@@ -4,11 +4,7 @@
 
 
 ;;;;;;;;;;; Theme ;;;;;;;;;;;
-(setq doom-theme 'atom-one-dark')
-
-
-;;;;;;;;;;; Prevents Emacs from Asking to Quit or Not ;;;;;;;;;;;
-(setq confirm-kill-emacs nil)
+(setq doom-theme 'atom-one-dark)
 
 
 ;;;;;;;;;;; Org Mode Directory ;;;;;;;;;;;
