@@ -25,64 +25,43 @@ draw_bold_text_with_bright_colors: false
 colors:
   #### Primary Colors ####
   primary:
-    background:        '#282a36'
-    foreground:        '#f8f8f2'
-    bright_foreground: '#ffffff'
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
+    bright_foreground: '0xe6efff'
   #### Cursor ####
   cursor:
     text:   CellBackground
     cursor: CellForeground
-  #### Vi Mode Cursor ####
-  vi_mode_cursor:
-    text:   CellBackground
-    cursor: CellForeground
-  #### Search ####
-  search:
-   matches:
-    foreground: '#44475a'
-    background: '#50fa7b'
-   focused_match:
-    foreground: '#44475a'
-    background: '#ffb86c'
-   bar:
-    background: '#282a36'
-    foreground: '#f8f8f2'
-  #### Hints ####
-  hints:
-   start:
-    foreground: '#282a36'
-    background: '#f1fa8c'
-   end:
-    foreground: '#f1fa8c'
-    background: '#282a36'
-  #### Line Indicator ####
-  line_indicator:
-    foreground: None
-    background: None
-  #### Selection ####
-  selection:
-    text:       CellForeground
-    background: '#44475a'
   #### Normal Colors ####
   normal:
-    black:      '#21222c'
-    red:        '#ff5555'
-    green:      '#50fa7b'
-    yellow:     '#f1fa8c'
-    blue:       '#bd93f9'
-    magenta:    '#ff79c6'
-    cyan:       '#8be9fd'
-    white:      '#f8f8f2'
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
   #### Bright Colors ####
   bright:
-    black:      '#6272a4'
-    red:        '#ff6e6e'
-    green:      '#69ff94'
-    yellow:     '#ffffa5'
-    blue:       '#d6acff'
-    magenta:    '#ff92df'
-    cyan:       '#a4ffff'
-    white:      '#ffffff'
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xe6efff'
+  ### Dim Colors ###
+  dim:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
 
 
 ########### Transparency ###########
