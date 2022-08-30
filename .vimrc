@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-python/python-syntax'
     Plug 'ap/vim-css-color'
     Plug 'junegunn/vim-emoji'
-    Plug 'dracula/vim',{'as': 'dracula'}
+    Plug 'joshdick/onedark.vim'
 call plug#end()
 filetype plugin indent on
 
@@ -32,7 +32,7 @@ colorscheme dracula
 
 """"""""""" Status Bar """""""""""
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'onedark',
       \ }
 
 set laststatus=2
