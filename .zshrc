@@ -109,4 +109,3 @@ bindkey -s '' "clear\n"
 
 
 ########### On Terminal Startup ###########
-colorscript random
