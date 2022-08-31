@@ -59,8 +59,6 @@ alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/p
 alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
 
 #### Miscellaneous ####
-## Clear ##
-alias clear="clear && colorscript random"
 ## Listing Users ##
 alias userlist="cut -d: -f1 /etc/passwd"
 ## Update Grub Config ##
