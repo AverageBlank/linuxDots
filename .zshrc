@@ -35,6 +35,9 @@ alias ll='ls -la'
 #### Setting Vim as NeoVim ####
 alias vim='nvim'
 
+### Clear Command ###
+alias clear='clear && colorscript random'
+
 #### Obvous Typos ####
 alias cd..='cd ..'
 alias pdw='pwd'
