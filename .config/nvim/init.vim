@@ -46,6 +46,8 @@ set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 autocmd! bufreadpost * set noexpandtab | retab! 4
 autocmd! bufwritepre * set expandtab | retab! 4
 autocmd! bufwritepost * set noexpandtab | retab! 4
+
+
 """"""""""" Keybindings """""""""""
 "" NerdTree ""
 " Open NerdTree with ctrl+p
