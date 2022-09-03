@@ -17,6 +17,7 @@ filetype plugin indent on
 """"""""""" Settings """""""""""
 syntax on
 set incsearch
+set nohlsearch
 set smartcase
 set ignorecase
 set nobackup
