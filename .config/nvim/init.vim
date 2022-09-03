@@ -41,7 +41,7 @@ let g:lightline = {
 set laststatus=2
 
 
-""""""""""" Tab Guides"""""""""""
+""""""""""" Tab Guides """""""""""
 set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 autocmd! bufreadpost * set noexpandtab | retab! 4
 autocmd! bufwritepre * set expandtab | retab! 4
