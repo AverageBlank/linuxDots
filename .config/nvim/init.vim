@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-python/python-syntax'
     Plug 'ap/vim-css-color'
     Plug 'junegunn/vim-emoji'
+    Plug 'preservim/nerdtree'
     Plug 'joshdick/onedark.vim'
 call plug#end()
 filetype plugin indent on
