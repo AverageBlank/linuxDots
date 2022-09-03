@@ -28,7 +28,7 @@ set mouse=a
 set expandtab
 set smarttab
 set shiftwidth=4
-set tabstop=4
+set tabstop=4 softtabstop=4
 set encoding=UTF-8
 colorscheme onedark
 
@@ -40,6 +40,12 @@ let g:lightline = {
 
 set laststatus=2
 
+
+""""""""""" Tab Guides"""""""""""
+set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+autocmd! bufreadpost * set noexpandtab | retab! 4
+autocmd! bufwritepre * set expandtab | retab! 4
+autocmd! bufwritepost * set noexpandtab | retab! 4
 """"""""""" Keybindings """""""""""
 "" NerdTree ""
 " Open NerdTree with ctrl+p
