@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/vim-emoji'
     Plug 'preservim/nerdtree'
     Plug 'joshdick/onedark.vim'
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 filetype plugin indent on
 
@@ -28,6 +29,7 @@ set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
+set encoding=UTF-8
 colorscheme onedark
 
 
@@ -37,3 +39,24 @@ let g:lightline = {
       \ }
 
 set laststatus=2
+
+""""""""""" Keybindings """""""""""
+"" NerdTree ""
+" Open NerdTree with ctrl+p
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-p> :NERDTreeToggle<CR>
+" AutoStart NerdTree
+autocmd VimEnter * NERDTree | wincmd p
+
+"" Navigating Splits ""
+nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
+
+"" Making Programming Easier ""
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap ' ''<left>
+inoremap " ""<left>
