@@ -69,3 +69,9 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap ' ''<left>
 inoremap " ""<left>
+
+"" Switching Between Lines ""
+map <C-a> <ESC>^
+inoremap <C-a> <ESC>I
+map <C-e> <ESC>$
+inoremap <C-e> <ESC>A
