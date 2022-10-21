@@ -1,0 +1,9 @@
+IdeaVIM
+PythonCore
+com.intellij.plugins.vscodekeymap
+com.mallowigi
+com.markskelton.one-dark-theme
+com.samdark.intellij-visual-studio-code-dark-plus
+com.vermouthx.idea
+com.vincentp.gruvbox-theme
+monokai-pro
