@@ -85,4 +85,4 @@ inoremap <C-BS> <C-W>
 "" Auto Commands""
 autocmd FileType python inoremap <F5> <Esc>:w !Python<CR>
 autocmd FileType python nnoremap <F5> :w !Python<CR>
-let g:python3_host_prog = 'C:\Users\Hussain Khorakiwala\AppData\Local\Programs\Python\Python310\python.exe'
+let g:python3_host_prog = 'HOME\AppData\Local\Programs\Python\Python310\python.exe'
