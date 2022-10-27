@@ -10,6 +10,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'joshdick/onedark.vim'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'preservim/tagbar'
+    Plug 'tpope/vim-commentary'
+    Plug 'davidhalter/jedi-vim'
+    Plug 'ervandew/supertab'
+    Plug 'tpope/vim-surround'
 call plug#end()
 filetype plugin indent on
 
@@ -23,6 +28,7 @@ set ignorecase
 set nobackup
 set noswapfile
 set nu
+set rnu
 set clipboard=unnamedplus
 set noshowmode
 set mouse=a
@@ -75,3 +81,8 @@ map <C-a> <ESC>^
 inoremap <C-a> <ESC>I
 map <C-e> <ESC>$
 inoremap <C-e> <ESC>A
+inoremap <C-BS> <C-W>
+"" Auto Commands""
+autocmd FileType python inoremap <F5> <Esc>:w !Python<CR>
+autocmd FileType python nnoremap <F5> :w !Python<CR>
+let g:python3_host_prog = 'C:\Users\Hussain Khorakiwala\AppData\Local\Programs\Python\Python310\python.exe'
