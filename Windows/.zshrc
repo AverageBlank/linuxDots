@@ -39,7 +39,7 @@ alias l='ls -a'
 alias ll='ls -la'
 
 #### Setting Vim as NeoVim ####
-alias vvim='vim'
+alias vvim='vi'
 alias vim='nvim'
 
 #### Obvous Typos ####
