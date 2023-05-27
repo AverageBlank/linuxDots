@@ -36,6 +36,7 @@
     {
         "defaults": 
         {
+            "colorScheme": "One Dark Pro",
             "font": 
             {
                 "face": "JetBrainsMono Nerd Font",
@@ -63,7 +64,7 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "colorScheme": "Campbell",
+                "colorScheme": "One Dark Pro",
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
                 "font": 
                 {
@@ -71,7 +72,8 @@
                 },
                 "guid": "{27ebfc0a-dfdd-466c-8316-b7062c19d0c7}",
                 "hidden": false,
-                "name": "Git Bash"
+                "name": "Git Bash",
+                "tabTitle": "Git Bash"
             }
         ]
     },
@@ -122,6 +124,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
+        },
+        {
+            "background": "#1E2127",
+            "black": "#000000",
+            "blue": "#61AFEF",
+            "brightBlack": "#5C6370",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#98C379",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#D19A66",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#56B6C2",
+            "foreground": "#5C6370",
+            "green": "#98C379",
+            "name": "One Dark Pro",
+            "purple": "#C678DD",
+            "red": "#E06C75",
+            "selectionBackground": "#FFFFFF",
+            "white": "#ABB2BF",
+            "yellow": "#D19A66"
         },
         {
             "background": "#282C34",
