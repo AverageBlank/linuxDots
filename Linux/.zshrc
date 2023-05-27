@@ -33,6 +33,7 @@ alias ls='ls --color=auto'
 alias ll='ls -la'
 
 #### Setting Vim as NeoVim ####
+alias vvim='vim'
 alias vim='nvim'
 
 ### Clear Command ###

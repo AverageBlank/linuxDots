@@ -18,7 +18,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 If the vimrc is in the home folder, edit it using:
 
 ```
-vim ~/.vimrc
+vvim ~/.vimrc
 ```
 
 Once you've begun editting the vimrc, source the file by using the following command:
