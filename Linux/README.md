@@ -21,16 +21,16 @@ If the vimrc is in the home folder, edit it using:
 vvim ~/.vimrc
 ```
 
-Once you've begun editting the vimrc, source the file by using the following command:
-
-```
-:source %
-```
-
 To install the plugins, run the following command:
 
 ```
 :PlugInstall
+```
+
+Source the file by using the following command:
+
+```
+:source %
 ```
 
 The above command is case sensitive.
@@ -50,16 +50,16 @@ If the vimrc is in the correct folder, edit it using:
 vim ~/.config/nvim/init.vim
 ```
 
-Once you've begun editting the config file, source the file by using the following command:
-
-```
-:source %
-```
-
 To install the plugins, run the following command:
 
 ```
 :PlugInstall
+```
+
+Source the file by using the following command:
+
+```
+:source %
 ```
 
 The above command is case sensitive.
