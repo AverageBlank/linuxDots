@@ -3,20 +3,6 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 
-########### Oh My Zsh ###########
-export ZSH="$HOME/.oh-my-zsh/"
-plugins=(
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  )  
-source $ZSH/oh-my-zsh.sh
-source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-setopt GLOB_DOTS
-export HISTCONTROL=ignoreboth:erasedups
-
-
 ########### Paths ###########
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
@@ -26,6 +12,7 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 export PATH=/usr/local/bin:$PATH
+
 
 ########### prompt ###########
 #### Using Starship for Prompt, Check Readme on How to Install ####
@@ -90,3 +77,8 @@ bindkey -s '' "clear\n"
 
 ########### On Terminal Startup ###########
 cd $HOME
+
+
+########### Plugins ###########
+source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

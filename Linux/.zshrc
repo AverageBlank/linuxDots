@@ -8,15 +8,6 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 
-########### Zsh Plugins ###########
-export ZSH=/usr/share/oh-my-zsh/
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-setopt GLOB_DOTS
-export HISTCONTROL=ignoreboth:erasedups
-
-
 ########### Paths ###########
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
@@ -111,3 +102,8 @@ bindkey -s '' "clear\n"
 
 
 ########### On Terminal Startup ###########
+
+
+########### Plugins ###########
+source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

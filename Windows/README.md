@@ -101,33 +101,21 @@ To install it, run the following command in zsh:
 curl -fsSL https://starship.rs/install.sh | sh
 ```
 
-### Oh My Zsh:
-
-Oh My Zsh is a plugin manager for zsh.
-To install it, run the following command:
-
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-<b>Zsh Completions:</b>
-To use zsh completions, run the following commands:
-
-```
-cd $HOME/.oh-my-zsh/custom/plugins
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
-```
-
+### Zsh Plugins:
 <b>Zsh Syntax Highlighting</b>
 To use syntax highlighting, run the following command:
 
 ```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+mkdir ~/.zsh-plugins
+cd ~/.zsh-plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 
 <b>Zsh Auto Suggestions</b>
 To get suggestions, run the following command:
 
 ```
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+mkdir ~/.zsh-plugins
+cd ~/.zsh-plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions
 ```
