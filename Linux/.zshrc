@@ -105,5 +105,12 @@ bindkey -s '' "clear\n"
 
 
 ########### Plugins ###########
+#### Autosuggestions press ->(right arrow) to activate ####
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#### Syntax Highlighting ####
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#### Non-Case sensitive searching ####
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
