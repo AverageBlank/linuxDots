@@ -20,7 +20,8 @@ eval "$(starship init zsh)"
 
 
 ########### History ###########
-export HISTFILE=~/.zshhist
+mkdir -p ~/.zsh-cache
+export HISTFILE=~/.zsh-cache/zshhist
 export HISTSIZE=10000
 export SAVEHIST=10000
 setopt INC_APPEND_HISTORY_TIME
@@ -79,7 +80,6 @@ export LC_CTYPE="en_US.utf8"
 
 
 ########### On Terminal Startup ###########
-cd $HOME
 
 
 ########### Plugins ###########
