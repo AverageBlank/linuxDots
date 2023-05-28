@@ -117,7 +117,7 @@ cargo install starship --loccked
 
 ### Zsh Plugins:
 <b>Zsh Syntax Highlighting</b>
-To use syntax highlighting, run the following command:
+To use syntax highlighting, run the following commands:
 
 ```
 mkdir ~/.zsh-plugins
@@ -126,10 +126,19 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 
 <b>Zsh Auto Suggestions</b>
-To get suggestions, run the following command:
+To get suggestions, run the following commands:
 
 ```
 mkdir ~/.zsh-plugins
 cd ~/.zsh-plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions
+```
+
+<b>History Substring Search</b>
+To get history substring search, run the following commands:
+
+```
+mkdir ~/.zsh-plugins
+cd ~/.zsh-plugins
+git clone https://github.com/zsh-users/zsh-history-substring-search
 ```

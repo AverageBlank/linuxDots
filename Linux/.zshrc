@@ -1,8 +1,3 @@
-########### prompt ###########
-#### Using Starship for Prompt, Check Readme on How to Install ####
-eval "$(starship init zsh)"
-
-
 ########### Setting NeoVim as defualt editor ###########
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -16,6 +11,21 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
+
+
+########### Prompt ###########
+#### Using Starship for Prompt, Check Readme on How to Install ####
+eval "$(starship init zsh)"
+
+
+########### History ###########
+export HISTFILE=~/.zshhist
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt INC_APPEND_HISTORY_TIME
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 
 ########### Aliases ###########
@@ -94,13 +104,6 @@ ex ()
 export LC_CTYPE="en_US.utf8"
 
 
-########### Key Bindings ###########
-bindkey '^H' backward-kill-word
-bindkey '^[[1;5C' forward-word
-bindkey '^H' backward-kill-word
-bindkey -s '' "clear\n"
-
-
 ########### On Terminal Startup ###########
 
 
@@ -111,6 +114,18 @@ source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #### Syntax Highlighting ####
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+#### History Substring Search ####
+source ~/.zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
 #### Non-Case sensitive searching ####
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+
+########### Key Bindings ###########
+bindkey '^H' backward-kill-word
+bindkey '^[[1;5C' forward-word
+bindkey '^H' backward-kill-word
+bindkey -s '' "clear\n"
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
