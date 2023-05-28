@@ -27,3 +27,5 @@ New-Item -ItemType SymbolicLink -Path $HOME\"AppData\Roaming\Microsoft\Windows\S
 New-Item -ItemType SymbolicLink -Path $HOME\"AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\user_keybindings.ahk" -Target .\user_keybindings.ahk
 New-Item -ItemType SymbolicLink -Path $HOME\"AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\desktop_switcher.ahk" -Target .\desktop_switcher.ahk
 ```
+
+If prompted to choose Autohotkey version, select the latest one.
