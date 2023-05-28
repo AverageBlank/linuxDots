@@ -11,7 +11,7 @@ To run both application and desktop keybindings start both the files
 
 ## For Autostarting: 
 Whichever config(s) you are running, you can autostart them by adding them into your autostart folder.
-To do so, run the following command(s) in an elavated(administrator) powershell: 
+To do so, open an elavated(administrator) powershell and then change into the Autohotkey directory and then run the command(s) required: 
 
 ### Only Application Bindings:
 ```
