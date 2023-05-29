@@ -115,7 +115,7 @@ sudo snap install starship
 cargo install starship --loccked
 ```
 
-<b>Other linux distributions: <b>
+<b>Other linux distributions: </b>
 
 ```
 curl -sS https://starship.rs/install.sh | sh
