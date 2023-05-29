@@ -40,8 +40,8 @@ The above command is case sensitive.
 For the plugins to work, you need to install a plugin manager. The plugin manager used is Vim Plug, to install run the following command:
 
 ```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
 If the vimrc is in the correct folder, edit it using:
