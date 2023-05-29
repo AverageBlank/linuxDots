@@ -53,7 +53,7 @@ if has('termguicolors')
 endif
 
 "" Setting Background
-set background=dark
+set Background=dark
 colorscheme onedark
 
 "" Status Bar
