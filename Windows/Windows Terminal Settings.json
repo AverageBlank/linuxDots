@@ -73,7 +73,28 @@
                 "guid": "{27ebfc0a-dfdd-466c-8316-b7062c19d0c7}",
                 "hidden": false,
                 "name": "Git Bash",
+                "startingDirectory": "%USERPROFILE%",
                 "tabTitle": "Git Bash"
+            },
+            {
+                "commandline": "C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysql.exe -uroot -p",
+                "guid": "{61266130-fbdd-494b-8b85-674062cdd51e}",
+                "hidden": false,
+                "name": "MySQL",
+                "tabTitle": "MySQL"
+            },
+            {
+                "cursorShape": "bar",
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": true,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
@@ -127,7 +148,7 @@
         },
         {
             "background": "#1E2127",
-            "black": "#000000",
+            "black": "#1E2127",
             "blue": "#61AFEF",
             "brightBlack": "#5C6370",
             "brightBlue": "#61AFEF",
@@ -139,7 +160,7 @@
             "brightYellow": "#D19A66",
             "cursorColor": "#FFFFFF",
             "cyan": "#56B6C2",
-            "foreground": "#5C6370",
+            "foreground": "#ABB2BF",
             "green": "#98C379",
             "name": "One Dark Pro",
             "purple": "#C678DD",
@@ -285,6 +306,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#D3D7CF",
             "yellow": "#C4A000"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
         },
         {
             "background": "#000000",
