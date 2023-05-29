@@ -53,7 +53,7 @@ if has('termguicolors')
 endif
 
 "" Setting Background
-set Background=dark
+set background=dark
 colorscheme onedark
 
 "" Status Bar
@@ -98,7 +98,3 @@ inoremap <C-a> <ESC>I
 map <C-e> <ESC>$
 inoremap <C-e> <ESC>A
 inoremap <C-BS> <C-W>
-"" Auto Commands""
-autocmd FileType python inoremap <F5> <Esc>:w !Python<CR>
-autocmd FileType python nnoremap <F5> :w !Python<CR>
-let g:python3_host_prog = 'HOME\AppData\Local\Programs\Python\Python310\python.exe'

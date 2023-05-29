@@ -143,7 +143,7 @@ sudo make install
 To use syntax highlighting, run the following commands:
 
 ```
-mkdir ~/.zsh-plugins
+mkdir -p ~/.zsh-plugins
 cd ~/.zsh-plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
@@ -152,7 +152,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 To get suggestions, run the following commands:
 
 ```
-mkdir ~/.zsh-plugins
+mkdir -p ~/.zsh-plugins
 cd ~/.zsh-plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions
 ```
@@ -161,7 +161,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions
 To get history substring search, run the following commands:
 
 ```
-mkdir ~/.zsh-plugins
+mkdir -p ~/.zsh-plugins
 cd ~/.zsh-plugins
 git clone https://github.com/zsh-users/zsh-history-substring-search
 ```

@@ -33,7 +33,7 @@ setopt HIST_SAVE_NO_DUPS
 ########### Aliases ###########
 #### Ls Commands Better ####
 alias ls='ls --color=auto'
-alias l='ls -a'
+alias l='ls -la'
 alias ll='ls -la'
 
 #### Setting Vim as NeoVim ####
