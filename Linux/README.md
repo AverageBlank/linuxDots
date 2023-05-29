@@ -136,6 +136,8 @@ yay -S shell-color-scripts
 git clone https://gitlab.com/dwt1/shell-color-scripts.git
 cd shell-color-scripts
 sudo make install
+cd ..
+rm -rf shell-color-scripts
 ```
 
 ### Zsh Plugins:
