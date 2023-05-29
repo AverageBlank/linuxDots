@@ -126,6 +126,7 @@ A set of terminal color scripts that beautify the terminal.
 To install it, run the installation command for your distribution.
 
 <b>Arch Linux: </b>
+
 If you have AUR set up, run the following command otherwise install it for other linux distributions:
 ```
 yay -S shell-color-scripts
