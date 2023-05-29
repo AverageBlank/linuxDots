@@ -37,10 +37,26 @@ set smarttab
 set shiftwidth=4
 set tabstop=4 softtabstop=4
 set encoding=UTF-8
+
+
+""""""""""" ColorScheme """""""""""
+if has('termguicolors')
+    " Turns on true terminal colors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+    " Turns on 24-bit RGB color support
+    set termguicolors
+
+    " Defines how many colors should be used. (maximum: 256, minimum: 0)
+    set t_Co=256
+endif
+
+"" Setting Background
+set Background=dark
 colorscheme onedark
 
-
-""""""""""" Status Bar """""""""""
+"" Status Bar
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ }
