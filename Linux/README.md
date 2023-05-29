@@ -115,6 +115,28 @@ sudo snap install starship
 cargo install starship --loccked
 ```
 
+<b>Other linux distributions: <b>
+
+```
+curl -sS https://starship.rs/install.sh | sh
+```
+
+### Shell Color Script:
+A set of terminal color scripts that beautify the terminal.
+To install it, run the installation command for your distribution.
+
+<b>Arch Linux: </b>
+If you have AUR set up, run the following command otherwise install it for other linux distributions:
+```
+yay -S shell-color-scripts
+```
+<b>Other linux distributions: </b>
+```
+git clone https://gitlab.com/dwt1/shell-color-scripts.git
+cd shell-color-scripts
+sudo make install
+```
+
 ### Zsh Plugins:
 <b>Zsh Syntax Highlighting</b>
 To use syntax highlighting, run the following commands:
