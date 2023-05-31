@@ -47,6 +47,9 @@ alias pdw='pwd'
 #### Grep With Better Colors ####
 alias grep='grep --color=auto'
 
+#### Miscellaneous ####
+## Python ##
+alias python="python3"
 
 ########### Extracting Files ###########
 ex ()

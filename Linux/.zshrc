@@ -70,6 +70,8 @@ alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pac
 alias userlist="cut -d: -f1 /etc/passwd"
 ## Update Grub Config ##
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+## Python ##
+alias python="python3"
 
 ####  ArcoLinux ####
 alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
