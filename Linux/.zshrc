@@ -72,6 +72,8 @@ alias userlist="cut -d: -f1 /etc/passwd"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 ## Python ##
 alias python="python3"
+## Emacs ##
+alias emacs="emacsclient -c -a 'emacs'"
 
 ####  ArcoLinux ####
 alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
