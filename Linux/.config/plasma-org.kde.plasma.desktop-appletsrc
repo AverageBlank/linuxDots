@@ -107,7 +107,7 @@ Image=/usr/share/wallpapers/summer_1am/
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][22][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/27.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/16.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][26]
@@ -141,7 +141,7 @@ Image=file:///usr/share/backgrounds/arcolinux/arco-wallpaper.jpg
 FillMode=2
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/19.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/1.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][53]
@@ -379,7 +379,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][7][Applets][18][Configuration]
-PreloadWeight=15
+PreloadWeight=20
 
 [Containments][7][Applets][19]
 immutability=1
@@ -438,7 +438,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][7][Applets][44][Configuration]
-PreloadWeight=65
+PreloadWeight=70
 
 [Containments][7][Applets][44][Configuration][General]
 migrated=true
