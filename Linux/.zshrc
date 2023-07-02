@@ -62,10 +62,10 @@ alias punlock='sudo rm /var/lib/pacman/db.lck'
 ## Using Yay as Paru ##
 alias yay='paru'
 ## Aliasing Yay ##
-alias yps='yay -S $1 --noconfirm'
-alias ypss='yay -Ss'
-alias ypr='yay -R $1 --noconfirm'
-alias ypq='yay -Q'
+alias yys='yay -S $1 --noconfirm'
+alias yyss='yay -Ss'
+alias yyr='yay -R $1 --noconfirm'
+alias yyq='yay -Q'
 ## Updating the System ##
 alias update='sudo pacman -Syu --noconfirm'
 alias upall='paru -Syu --noconfirm'
