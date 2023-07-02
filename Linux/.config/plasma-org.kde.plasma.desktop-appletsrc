@@ -14,22 +14,24 @@ location=4
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
-[Containments][2][Applets][38]
+[Containments][2][Applets][108]
 immutability=1
-plugin=org.kde.plasma.kicker
+plugin=org.kde.plasma.kickoff
 
-[Containments][2][Applets][38][Configuration]
+[Containments][2][Applets][108][Configuration]
 PreloadWeight=100
+popupHeight=562
+popupWidth=719
 
-[Containments][2][Applets][38][Configuration][ConfigDialog]
+[Containments][2][Applets][108][Configuration][ConfigDialog]
 DialogHeight=600
 DialogWidth=800
 
-[Containments][2][Applets][38][Configuration][General]
+[Containments][2][Applets][108][Configuration][General]
 customButtonImage=com.gitlab.jnuutinen.minimalmenu
 favoritesPortedToKAstats=true
 
-[Containments][2][Applets][38][Shortcuts]
+[Containments][2][Applets][108][Shortcuts]
 global=Alt+F1
 
 [Containments][2][Applets][45]
@@ -44,7 +46,7 @@ DialogHeight=600
 DialogWidth=800
 
 [Containments][2][Applets][45][Configuration][General]
-launchers=applications:brave-browser.desktop,preferred://filemanager,applications:spotify.desktop,applications:discord.desktop,applications:brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,applications:Alacritty.desktop,applications:code.desktop
+launchers=applications:brave-browser.desktop,preferred://filemanager,applications:spotify.desktop,applications:discord.desktop,applications:brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,applications:code.desktop,applications:Alacritty.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -76,7 +78,7 @@ DialogWidth=1920
 PreloadWeight=0
 
 [Containments][2][General]
-AppletOrder=38;45;6;8;9
+AppletOrder=108;45;6;8;9
 
 [Containments][22]
 ItemGeometries-1920x1080=
@@ -105,7 +107,7 @@ Image=/usr/share/wallpapers/summer_1am/
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][22][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/15.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/27.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][26]
@@ -139,7 +141,7 @@ Image=file:///usr/share/backgrounds/arcolinux/arco-wallpaper.jpg
 FillMode=2
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/30.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/19.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][53]
@@ -335,7 +337,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][7][Applets][12][Configuration]
-PreloadWeight=45
+PreloadWeight=75
 
 [Containments][7][Applets][13]
 immutability=1
@@ -384,7 +386,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][7][Applets][19][Configuration]
-PreloadWeight=15
+PreloadWeight=20
 
 [Containments][7][Applets][20]
 immutability=1
@@ -436,7 +438,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][7][Applets][44][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 
 [Containments][7][Applets][44][Configuration][General]
 migrated=true

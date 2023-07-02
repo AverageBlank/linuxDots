@@ -27,7 +27,9 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
+{8ccd0d52-ff28-41ca-ac85-545f9f8fcf1c}=Print,none,flameshot
 {96a38e8d-9c23-4ad9-8f05-1229950cbbc8}=Meta+Return,none,alacritty
+{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -244,7 +246,7 @@ _launch=Meta+.,Meta+.,Emoji Selector
 [org.kde.spectacle.desktop]
 ActiveWindowScreenShot=Ctrl+Print,Meta+Print,Capture Active Window
 CurrentMonitorScreenShot=none,none,Capture Current Monitor
-FullScreenScreenShot=Print,Shift+Print,Capture Entire Desktop
+FullScreenScreenShot=none,Shift+Print,Capture Entire Desktop
 OpenWithoutScreenshot=none,none,Launch Spectacle without capturing
 RectangularRegionScreenShot=none,Meta+Shift+Print,Capture Rectangular Region
 WindowUnderCursorScreenShot=Meta+Ctrl+Print,Meta+Ctrl+Print,Capture Window Under Cursor
@@ -276,8 +278,8 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
+activate widget 108=Alt+F1,none,Activate Application Launcher Widget
 activate widget 28=none,none,Activate Application Launcher Widget
-activate widget 38=Alt+F1,none,Activate Application Menu Widget
 activate widget 45=none,none,Activate Icons-only Task Manager Widget
 activate widget 48=none,none,Activate Application Launcher Widget
 activate widget 76=none,none,Activate Application Launcher Widget

@@ -1,14 +1,9 @@
-[$Version]
-update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,icons_remove_effects.upd:IconsRemoveEffects,kwin.upd:animation-speed,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
-
 [ColorEffects:Disabled]
-ChangeSelectionColor=
 Color=56,56,56
 ColorAmount=0
 ColorEffect=0
 ContrastAmount=0.65
 ContrastEffect=1
-Enable=
 IntensityAmount=0.1
 IntensityEffect=2
 
@@ -103,66 +98,17 @@ ForegroundNormal=254,254,254
 ForegroundPositive=132,255,57
 ForegroundVisited=124,183,255
 
-[DirSelect Dialog]
-DirSelectDialog Size=856,602
-History Items[$e]=file:///run/media/hussain/Ventoy/01. Iso/02. Arch Linux Based,file:$HOME/Github Projects/Wallpapers,file:$HOME/Github Projects/Wallpapers
-
 [General]
-BrowserApplication=brave-browser.desktop
-ColorSchemeHash=caf9814ce486ec8051875daf6dbac7aac7f820f3
-Name=Breeze Light
-TerminalApplication=alacritty
-TerminalService=Alacritty.desktop
-XftAntialias=true
-XftHintStyle=hintfull
-XftSubPixel=rgb
-fixed=Hack,9,-1,5,50,0,0,0,0,0,Regular
-font=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
-menuFont=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
+ColorScheme=nordic-bluish
+Name=Andromeda
 shadeSortColumn=true
-smallestReadableFont=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
-toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
-
-[Icons]
-Theme=Papirus-Dark
 
 [KDE]
-ColorScheme=Breeze
-LookAndFeelPackage=Andromeda
-ShowIconsInMenuItems=true
-ShowIconsOnPushButtons=true
-SingleClick=false
 contrast=4
-widgetStyle=kvantum-dark
-
-[KFileDialog Settings]
-Allow Expansion=false
-Automatically select filename extension=true
-Breadcrumb Navigation=true
-Decoration position=2
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
-Show Bookmarks=false
-Show Full Path=false
-Show Inline Previews=true
-Show Preview=false
-Show Speedbar=true
-Show hidden files=false
-Sort by=Name
-Sort directories first=true
-Sort hidden files last=false
-Sort reversed=false
-Speedbar Width=167
-View Style=DetailTree
-
-[Toolbar style]
-ToolButtonStyle=TextBesideIcon
-ToolButtonStyleOtherToolbars=TextBesideIcon
 
 [WM]
 activeBackground=47,52,63
 activeBlend=47,52,63
-activeFont=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
 activeForeground=211,218,227
 inactiveBackground=47,52,63
 inactiveBlend=47,52,63

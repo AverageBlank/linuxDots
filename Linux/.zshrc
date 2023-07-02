@@ -87,13 +87,14 @@ alias python="python3"
 alias py="python3"
 ## Emacs ##
 alias emacs="emacsclient -c -a 'emacs'"
+## Copying Configs ##
+alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Github\ Projects/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
 
 ####  Nvidia ####
 ## Optimus Manager ##
 alias oph='optimus-manager --switch hybrid'
 alias opn='optimus-manager --switch nvidia'
 alias opi='optimus-manager --switch integrated'
-
 
 ####  ArcoLinux ####
 alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
