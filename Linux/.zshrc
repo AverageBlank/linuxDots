@@ -45,16 +45,27 @@ alias clear='clear && colorscript random'
 #### Obvous Typos ####
 alias cd..='cd ..'
 alias pdw='pwd'
-alias pacman='sudo pacman'
 
 #### Grep With Better Colors ####
 alias grep='grep --color=auto'
 
 #### Package Manager ####
+### Pacman ###
+## Aliasing Pacman ##
+alias pacman='sudo pacman --color auto'
+alias sps='sudo pacman -S $1 --noconfirm'
+alias spss='sudo pacman -Ss'
+alias spr='sudo pacman -R $1 --noconfirm'
+alias spq='sudo pacman -Q'
 ## Unlocking Pacman ##
-alias unlock='sudo rm /var/lib/pacman/db.lck'
+alias punlock='sudo rm /var/lib/pacman/db.lck'
 ## Using Yay as Paru ##
 alias yay='paru'
+## Aliasing Yay ##
+alias yps='yay -S $1 --noconfirm'
+alias ypss='yay -Ss'
+alias ypr='yay -R $1 --noconfirm'
+alias ypq='yay -Q'
 ## Updating the System ##
 alias update='sudo pacman -Syu --noconfirm'
 alias upall='paru -Syu --noconfirm'
@@ -70,11 +81,19 @@ alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pac
 alias userlist="cut -d: -f1 /etc/passwd"
 ## Update Grub Config ##
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 ## Python ##
 alias python="python3"
 alias py="python3"
 ## Emacs ##
 alias emacs="emacsclient -c -a 'emacs'"
+
+####  Nvidia ####
+## Optimus Manager ##
+alias oph='optimus-manager --switch hybrid'
+alias opn='optimus-manager --switch nvidia'
+alias opi='optimus-manager --switch integrated'
+
 
 ####  ArcoLinux ####
 alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
@@ -112,7 +131,7 @@ export LC_CTYPE="en_US.utf8"
 
 
 ########### On Terminal Startup ###########
-
+colorscript random
 
 ########### Plugins ###########
 #### Autosuggestions press ->(right arrow) to activate ####
