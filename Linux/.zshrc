@@ -133,6 +133,7 @@ export LC_CTYPE="en_US.utf8"
 ########### On Terminal Startup ###########
 colorscript random
 
+
 ########### Plugins ###########
 #### Autosuggestions press ->(right arrow) to activate ####
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
