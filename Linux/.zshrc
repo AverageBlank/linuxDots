@@ -89,6 +89,11 @@ alias py="python3"
 alias emacs="emacsclient -c -a 'emacs'"
 ## Copying Configs ##
 alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Github\ Projects/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
+## Iso ##
+alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
+## Shutdown/Reboot ##
+alias ssn="sudo shutdown now"
+alias sr="reboot"
 
 ####  Nvidia ####
 ## Optimus Manager ##
