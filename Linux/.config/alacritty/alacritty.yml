@@ -65,10 +65,11 @@ colors:
 
 
 ########### Transparency ###########
-    background_opacity: 1.0
+window:
+  opacity: 0.9
 
 
-########### Transparency ###########
+########### CUrsor ###########
 cursor:
   style:
     shape: Beam
