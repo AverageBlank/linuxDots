@@ -121,7 +121,7 @@ alias cgzshrc="code ~/Github\ Projects/Dotfiles/Linux/.zshrc"
 ####  Git ####
 alias ga="git add ."
 alias gc="git commit -m"
-alias gp="git push -u origin $"
+alias gp="git push -u origin"
 
 
 ####  Nvidia ####
