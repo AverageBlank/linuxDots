@@ -29,16 +29,18 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 _k_friendly_name=Custom Shortcuts Service
 {8ccd0d52-ff28-41ca-ac85-545f9f8fcf1c}=Print,none,flameshot
 {96a38e8d-9c23-4ad9-8f05-1229950cbbc8}=Meta+Return,none,alacritty
-{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 
 [kmix]
 _k_friendly_name=Audio Volume
+decrease-volume-Speaker@boAt IM-1000D=none,none,Decrease volume of Speaker on boAt IM-1000D
 decrease_microphone_volume=Microphone Volume Down,Microphone Volume Down,Decrease Microphone Volume
 decrease_volume=Volume Down,Volume Down,Decrease Volume
+increase-volume-Speaker@boAt IM-1000D=none,none,Increase volume of Speaker on boAt IM-1000D
 increase_microphone_volume=Microphone Volume Up,Microphone Volume Up,Increase Microphone Volume
 increase_volume=Volume Up,Volume Up,Increase Volume
 mic_mute=Microphone Mute,Microphone Mute\tMeta+Volume Mute,Mute Microphone
 mute=Volume Mute,Volume Mute,Mute
+toggle-mute-Speaker@boAt IM-1000D=none,none,Mute Speaker on boAt IM-1000D
 
 [ksmserver]
 Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,,Halt Without Confirmation

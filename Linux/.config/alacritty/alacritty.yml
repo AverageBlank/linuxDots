@@ -2,19 +2,19 @@
 font:
 #### Normal ####
   normal:
-    family: Source Code Pro
+    family: JetBrainsMono Nerd Font
     style: Regular
 #### Bold ####
   bold:
-    family: Source Code Pro
+    family: JetBrainsMono Nerd Font
     style: Bold
 #### Italic ####
   italic:
-    family: Source Code Pro
+    family: JetBrainsMono Nerd Font
     style: Italic
 #### Bold and Italic ####
   bold_italic:
-    family: Source Code Pro
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
 #### Pointer Size ####
   size: 11.0
@@ -66,3 +66,13 @@ colors:
 
 ########### Transparency ###########
     background_opacity: 1.0
+
+
+########### Transparency ###########
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+  blink_interval: 500
+  vi_mode_style:
+    shape: Block
