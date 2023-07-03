@@ -93,7 +93,7 @@ alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 alias ssn="sudo shutdown now"
 alias sr="reboot"
 
-####  Nvidia ####
+####  Configurations ####
 ## Copying Configs ##
 # Plasma
 alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Github\ Projects/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
@@ -116,6 +116,12 @@ alias czshrc="code ~/.zshrc"
 alias vgzshrc="vim ~/Github\ Projects/Dotfiles/Linux/.zshrc"
 alias egzshrc="emacs ~/Github\ Projects/Dotfiles/Linux/.zshrc"
 alias cgzshrc="code ~/Github\ Projects/Dotfiles/Linux/.zshrc"
+
+
+####  Git ####
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push -u origin $"
 
 
 ####  Nvidia ####
