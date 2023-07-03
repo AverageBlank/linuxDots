@@ -87,13 +87,36 @@ alias python="python3"
 alias py="python3"
 ## Emacs ##
 alias emacs="emacsclient -c -a 'emacs'"
-## Copying Configs ##
-alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Github\ Projects/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
 ## Iso ##
 alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 ## Shutdown/Reboot ##
 alias ssn="sudo shutdown now"
 alias sr="reboot"
+
+####  Nvidia ####
+## Copying Configs ##
+# Plasma
+alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Github\ Projects/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
+# Alacritty
+alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.yml ~/Github\ Projects/Dotfiles/Linux/.config/alacritty"
+## Opening Configs ##
+# .config Alacritty
+alias valacritty="vim ~/.config/alacritty/alacritty.yml"
+alias ealacritty="emacs ~/.config/alacritty/alacritty.yml"
+alias calacritty="code ~/.config/alacritty/alacritty.yml"
+# github Alacritty
+alias vgalacritty="vim ~/Github\ Projects/Dotfiles/Linux/.config/alacritty/alacritty.yml"
+alias egalacritty="emacs ~/Github\ Projects/Dotfiles/Linux/.config/alacritty/alacritty.yml"
+alias cgalacritty="code ~/Github\ Projects/Dotfiles/Linux/.config/alacritty/alacritty.yml"
+# .zshrc
+alias vzshrc="vim ~/.zshrc"
+alias ezshrc="emacs ~/.zshrc"
+alias czshrc="code ~/.zshrc"
+# github zshrc
+alias vgzshrc="vim ~/Github\ Projects/Dotfiles/Linux/.zshrc"
+alias egzshrc="emacs ~/Github\ Projects/Dotfiles/Linux/.zshrc"
+alias cgzshrc="code ~/Github\ Projects/Dotfiles/Linux/.zshrc"
+
 
 ####  Nvidia ####
 ## Optimus Manager ##

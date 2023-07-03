@@ -107,7 +107,7 @@ Image=/usr/share/wallpapers/summer_1am/
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][22][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/23.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/8.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][26]
@@ -141,7 +141,7 @@ Image=file:///usr/share/backgrounds/arcolinux/arco-wallpaper.jpg
 FillMode=2
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/22.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/26.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][53]
@@ -441,9 +441,10 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][7][Applets][44][Configuration]
-PreloadWeight=70
+PreloadWeight=75
 
 [Containments][7][Applets][44][Configuration][General]
+currentTab=streams
 migrated=true
 
 [Containments][7][Applets][66]
@@ -499,7 +500,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][75][Applets][80][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 SystrayContainmentId=81
 
 [Containments][75][Applets][94]
@@ -608,9 +609,10 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][81][Applets][92][Configuration]
-PreloadWeight=55
+PreloadWeight=70
 
 [Containments][81][Applets][92][Configuration][General]
+currentTab=streams
 migrated=true
 
 [Containments][81][Applets][93]
