@@ -96,6 +96,7 @@ alias sr="reboot"
 alias sce="sudo systemctl enable"
 alias scs="sudo systemctl start"
 alias scd="sudo systemctl disable"
+alias firmwarereboot="sudo systemctl reboot --firmware-setup"
 
 ####  Configurations ####
 ## Copying Configs ##
