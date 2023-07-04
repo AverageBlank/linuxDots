@@ -92,6 +92,10 @@ alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 ## Shutdown/Reboot ##
 alias ssn="sudo shutdown now"
 alias sr="reboot"
+## Systemctl ##
+alias sce"sudo systemctl enable"
+alias scs"sudo systemctl start"
+alias scd"sudo systemctl disable"
 
 ####  Configurations ####
 ## Copying Configs ##

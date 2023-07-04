@@ -107,7 +107,7 @@ Image=/usr/share/wallpapers/summer_1am/
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][22][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/26.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/27.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][26]
@@ -141,7 +141,7 @@ Image=file:///usr/share/backgrounds/arcolinux/arco-wallpaper.jpg
 FillMode=2
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/17.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/15.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][53]
@@ -493,6 +493,9 @@ global=Alt+F1
 [Containments][75][Applets][78]
 immutability=1
 plugin=org.kde.plasma.icontasks
+
+[Containments][75][Applets][78][Configuration][General]
+launchers=applications:systemsettings.desktop,preferred://filemanager,preferred://browser
 
 [Containments][75][Applets][80]
 immutability=1
