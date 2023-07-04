@@ -107,7 +107,7 @@ Image=/usr/share/wallpapers/summer_1am/
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][22][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/25.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/26.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][26]
@@ -141,7 +141,7 @@ Image=file:///usr/share/backgrounds/arcolinux/arco-wallpaper.jpg
 FillMode=2
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/3.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/17.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][53]
@@ -309,7 +309,7 @@ immutability=1
 plugin=org.kde.plasma.weather
 
 [Containments][7][Applets][101][Configuration]
-PreloadWeight=65
+PreloadWeight=70
 configMigrated=true
 
 [Containments][7][Applets][101][Configuration][ConfigDialog]
@@ -441,10 +441,9 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][7][Applets][44][Configuration]
-PreloadWeight=75
+PreloadWeight=85
 
 [Containments][7][Applets][44][Configuration][General]
-currentTab=streams
 migrated=true
 
 [Containments][7][Applets][66]

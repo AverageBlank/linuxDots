@@ -99,6 +99,8 @@ alias sr="reboot"
 alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Github\ Projects/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
 # Alacritty
 alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.yml ~/Github\ Projects/Dotfiles/Linux/.config/alacritty"
+# Zshrc
+alias cpzshrc="cp =rf ~/.zshrc ~/GIthub\ Projects/Dotfiles/Linux/"
 ## Opening Configs ##
 # .config Alacritty
 alias valacritty="vim ~/.config/alacritty/alacritty.yml"
