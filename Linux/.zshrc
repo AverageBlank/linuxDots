@@ -100,7 +100,7 @@ alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/plasma-org.kde.plasma.desktop-
 # Alacritty
 alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.yml ~/Github\ Projects/Dotfiles/Linux/.config/alacritty"
 # Zshrc
-alias cpzshrc="cp -rf ~/.zshrc ~/GIthub\ Projects/Dotfiles/Linux/"
+alias cpzshrc="cp -rf ~/.zshrc ~/Github\ Projects/Dotfiles/Linux/"
 ## Opening Configs ##
 # .config Alacritty
 alias valacritty="vim ~/.config/alacritty/alacritty.yml"
