@@ -125,13 +125,13 @@ alias vgzshrc="vim ~/Github\ Projects/Dotfiles/Linux/.zshrc"
 alias egzshrc="emacs ~/Github\ Projects/Dotfiles/Linux/.zshrc"
 alias cgzshrc="code ~/Github\ Projects/Dotfiles/Linux/.zshrc"
 # .config qtile
-alias valacritty="vim ~/.config/qtile/config.py"
-alias ealacritty="emacs ~/.config/qtile/config.py"
-alias calacritty="code ~/.config/qtile/config.py"
+alias vqtile="vim ~/.config/qtile/config.py"
+alias eqtile="emacs ~/.config/qtile/config.py"
+alias cqtile="code ~/.config/qtile/config.py"
 # github qtile
-alias vgalacritty="vim ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
-alias egalacritty="emacs ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
-alias cgalacritty="code ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
+alias vgqtile="vim ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
+alias egqtile="emacs ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
+alias cgqtile="code ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
 
 
 ####  Git ####
