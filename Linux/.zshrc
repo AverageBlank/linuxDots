@@ -203,7 +203,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 ########### Key Bindings ###########
 bindkey '^H' backward-kill-word
 bindkey '^[[1;5C' forward-word
-bindkey '^H' backward-kill-word
+bindkey "^[[1;5D" backward-word
 bindkey -s '' "clear\n"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
