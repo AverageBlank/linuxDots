@@ -156,6 +156,7 @@ alias gp="git push -u origin"
 alias oph='optimus-manager --switch hybrid --no-confirm'
 alias opn='optimus-manager --switch nvidia --no-confirm'
 alias opi='optimus-manager --switch integrated --no-confirm'
+alias ops='optimus-manager --print-mode'
 
 ####  ArcoLinux ####
 alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
