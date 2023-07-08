@@ -83,6 +83,7 @@ PreloadWeight=0
 AppletOrder=108;45;6;8;9
 
 [Containments][22]
+ItemGeometries-1024x768=
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
 activityId=1fe86127-d67b-4797-816f-87c2194fc798
@@ -109,7 +110,7 @@ Image=/usr/share/wallpapers/summer_1am/
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][22][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/27.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/7.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][26]
@@ -143,7 +144,7 @@ Image=file:///usr/share/backgrounds/arcolinux/arco-wallpaper.jpg
 FillMode=2
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/hussain/Github Projects/Wallpapers/16.jpg
+Image=file:///home/hussain/Github Projects/Wallpapers/33.jpg
 SlidePaths=/home/hussain/Github Projects/Wallpapers/
 
 [Containments][53]
@@ -332,7 +333,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][7][Applets][109][Configuration]
-PreloadWeight=60
+PreloadWeight=70
 
 [Containments][7][Applets][11]
 immutability=1
