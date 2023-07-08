@@ -51,6 +51,9 @@ if has('termguicolors')
     set t_Co=256
 endif
 
+"" Python Syntax Highlighting
+let g:python_highlight_all = 1
+
 "" Setting Background
 set background=dark
 colorscheme onedark
