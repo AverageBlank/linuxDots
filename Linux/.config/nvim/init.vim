@@ -10,11 +10,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'joshdick/onedark.vim'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'preservim/tagbar'
     Plug 'tpope/vim-commentary'
-    Plug 'davidhalter/jedi-vim'
     Plug 'ervandew/supertab'
     Plug 'tpope/vim-surround'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'neoclide/coc.nvim', { 'do': 'cd app && yarn install' }
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 filetype plugin indent on
 
@@ -96,13 +97,16 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap ' ''<left>
 inoremap " ""<left>
+inoremap ` ``<left>
 inoremap < <><left>
 
 "" Switching Between Words ""
-map <C-a> <ESC>^
+nnoremap <C-a> <ESC>^
 inoremap <C-a> <ESC>I
-map <C-e> <ESC>$
+nnoremap <C-e> <ESC>$
 inoremap <C-e> <ESC>A
+vnoremap <C-a> $<Left>
+vnoremap <C-e> ^
 
 "" To delete previous word ""
 noremap! <C-BS> <C-w>
@@ -111,4 +115,11 @@ noremap! <C-h> <C-w>
 "" Pasting System Clipboard ""
 inoremap <C-v> <ESC>"+pi<Right>
 vnoremap <C-c> "+y
+
+"" Python Autocomplete
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+"" Markdown Preview
+nnoremap <C-o> <Plug>MarkdownPreview
+inoremap <C-o> <Plug>MarkdownPreview
 
