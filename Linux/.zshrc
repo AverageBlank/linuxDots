@@ -31,7 +31,7 @@ setopt HIST_SAVE_NO_DUPS
 
 ########### Aliases ###########
 #### Ls Commands Better ####
-alias ls='ls -l --color=auto'
+alias ls='ls --color=auto'
 alias l='ls -la'
 alias ll='ls -la'
 
@@ -109,6 +109,8 @@ alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.yml ~/Github\ Projects/D
 alias cpzshrc="cp -rf ~/.zshrc ~/Github\ Projects/Dotfiles/Linux/"
 # Nvimrc
 alias cpnvimrc="cp -rf ~/.config/nvim/init.vim ~/Github\ Projects/Dotfiles/Linux/.config/nvim/"
+# Qtile
+alias cpqtile="cp -rf ~/.config/qtile/autostart.sh ~/.config/qtile/battery.py ~/.config/qtile/config.py ~/.config/qtile/icons ~/Github\ Projects/Dotfiles/Linux/.config/qtile"
 ## Opening Configs ##
 # .config Alacritty
 alias valacritty="vim ~/.config/alacritty/alacritty.yml"

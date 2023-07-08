@@ -150,7 +150,7 @@ layouts = [
 ## Colors for the Workspaces ##
 colors1 = [["#282828", "#282828"],                         # BackGround Color
            ["#4e8aa0", "#4e8aa0"],                         # Workspaces with Open Applications
-           ["#e78a4e", "#e78a4e"],                         # Workspaces with no Open Applictaions
+           ["#e78a4e", "#e78a4e"],                         # Workspaces with no Applications
            ["#3d3f4b", "#3d3f4b"],                         # Highlight Current Workspace
            ["#ea6962", "#ea6962"]]                         # Line Color
 ## Colors for the Widgets ##
@@ -170,7 +170,8 @@ def init_widgets_defaults():
                 background=colors2[0])
 widget_defaults = init_widgets_defaults()
 ## Widgets ##
-def init_widgets_list():
+#* Screen 1
+def init_widgets_list1():
     widgets_list = [
                widget.Image(
                        filename = home + "/.config/qtile/icons/python.png",
@@ -265,34 +266,113 @@ def init_widgets_list():
               ]
     return widgets_list
 
+
+#* Screen 2
+def init_widgets_list2():
+    widgets_list = [
+               widget.Image(
+                       filename = home + "/.config/qtile/icons/python.png",
+                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(run)},
+                       ),
+               widget.GroupBox(
+                        fontsize = 14,
+                        margin_y = 3,
+                        margin_x = 0,
+                        padding_x = 3,
+                        active = colors1[1],
+                        inactive = colors1[2],
+                        rounded = False,
+                        highlight_color = colors1[3],
+                        highlight_method = "line",
+                        disable_drag = "true",
+                        this_current_screen_border = colors1[4],
+                        background = colors1[0],
+                        ),
+               widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors2[5],
+                        background = colors2[0],
+                        ),
+               widget.WindowName(
+                        fontsize = 12,
+                        foreground = colors2[1],
+                        background = colors2[0],
+                        ),
+               widget.TextBox(
+                        text="  ",
+                        foreground = colors2[2],
+                        background = colors2[0],
+                        fontsize=16,
+                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(taskmanager)},
+                        ),
+               widget.Memory(
+                        format = '{MemUsed}M/{MemTotal}M',
+                        update_interval = 1,
+                        fontsize = 12,
+                        foreground = colors2[2],
+                        background = colors2[0],
+                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(taskmanager)},
+                       ),
+               widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors2[5],
+                        background = colors2[0]
+                        ),
+               widget.TextBox(
+                        text="  ",
+                        foreground=colors2[3],
+                        background=colors2[0],
+                        padding = 0,
+                        fontsize=16
+                        ),
+               widget.Clock(
+                        foreground = colors2[3],
+                        background = colors2[0],
+                        fontsize = 12,
+                        format="%Y-%m-%d %H:%M"
+                        ),
+               widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors2[5],
+                        background = colors2[0]
+                        ),
+               widget.CurrentLayoutIcon(
+                       custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                       background = colors2[0],
+                       padding = 0,
+                       scale = 0.7
+                       ),
+               widget.CurrentLayout(
+                        foreground = colors2[4],
+                        background = colors2[0]
+                        ),
+              ]
+    return widgets_list
+
 #### Setting up Bar for Multiple Monitors ####
 ## Variable ##
-widgets_list = init_widgets_list()
+widgets_list = init_widgets_list1()
 ## Screens ##
 # Screen 1
 def init_widgets_screen1():
-    widgets_screen1 = init_widgets_list()
+    widgets_screen1 = init_widgets_list1()
     return widgets_screen1
 # Screen 2
 def init_widgets_screen2():
-    widgets_screen2 = init_widgets_list()
+    widgets_screen2 = init_widgets_list2()
     return widgets_screen2
-# Screen 3
-def init_widgets_screen3():
-    widgets_screen3 = init_widgets_list()
-    return widgets_screen3
 ## Making Bar Appear ##
 # Screen 1
 widgets_screen1 = init_widgets_screen1()
 # Screen 2
 widgets_screen2 = init_widgets_screen2()
-# Screen 3
-widgets_screen3 = init_widgets_screen3()
 ## Size of Bar on Different Screens ##
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen3(), size=26))]
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=100))]
 screens = init_screens()
 
 
