@@ -107,6 +107,8 @@ alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/plasma-org.kde.plasma.desktop-
 alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.yml ~/Github\ Projects/Dotfiles/Linux/.config/alacritty"
 # Zshrc
 alias cpzshrc="cp -rf ~/.zshrc ~/Github\ Projects/Dotfiles/Linux/"
+# Nvimrz
+alias cpnvimrc="cp -rf ~/.config/nvim/init.vim ~/Github\ Projects/Dotfiles/Linux/.config/nvim/"
 ## Opening Configs ##
 # .config Alacritty
 alias valacritty="vim ~/.config/alacritty/alacritty.yml"
@@ -132,9 +134,18 @@ alias cqtile="code ~/.config/qtile/config.py"
 alias vgqtile="vim ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
 alias egqtile="emacs ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
 alias cgqtile="code ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
+# .config nvim
+alias vnvimrc="vim ~/.config/nvim/init.vim"
+alias envimrc="emacs ~/.config/nvim/init.vim"
+alias cnvimrc="code ~/.config/nvim/init.vim"
+# github nvim
+alias vgnvimrc="vim ~/Github\ Projects/Dotfiles/Linux/.config/nvim/init.vim"
+alias egnvimrc="emacs ~/Github\ Projects/Dotfiles/Linux/.config/nvim/init.vim"
+alias cgnvimrc="code ~/Github\ Projects/Dotfiles/Linux/.config/nvim/init.vim"
 
 
 ####  Git ####
+alias gss="git status"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git push -u origin"

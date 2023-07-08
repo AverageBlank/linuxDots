@@ -29,7 +29,6 @@ set nobackup
 set noswapfile
 set nu
 set rnu
-set clipboard=unnamedplus
 set noshowmode
 set mouse=a
 set expandtab
@@ -91,10 +90,19 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap ' ''<left>
 inoremap " ""<left>
+inoremap < <><left>
 
-"" Switching Between Lines ""
+"" Switching Between Words ""
 map <C-a> <ESC>^
 inoremap <C-a> <ESC>I
 map <C-e> <ESC>$
 inoremap <C-e> <ESC>A
-inoremap <C-BS> <C-W>
+
+"" To delete previous word ""
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
+
+"" Pasting System Clipboard ""
+inoremap <C-v> <ESC>"+pi<Right>
+vnoremap <C-c> "+y
+
