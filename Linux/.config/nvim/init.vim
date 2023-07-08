@@ -78,12 +78,11 @@ autocmd! bufwritepost * set noexpandtab | retab! 4
 
 
 """"""""""" Keybindings """""""""""
+"" Leader Key ""
+let mapleader = " "
 "" NerdTree ""
 " Open NerdTree with ctrl+p
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-p> :NERDTreeToggle<CR>
-" AutoStart NerdTree
-autocmd VimEnter * NERDTree | wincmd p
+map <C-p> :NERDTree %:p:h<CR>
 
 "" Navigating Splits ""
 nnoremap <silent> <c-k> :wincmd k<CR>
