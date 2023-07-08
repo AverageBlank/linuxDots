@@ -31,7 +31,7 @@ setopt HIST_SAVE_NO_DUPS
 
 ########### Aliases ###########
 #### Ls Commands Better ####
-alias ls='ls --color=auto'
+alias ls='ls -l --color=auto'
 alias l='ls -la'
 alias ll='ls -la'
 
