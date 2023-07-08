@@ -58,6 +58,10 @@ let g:python_highlight_all = 1
 set background=dark
 colorscheme onedark
 
+"" Setting Transparency
+highlight Normal guibg=none
+highlight NonText guibg=none
+
 "" Status Bar
 let g:lightline = {
       \ 'colorscheme': 'onedark',
