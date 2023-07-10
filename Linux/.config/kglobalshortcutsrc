@@ -4,6 +4,11 @@ switch-to-activity-1fe86127-d67b-4797-816f-87c2194fc798=none,none,Switch to acti
 switch-to-activity-702edd4c-953e-4343-b9b7-37b80f029431=none,none,Switch to activity "Default"
 switch-to-activity-799fea17-cff7-46d0-9aac-8d71c6bf41fc=none,none,Switch to activity "Default"
 
+[Alacritty.desktop]
+New=none,none,New Terminal
+_k_friendly_name=Alacritty
+_launch=none,none,Alacritty
+
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to Belgian=none,none,Switch keyboard layout to Belgian
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
@@ -27,9 +32,13 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
-{361d224c-184a-48fa-a7dd-c14ea4b57933}=Ctrl+Shift+Esc,none,htop
-{8ccd0d52-ff28-41ca-ac85-545f9f8fcf1c}=Print,none,flameshot
-{96a38e8d-9c23-4ad9-8f05-1229950cbbc8}=Meta+Return,none,alacritty
+{172ed108-7cd7-4906-ba78-8e3545edb8b6}=Meta+Return,none,Alacritty
+{2cae35f9-2f77-46ae-bfd8-80e557d3a803}=Print,none,Flameshot
+{332c80ac-6564-4de5-855b-cf4b2e4d9f7f}=Meta+Shift+B,none,Brave
+{5bb127e1-83bc-426d-9c62-39af12010579}=Meta+Shift+E,none,Visual Studio Code
+{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
+{e698469e-b85d-418d-b19e-5252339ea372}=,none,New Action
+{fa7ef895-6e32-40e0-8a5e-b10d6f1298ff}=,none,New Action
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -287,7 +296,7 @@ activate widget 45=none,none,Activate Icons-only Task Manager Widget
 activate widget 48=none,none,Activate Application Launcher Widget
 activate widget 76=none,none,Activate Application Launcher Widget
 clear-history=none,,Clear Clipboard History
-clipboard_action=Ctrl+Alt+X,Meta+Ctrl+X,Automatic Action Popup Menu
+clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
 cycle-panels=Meta+Alt+P,Meta+Alt+P,Move keyboard focus between panels
 cycleNextAction=none,,Next History Item
 cyclePrevAction=none,,Previous History Item
@@ -295,7 +304,7 @@ edit_clipboard=none,,Edit Contents…
 manage activities=Meta+Q,Meta+Q,Show Activity Switcher
 next activity=Meta+Tab,none,Walk through activities
 previous activity=Meta+Shift+Tab,none,Walk through activities (Reverse)
-repeat_action=Ctrl+Alt+R,Meta+Ctrl+R,Manually Invoke Action on Current Clipboard
+repeat_action=Ctrl+Alt+R\tMeta+Ctrl+R,Meta+Ctrl+R,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=none,,Show Barcode…
 show-on-mouse-pos=none,Meta+V,Show Items at Mouse Position
