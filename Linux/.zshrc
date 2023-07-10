@@ -1,3 +1,7 @@
+########### Setting a few defaults ###########
+setopt autocd
+
+
 ########### Setting NeoVim as defualt editor ###########
 export EDITOR='nvim'
 export VISUAL='nvim'

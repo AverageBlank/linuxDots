@@ -9,6 +9,7 @@ from typing import List
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
 from libqtile.command import lazy
+from libqtile.widget import spacer
 import arcobattery
 
 #! --------------------------------------------------
@@ -216,7 +217,7 @@ def init_widgets_defaults():
 widget_defaults = init_widgets_defaults()
 ## Widgets ##
 #* Screen 1
-def init_widgets_list1():
+def init_widgets_list():
     widgets_list = [
                widget.Image(
                        filename = home + "/.config/qtile/icons/python.png",
@@ -397,16 +398,15 @@ def init_widgets_list2():
 
     #? ---- Setting up the bar for multiple monitors ----
 ## Variable ##
-widgets_list = init_widgets_list1()
-widgets_list2 = init_widgets_list2()
+widgets_list = init_widgets_list()
 ## Screens ##
 # Screen 1
 def init_widgets_screen1():
-    widgets_screen1 = init_widgets_list1()
+    widgets_screen1 = init_widgets_list()
     return widgets_screen1
 # Screen 2
 def init_widgets_screen2():
-    widgets_screen2 = init_widgets_list2()
+    widgets_screen2 = init_widgets_list()
     return widgets_screen2
 ## Making Bar Appear ##
 # Screen 1
@@ -418,6 +418,8 @@ def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26)),
             Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26))]
 screens = init_screens()
+dgroups_key_binder = None
+dgroups_app_rules = []
 
 
 #! --------------------------------------------------
@@ -452,6 +454,7 @@ def assign_app_group(client):
 #! --------------------------------------------------
 #! ---------- Startup
 #! --------------------------------------------------
+main = None
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser('~')
@@ -506,7 +509,6 @@ floating_layout = layout.Floating(float_rules=[
 auto_fullscreen = True
 focus_on_window_activation = "focus"
 wmname = "LG3D"
-main = None
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
