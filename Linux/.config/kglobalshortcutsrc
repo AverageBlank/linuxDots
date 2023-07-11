@@ -36,9 +36,6 @@ _k_friendly_name=Custom Shortcuts Service
 {2cae35f9-2f77-46ae-bfd8-80e557d3a803}=Print,none,Flameshot
 {332c80ac-6564-4de5-855b-cf4b2e4d9f7f}=Meta+Shift+B,none,Brave
 {5bb127e1-83bc-426d-9c62-39af12010579}=Meta+Shift+E,none,Visual Studio Code
-{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
-{e698469e-b85d-418d-b19e-5252339ea372}=,none,New Action
-{fa7ef895-6e32-40e0-8a5e-b10d6f1298ff}=,none,New Action
 
 [kmix]
 _k_friendly_name=Audio Volume
