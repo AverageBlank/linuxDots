@@ -102,6 +102,8 @@ alias sce="sudo systemctl enable"
 alias scs="sudo systemctl start"
 alias scd="sudo systemctl disable"
 alias firmwarereboot="sudo systemctl reboot --firmware-setup"
+## Superuser Do ##
+alias fucking="sudo"
 
 ####  Configurations ####
 ## Copying Configs ##
