@@ -64,7 +64,6 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "colorScheme": "One Dark Pro",
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
                 "font": 
                 {

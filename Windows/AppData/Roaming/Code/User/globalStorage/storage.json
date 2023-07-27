@@ -1,0 +1,74 @@
+{
+    "userDataProfilesMigration": true,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Github%20Projects/Dotfiles/Windows": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Github%20Projects/Student%20Database%20--%20Stable": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Desktop": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Github%20Projects/Dotfiles/Linux": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Github%20Projects/Dotfiles": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Github%20Projects/Student%20Database%20--%20Development": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Github%20Projects/Coding%20Projects": "__default__profile__",
+            "file:///c%3A/Users/HUSSAI~1/AppData/Local/Temp/vsliveshare-workspace-tmp-631FB06592B1EA5EC02ED9BE8C3F670B98E8/Visual%20Studio%20Live%20Share.code-workspace": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Github%20Projects/PasswordManager/Proxlight_Designer_Export": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Downloads/Test/Proxlight_Designer_Export": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Github%20Projects/Coding%20Projects/Python/Password%20Manager": "__default__profile__",
+            "file:///c%3A/Users/Hussain%20Khorakiwala/Documents": "__default__profile__"
+        },
+        "emptyWindows": {
+            "1690477909986": "__default__profile__",
+            "1690477925475": "__default__profile__",
+            "1690477971230": "__default__profile__"
+        }
+    },
+    "profileAssociationsMigration": true,
+    "telemetry.machineId": "8547e1972d5339dbc27c912e628ab5e1721e2d7e5c4f3c24cb95314167a3bf8c",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [],
+        "emptyWindows": [
+            {
+                "backupFolder": "1690477971230"
+            }
+        ]
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "backupPath": "C:\\Users\\Hussain Khorakiwala\\AppData\\Roaming\\Code\\Backups\\1690477971230",
+            "uiState": {
+                "mode": 0,
+                "x": 509,
+                "y": 182,
+                "width": 1024,
+                "height": 768
+            }
+        },
+        "openedWindows": []
+    },
+    "windowControlHeight": 30,
+    "theme": "vs-dark",
+    "themeBackground": "#23262e",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#d5ced9",
+            "background": "#23262e",
+            "editorBackground": "#23262e",
+            "titleBarBackground": "#23262e",
+            "activityBarBackground": "#23262e",
+            "sideBarBackground": "#23262e",
+            "statusBarBackground": "#005f5f",
+            "statusBarNoFolderBackground": "#005f5f"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 30,
+            "activityBarWidth": 48,
+            "sideBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    }
+}
