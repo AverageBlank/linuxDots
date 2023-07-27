@@ -1,0 +1,51 @@
+{
+	"name": "hot-dog-stand",
+	"displayName": "Hot Dog Stand",
+	"publisher": "somekittens",
+	"description": "Burn out your eyeballs in 15 seconds!",
+	"version": "6.6.9",
+	"license": "MIT",
+	"scripts": {
+		"prestart": "tsc index.ts",
+		"start": "node index.js"
+	},
+	"engines": {
+		"vscode": "^1.11.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"Hot Dog Stand",
+		"Abominations"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SomeKittens/VSC-HDS.git"
+	},
+	"icon": "icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Hot Dog Stand",
+				"uiTheme": "vs-dark",
+				"path": "./theme.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"@types/node": "^7.0.10",
+		"typescript": "^2.2.1",
+		"vscode-theme-generator": "*"
+	},
+	"__metadata": {
+		"id": "f85994c6-9a3c-4994-b094-5341a80c570b",
+		"publisherId": "5344d143-8cc5-4b11-885e-4565d10710a5",
+		"publisherDisplayName": "SomeKittens",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1689088713696,
+		"preRelease": false
+	}
+}

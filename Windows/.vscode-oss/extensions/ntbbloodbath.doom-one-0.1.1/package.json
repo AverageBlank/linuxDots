@@ -1,0 +1,45 @@
+{
+	"name": "doom-one",
+	"displayName": "doom-one",
+	"description": "Doom Emacs' doom-one colorscheme port for VSC",
+	"version": "0.1.1",
+	"author": "NTBBloodbath",
+	"publisher": "NTBBloodbath",
+	"repository": {
+		"url": "https://github.com/NTBBloodbath/doom-one-vscode",
+		"type": "git"
+	},
+	"engines": {
+		"vscode": "^1.40.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"doom",
+		"emacs",
+		"port"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "doom-one",
+				"uiTheme": "vs-dark",
+				"path": "./themes/doom-one-color-theme.json"
+			}
+		]
+	},
+	"dependencies": {
+		"semver": "^7.1.1"
+	},
+	"__metadata": {
+		"id": "79d23811-8240-4e51-867e-99962717a7ca",
+		"publisherId": "45888d19-3dc6-44bb-9957-e0f2530c2b6e",
+		"publisherDisplayName": "NTBBloodbath",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1689088713614,
+		"preRelease": false
+	}
+}
