@@ -2,7 +2,7 @@
 setopt autocd
 
 
-########### Setting NeoVim as defualt editor ###########
+########### Setting NeoVim as default editor ###########
 export EDITOR='nvim'
 export VISUAL='nvim'
 
@@ -108,48 +108,48 @@ alias fucking="sudo"
 ####  Configurations ####
 ## Copying Configs ##
 # Plasma
-alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/khotkeysrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Github\ Projects/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
+alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/khotkeysrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Coding/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
 # Alacritty
-alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.yml ~/Github\ Projects/Dotfiles/Linux/.config/alacritty"
+alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.yml ~/Coding/Dotfiles/Linux/.config/alacritty"
 # Zshrc
-alias cpzshrc="cp -rf ~/.zshrc ~/Github\ Projects/Dotfiles/Linux/"
+alias cpzshrc="cp -rf ~/.zshrc ~/Coding/Dotfiles/Linux/"
 # Nvimrc
-alias cpnvimrc="cp -rf ~/.config/nvim/init.vim ~/Github\ Projects/Dotfiles/Linux/.config/nvim/"
+alias cpnvimrc="cp -rf ~/.config/nvim/init.vim ~/Coding/Dotfiles/Linux/.config/nvim/"
 # Qtile
-alias cpqtile="cp -rf ~/.config/qtile/autostart.sh ~/.config/qtile/battery.py ~/.config/qtile/config.py ~/.config/qtile/icons ~/Github\ Projects/Dotfiles/Linux/.config/qtile"
+alias cpqtile="cp -rf ~/.config/qtile/autostart.sh ~/.config/qtile/battery.py ~/.config/qtile/config.py ~/.config/qtile/icons ~/Coding/Dotfiles/Linux/.config/qtile"
 ## Opening Configs ##
 # .config Alacritty
 alias valacritty="vim ~/.config/alacritty/alacritty.yml"
 alias ealacritty="emacs ~/.config/alacritty/alacritty.yml"
 alias calacritty="code ~/.config/alacritty/alacritty.yml"
 # github Alacritty
-alias vgalacritty="vim ~/Github\ Projects/Dotfiles/Linux/.config/alacritty/alacritty.yml"
-alias egalacritty="emacs ~/Github\ Projects/Dotfiles/Linux/.config/alacritty/alacritty.yml"
-alias cgalacritty="code ~/Github\ Projects/Dotfiles/Linux/.config/alacritty/alacritty.yml"
+alias vgalacritty="vim ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.yml"
+alias egalacritty="emacs ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.yml"
+alias cgalacritty="code ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.yml"
 # .zshrc
 alias vzshrc="vim ~/.zshrc"
 alias ezshrc="emacs ~/.zshrc"
 alias czshrc="code ~/.zshrc"
 # github zshrc
-alias vgzshrc="vim ~/Github\ Projects/Dotfiles/Linux/.zshrc"
-alias egzshrc="emacs ~/Github\ Projects/Dotfiles/Linux/.zshrc"
-alias cgzshrc="code ~/Github\ Projects/Dotfiles/Linux/.zshrc"
+alias vgzshrc="vim ~/Coding/Dotfiles/Linux/.zshrc"
+alias egzshrc="emacs ~/Coding/Dotfiles/Linux/.zshrc"
+alias cgzshrc="code ~/Coding/Dotfiles/Linux/.zshrc"
 # .config qtile
 alias vqtile="vim ~/.config/qtile/config.py"
 alias eqtile="emacs ~/.config/qtile/config.py"
 alias cqtile="code ~/.config/qtile/config.py"
 # github qtile
-alias vgqtile="vim ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
-alias egqtile="emacs ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
-alias cgqtile="code ~/Github\ Projects/Dotfiles/Linux/.config/qtile/config.py"
+alias vgqtile="vim ~/Coding/Dotfiles/Linux/.config/qtile/config.py"
+alias egqtile="emacs ~/Coding/Dotfiles/Linux/.config/qtile/config.py"
+alias cgqtile="code ~/Coding/Dotfiles/Linux/.config/qtile/config.py"
 # .config nvim
 alias vnvimrc="vim ~/.config/nvim/init.vim"
 alias envimrc="emacs ~/.config/nvim/init.vim"
 alias cnvimrc="code ~/.config/nvim/init.vim"
 # github nvim
-alias vgnvimrc="vim ~/Github\ Projects/Dotfiles/Linux/.config/nvim/init.vim"
-alias egnvimrc="emacs ~/Github\ Projects/Dotfiles/Linux/.config/nvim/init.vim"
-alias cgnvimrc="code ~/Github\ Projects/Dotfiles/Linux/.config/nvim/init.vim"
+alias vgnvimrc="vim ~/Coding/Dotfiles/Linux/.config/nvim/init.vim"
+alias egnvimrc="emacs ~/Coding/Dotfiles/Linux/.config/nvim/init.vim"
+alias cgnvimrc="code ~/Coding/Dotfiles/Linux/.config/nvim/init.vim"
 
 
 ####  Git ####
