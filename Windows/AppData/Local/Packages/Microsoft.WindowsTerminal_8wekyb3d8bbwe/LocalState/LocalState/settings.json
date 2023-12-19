@@ -36,7 +36,7 @@
     {
         "defaults": 
         {
-            "colorScheme": "One Dark Pro",
+            "colorScheme": "Monokai Pro (Filter Machine)",
             "font": 
             {
                 "face": "JetBrainsMono Nerd Font",
@@ -114,8 +114,8 @@
             "yellow": "#C19C00"
         },
         {
-            "background": "#3A4449",
-            "black": "#3A4449",
+            "background": "#273136",
+            "black": "#273136",
             "blue": "#FFB270",
             "brightBlack": "#6B7678",
             "brightBlue": "#FFB270",
