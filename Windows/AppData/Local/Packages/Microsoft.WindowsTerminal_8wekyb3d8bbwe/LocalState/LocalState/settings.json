@@ -41,7 +41,8 @@
             {
                 "face": "JetBrainsMono Nerd Font",
                 "size": 11
-            }
+            },
+            "opacity": 90
         },
         "list": 
         [

@@ -1,6 +1,7 @@
 {
 	"dismissedMessages" : 
 	[
-		"setAsDefault"
+		"setAsDefault",
+		"closeOnExitInfo"
 	]
 }
