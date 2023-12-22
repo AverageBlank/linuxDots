@@ -28,11 +28,11 @@ function rm {rm $args -r -force}
 #### Package Manager ####
 ## Aliasing Winget ##
 function wns { sudo winget install $args --accept-source-agreements --accept-package-agreements }
-function wnss { sudo winget search $args }
+function wnss { winget search $args }
 function wnr { sudo winget uninstall $args }
 ## Aliasing Chocolatey ##
 function chs { sudo choco install $args -y }
-function chss { sudo choco search $args }
+function chss { choco search $args }
 function chr { sudo choco uninstall $args -y }
 
 #### Superuser do ####
