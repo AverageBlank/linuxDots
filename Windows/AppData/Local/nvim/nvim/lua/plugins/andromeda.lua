@@ -3,8 +3,8 @@ return {
     dependencies = { "tjdevries/colorbuddy.nvim"},
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "andromeda",
-    },
+    -- opts = {
+    --   colorscheme = "andromeda",
+    -- },
   },
 }
