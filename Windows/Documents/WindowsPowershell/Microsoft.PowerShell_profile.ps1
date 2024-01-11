@@ -8,10 +8,15 @@ Invoke-Expression (& "C:\Program Files\starship\bin\starship.exe" init powershel
 Set-Alias vvim 'vi'
 Set-Alias vim 'nvim'
 
+#### Superuser do ####
+Set-Alias sudo "C:\tools\gsudo\Current\gsudo.exe"
+Set-Alias gsudo "C:\tools\gsudo\Current\gsudo.exe"
+Set-Alias fucking sudo
+
 #### Shutdown/Reboot ####
 function ssn { shutdown -t 0 -s }
 function sr { shutdown -t 0 -r }
-function firmwarereboot { shutdown -t 0 -r -fw }
+function sfr { sudo shutdown -t 0 -r -fw }
 
 #### ls ####
 Set-Alias l ls
@@ -35,10 +40,6 @@ function chs { sudo choco install $args -y }
 function chss { choco search $args }
 function chr { sudo choco uninstall $args -y }
 
-#### Superuser do ####
-Set-Alias sudo "C:\tools\gsudo\Current\gsudo.exe"
-Set-Alias gsudo "C:\tools\gsudo\Current\gsudo.exe"
-Set-Alias fucking sudo
 
 ####  Configurations ####
 ## Copying Configs ##
@@ -50,11 +51,11 @@ function cpwt {cp $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8
 function cppwsh {cp $env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 C:\Coding\Dotfiles\Windows\Documents\WindowsPowerShell -r -force }
 ## Opening Configs ##
 # LOCALAPPDATA nvim
-function vnvimrc { vim $env:LOCALAPPDATA\nvim\lua\config }
-function cnvimrc { code $env:LOCALAPPDATA\nvim\lua\config }
+function vnvimrc { vim $env:LOCALAPPDATA\nvim\lua }
+function cnvimrc { code $env:LOCALAPPDATA\nvim\lua }
 # github nvim
-function vgnvimrc { vim C:\Coding\Dotfiles\Windows\AppData\local\nvim\lua\config }
-function cgnvimrc { code C:\Coding\Dotfiles\Windows\AppData\local\nvim\lua\config }
+function vgnvimrc { vim C:\Coding\Dotfiles\Windows\AppData\local\nvim\lua }
+function cgnvimrc { code C:\Coding\Dotfiles\Windows\AppData\local\nvim\lua }
 # LOCALAPPDATA Windows Terminal
 function vwt { vim $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json }
 function cwt { code $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json }
