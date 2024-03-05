@@ -46,7 +46,7 @@ function chr { sudo choco uninstall $args -y }
 # nvim
 function cpnvimrc {cp $env:LOCALAPPDATA\nvim\ C:\Coding\Dotfiles\Windows\AppData\local\nvim -r -force}
 # Windows Terminal
-function cpwt {cp $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState C:\Coding\Dotfiles\Windows\AppData\local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState -r -force }
+function cpwt {cp $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState C:\Coding\Dotfiles\Windows\AppData\local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\ -r -force }
 # Powershell
 function cppwsh {cp $env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 C:\Coding\Dotfiles\Windows\Documents\WindowsPowerShell -r -force }
 ## Opening Configs ##

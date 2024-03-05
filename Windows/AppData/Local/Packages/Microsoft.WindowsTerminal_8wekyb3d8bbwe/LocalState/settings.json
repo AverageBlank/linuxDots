@@ -36,17 +36,18 @@
     {
         "defaults": 
         {
-            "colorScheme": "One Dark Pro",
+            "colorScheme": "Monokai Pro (Filter Machine)",
             "font": 
             {
                 "face": "JetBrainsMono Nerd Font",
                 "size": 11
-            }
+            },
+            "opacity": 90
         },
         "list": 
         [
             {
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -nologo",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
@@ -114,8 +115,8 @@
             "yellow": "#C19C00"
         },
         {
-            "background": "#3A4449",
-            "black": "#3A4449",
+            "background": "#273136",
+            "black": "#273136",
             "blue": "#FFB270",
             "brightBlack": "#6B7678",
             "brightBlue": "#FFB270",
