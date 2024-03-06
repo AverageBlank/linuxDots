@@ -76,6 +76,5 @@ chmod +x ~/.config/qtile/scripts/TermApps/openmem.sh
 chmod +x ~/.config/qtile/scripts/TermApps/opendf.sh
 
 ########### Changing Defaults ###########
-chsh -s /bin/zsh $USER
+sudo chsh -s /bin/zsh $USER
 cd
-rm -- "$0"

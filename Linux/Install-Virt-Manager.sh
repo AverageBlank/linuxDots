@@ -1,4 +1,5 @@
-sudo pacman -S qemu-full virt-manager virt-viewer dnsmasq bridge-utils libguestfs ebtables vde2 openbsd-netcat --noconfirm
+sudo pacman -S qemu-full virt-manager virt-viewer dnsmasq bridge-utils libguestfs vde2 openbsd-netcat --noconfirm
+sudo pacman -S ebtables --noconfirm
 
 sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
