@@ -42,6 +42,10 @@ alias ll='ls -la'
 #### Setting Vim as NeoVim ####
 alias vvim='vi'
 alias vim='nvim'
+alias v='nvim'
+
+#### Visual Studio Code ####
+alias c="code"
 
 ### Clear Command ###
 alias clear='clear && colorscript random'
