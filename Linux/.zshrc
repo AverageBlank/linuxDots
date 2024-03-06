@@ -155,6 +155,7 @@ alias cgnvimrc="code ~/Coding/Dotfiles/Linux/.config/nvim/init.vim"
 ####  Git ####
 alias gss="git status"
 alias ga="git add ."
+alias gr="git remove"
 alias gc="git commit -m"
 alias gp="git push -u origin"
 
