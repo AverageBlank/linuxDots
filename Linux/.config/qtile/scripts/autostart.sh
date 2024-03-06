@@ -1,10 +1,14 @@
 #!/bin/bash
 
 #? Proper alignment of monitors
-case $(optimus-manager --print-mode) in
-"Current GPU mode : nvidia") xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal ;;
-"Current GPU mode : hybrid") xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal ;;
-esac
+if sudo dmesg | grep -q "Hypervisor detected"; then
+    xrandr -s 1920x1080 &
+else
+    case $(optimus-manager --print-mode) in
+    "Current GPU mode : nvidia") xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal ;;
+    "Current GPU mode : hybrid") xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal ;;
+    esac
+fi
 
 #? Autostart
 # Network Manager
