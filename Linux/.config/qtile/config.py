@@ -110,7 +110,6 @@ keys = [
     ## Change the Layout ##
     Key([leader], "Tab", lazy.next_layout()),
     ## Toggle Full Screen ##
-    Key([leader, "shift"], "f", lazy.window.toggle_fullscreen()),
     ## Toggle Floating ##
     Key([leader, "shift"], "t", lazy.window.toggle_floating()),
     ## Growing/ Shrinking the layouts ##
@@ -126,6 +125,7 @@ keys = [
         "f",
         maximize_by_switching_layout(),
         lazy.window.toggle_fullscreen(),
+        lazy.hide_show_bar(),
     ),
     # ? --- Moving Windows through Screens ---
     ## Move focus to previous Screen ##
