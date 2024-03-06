@@ -1,5 +1,5 @@
 ########### Taking backups of Files if they exist ###########
-mv -f ~/.config/alacritty ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/backups-$(date +%Y.%m.%d-%H.%M.%S)
+cp -rf ~/.config/alacritty ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/backups-$(date +%Y.%m.%d-%H.%M.%S)
 
 ########### CLoning the directory ###########
 mkdir -p ~/tempDotfiles
@@ -10,10 +10,10 @@ mkdir -p ~/.config/alacritty/
 mkdir -p ~/.config/qtile/
 
 ########### Moving files ###########
-mv -f ~/tempDotfiles/Linux/.config/alacritty/alacritty.toml .config/alacritty/
-mv -f ~/tempDotfiles/Linux/.config/qtile/* .config/qtile/
-mv -f ~/tempDotfiles/Linux/.config/starship.toml .config/
-mv -f ~/tempDotfiles/Linux/.zshrc .
+cp -rf ~/tempDotfiles/Linux/.config/alacritty/alacritty.toml .config/alacritty/
+cp -rf ~/tempDotfiles/Linux/.config/qtile/* .config/qtile/
+cp -rf ~/tempDotfiles/Linux/.config/starship.toml .config/
+cp -rf ~/tempDotfiles/Linux/.zshrc .
 
 ########### Removing the cloned directory ###########
 rm -rf ~/tempDotfiles
