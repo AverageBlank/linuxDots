@@ -19,7 +19,7 @@ mv -rf ~/tempDotfiles/Linux/.zshrc .
 rm -rf ~/tempDotfiles
 
 ########### Installing Packages ###########
-sudo pacman -S zsh, qtile, qtile-extras, starship, alacritty, rofi, brave, thunar, ttf-ubuntu-font-family, ttf-ubuntu-nerd, ttf-ubuntu-mono-nerd, ttf-jetbrains-mono, ttf-jetbrains-mono-nerd, picom, network-manager-applet, xfce4-power-manager, blueberry, lxsession, flameshot, xfce4-notifyd, nitrogen --noconfirm
+sudo pacman -S zsh, qtile, qtile-extras, starship, alacritty, rofi, brave, thunar, ttf-ubuntu-font-family, ttf-ubuntu-nerd, ttf-ubuntu-mono-nerd, ttf-jetbrains-mono, ttf-jetbrains-mono-nerd, picom, network-manager-applet, xfce4-power-manager, blueberry, lxsession, flameshot, xfce4-notifyd, nitrogen, mpv --noconfirm
 paru -S shell-color-scripts --noconfirm
 
 ########### Installing Other Programs ###########

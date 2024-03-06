@@ -36,8 +36,9 @@ code = "code"
 files = "thunar"
 logout = "archlinux-logout"
 run = "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/qtile/scripts/launcher.rasi"
-taskmanager = "alacritty -e'htop'"
 terminal = "alacritty"
+taskmanager = f"{terminal} -e 'htop'"
+calendar = f"{terminal} -e bash -c \"cal -y; read -p 'Press Enter to exit...'\""
 chat = "discord"
 virtual = "virt-manager"
 # music = "apple-music-desktop.sh"
@@ -443,11 +444,18 @@ def init_widgets_list():
                     border_width=[0, 0, 2, 0],
                 )
             ],
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(
+                    terminal
+                    + " -e "
+                    + home
+                    + "/.config/qtile/scripts/TermApps/opencpu.sh"
+                )
+            },
         ),
         widget.Spacer(length=8),
         widget.Memory(
             foreground=colors[8],
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -e htop")},
             format="{MemUsed: .0f}{mm}",
             fmt="🖥  Mem: {} used",
             decorations=[
@@ -456,12 +464,19 @@ def init_widgets_list():
                     border_width=[0, 0, 2, 0],
                 )
             ],
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(
+                    terminal
+                    + " -e "
+                    + home
+                    + "/.config/qtile/scripts/TermApps/openmem.sh"
+                )
+            },
         ),
         widget.Spacer(length=8),
         widget.DF(
             update_interval=60,
             foreground=colors[5],
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -e df")},
             partition="/",
             # format = '[{p}] {uf}{m} ({r:.0f}%)',
             format="{uf}{m} free",
@@ -473,6 +488,14 @@ def init_widgets_list():
                     border_width=[0, 0, 2, 0],
                 )
             ],
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(
+                    terminal
+                    + " -e "
+                    + home
+                    + "/.config/qtile/scripts/TermApps/opendf.sh"
+                )
+            },
         ),
         widget.Spacer(length=8),
         widget.Volume(
@@ -484,6 +507,7 @@ def init_widgets_list():
                     border_width=[0, 0, 2, 0],
                 )
             ],
+            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("pavucontrol")},
         ),
         widget.Spacer(length=8),
         widget.KeyboardLayout(
@@ -506,6 +530,14 @@ def init_widgets_list():
                     border_width=[0, 0, 2, 0],
                 )
             ],
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(
+                    terminal
+                    + " -e "
+                    + home
+                    + "/.config/qtile/scripts/TermApps/opencal.sh"
+                )
+            },
         ),
         widget.Spacer(length=8),
         widget.Systray(padding=3),
