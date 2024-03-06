@@ -1,5 +1,5 @@
 ########### Taking backups of Files if they exist ###########
-mv -rf ~/.config/alacritty ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/backups-$(date +%Y.%m.%d-%H.%M.%S)
+mv -f ~/.config/alacritty ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/backups-$(date +%Y.%m.%d-%H.%M.%S)
 
 ########### CLoning the directory ###########
 mkdir -p ~/tempDotfiles
@@ -10,15 +10,16 @@ mkdir -p ~/.config/alacritty/
 mkdir -p ~/.config/qtile/
 
 ########### Moving files ###########
-mv -rf ~/tempDotfiles/Linux/.config/alacritty/alacritty.toml .config/alacritty/
-mv -rf ~/tempDotfiles/Linux/.config/qtile/* .config/qtile/
-mv -rf ~/tempDotfiles/Linux/.config/starship.toml .config/
-mv -rf ~/tempDotfiles/Linux/.zshrc .
+mv -f ~/tempDotfiles/Linux/.config/alacritty/alacritty.toml .config/alacritty/
+mv -f ~/tempDotfiles/Linux/.config/qtile/* .config/qtile/
+mv -f ~/tempDotfiles/Linux/.config/starship.toml .config/
+mv -f ~/tempDotfiles/Linux/.zshrc .
 
 ########### Removing the cloned directory ###########
 rm -rf ~/tempDotfiles
 
 ########### Installing Packages ###########
+sudo pacman -Syyy
 sudo pacman -S zsh, qtile, qtile-extras, starship, alacritty, rofi, brave, thunar, ttf-ubuntu-font-family, ttf-ubuntu-nerd, ttf-ubuntu-mono-nerd, ttf-jetbrains-mono, ttf-jetbrains-mono-nerd, picom, network-manager-applet, xfce4-power-manager, blueberry, lxsession, flameshot, xfce4-notifyd, nitrogen, mpv --noconfirm
 paru -S shell-color-scripts --noconfirm
 
