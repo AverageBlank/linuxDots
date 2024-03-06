@@ -82,6 +82,16 @@ cd ~/.zsh-plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search
+chmod +x ~/.config/qtile/scripts/autostart.sh
+chmod +x ~/.config/qtile/scripts/nitrogen1.sh
+chmod +x ~/.config/qtile/scripts/nitrogen2.sh
+chmod +x ~/.config/qtile/scripts/nitrogen3.sh
+chmod +x ~/.config/qtile/scripts/TermApps/opencal.sh
+chmod +x ~/.config/qtile/scripts/TermApps/opencpu.sh
+chmod +x ~/.config/qtile/scripts/TermApps/openmem.sh
+chmod +x ~/.config/qtile/scripts/TermApps/opendf.sh
 
 ########### Changing Defaults ###########
 chsh -s /bin/zsh $USER
+cd
+rm -- "$0"
