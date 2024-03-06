@@ -13,6 +13,7 @@ from libqtile.widget import spacer
 
 
 # ? Requires qtile-extras package from pacman
+# ? sudo pacman -S qtile-extras
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 
@@ -49,9 +50,10 @@ music = "spotify"
 # ? --- A function to minimize all the open windows ---
 @lazy.function
 def minimize_all(qtile):
-    for win in qtile.current_group.windows:
-        if hasattr(win, "toggle_minimize"):
-            win.toggle_minimize()
+    for i in range(0, 9):
+        for win in qtile.groups[i].windows:
+            if hasattr(win, "toggle_minimize"):
+                win.toggle_minimize()
 
 
 # ? --- A function to maximize current window ---
@@ -301,6 +303,7 @@ group_names = [
     ("5", {"layout": "monadtall"}),
     ("6", {"layout": "monadtall"}),
     ("7", {"layout": "monadtall"}),
+    ("8", {"layout": "monadtall"}),
     ("8", {"layout": "monadtall"}),
 ]
 
