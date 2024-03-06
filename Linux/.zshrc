@@ -72,7 +72,7 @@ alias yyr='yay -R $1 --noconfirm'
 alias yyq='yay -Q'
 ## Updating the System ##
 alias update='sudo pacman -Syu --noconfirm'
-alias upall='paru -Syu --noconfirm'
+alias upall='yay -Syu --noconfirm'
 
 #### Fastest Mirrors ####
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -97,11 +97,11 @@ alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 ## Shutdown/Reboot ##
 alias ssn="sudo shutdown now"
 alias sr="reboot"
+alias sfr="sudo systemctl reboot --firmware-setup"
 ## Systemctl ##
 alias sce="sudo systemctl enable"
 alias scs="sudo systemctl start"
 alias scd="sudo systemctl disable"
-alias firmwarereboot="sudo systemctl reboot --firmware-setup"
 ## Superuser Do ##
 alias fucking="sudo"
 
@@ -110,22 +110,22 @@ alias fucking="sudo"
 # Plasma
 alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/khotkeysrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Coding/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
 # Alacritty
-alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.yml ~/Coding/Dotfiles/Linux/.config/alacritty"
+alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.toml ~/Coding/Dotfiles/Linux/.config/alacritty"
 # Zshrc
 alias cpzshrc="cp -rf ~/.zshrc ~/Coding/Dotfiles/Linux/"
 # Nvimrc
 alias cpnvimrc="cp -rf ~/.config/nvim/init.vim ~/Coding/Dotfiles/Linux/.config/nvim/"
 # Qtile
-alias cpqtile="cp -rf ~/.config/qtile/autostart.sh ~/.config/qtile/battery.py ~/.config/qtile/config.py ~/.config/qtile/icons ~/Coding/Dotfiles/Linux/.config/qtile"
+alias cpqtile="cp -rf ~/.config/qtile/config.py ~/.config/qtile/cbatticon ~/.config/qtile/icons ~/.config/qtile/scripts ~/Coding/Dotfiles/Linux/.config/qtile"
 ## Opening Configs ##
 # .config Alacritty
-alias valacritty="vim ~/.config/alacritty/alacritty.yml"
-alias ealacritty="emacs ~/.config/alacritty/alacritty.yml"
-alias calacritty="code ~/.config/alacritty/alacritty.yml"
+alias valacritty="vim ~/.config/alacritty/alacritty.toml"
+alias ealacritty="emacs ~/.config/alacritty/alacritty.toml"
+alias calacritty="code ~/.config/alacritty/alacritty.toml"
 # github Alacritty
-alias vgalacritty="vim ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.yml"
-alias egalacritty="emacs ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.yml"
-alias cgalacritty="code ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.yml"
+alias vgalacritty="vim ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.toml"
+alias egalacritty="emacs ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.toml"
+alias cgalacritty="code ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.toml"
 # .zshrc
 alias vzshrc="vim ~/.zshrc"
 alias ezshrc="emacs ~/.zshrc"
