@@ -20,7 +20,52 @@ rm -rf ~/tempDotfiles
 
 ########### Installing Packages ###########
 sudo pacman -S zsh, qtile, qtile-extras, starship, alacritty, rofi, brave, thunar, ttf-ubuntu-font-family, ttf-ubuntu-nerd, ttf-ubuntu-mono-nerd, ttf-jetbrains-mono, ttf-jetbrains-mono-nerd, picom, network-manager-applet, xfce4-power-manager, blueberry, lxsession, flameshot, xfce4-notifyd, nitrogen --noconfirm
-yay -S shell-color-scripts --noconfirm
+paru -S shell-color-scripts --noconfirm
+
+########### Installing Other Programs ###########
+echo "Do you wish to install Virt Manager?"
+select yn in "Yes" "No"; do
+    case $yn in
+    Yes)
+        curl -s -L https://raw.githubusercontent.com/AverageBlank/Dotfiles/Master/Linux/Install-Virt-Manager.sh | bash
+        break
+        ;;
+    No) break ;;
+    esac
+done
+
+echo "Do you wish to install Visual Studio Code?"
+select yn in "Yes" "No"; do
+    case $yn in
+    Yes)
+        paru -S visual-studio-code-bin --noconfirm
+        break
+        ;;
+    No) break ;;
+    esac
+done
+
+echo "Do you wish to install Discord?"
+select yn in "Yes" "No"; do
+    case $yn in
+    Yes)
+        paru -S discord --noconfirm
+        break
+        ;;
+    No) break ;;
+    esac
+done
+
+echo "Do you wish to install Apple Music?"
+select yn in "Yes" "No"; do
+    case $yn in
+    Yes)
+        paru -S apple-music-desktop --noconfirm
+        break
+        ;;
+    No) break ;;
+    esac
+done
 
 ## Checking if nvidia GPU
 gpu=$(lspci | grep -i '.* vga .* nvidia .*')
