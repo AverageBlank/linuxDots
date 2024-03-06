@@ -1,11 +1,11 @@
 #!/bin/bash
 
 ########### Taking backups of Files if they exist ###########
-mkdir -p ~/.config-backup
+mkdir -p ~/.config-backup/
 cp -Rf ~/.config/alacritty ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/.config-backup/
 
 ########### CLoning the directory ###########
-mkdir -p ~/tempDotfiles
+mkdir -p ~/tempDotfiles/
 git clone https://github.com/AverageBlank/dotfiles ~/tempDotfiles
 
 ########### Creating directories ###########
@@ -74,6 +74,10 @@ chmod +x ~/.config/qtile/scripts/TermApps/opencal.sh
 chmod +x ~/.config/qtile/scripts/TermApps/opencpu.sh
 chmod +x ~/.config/qtile/scripts/TermApps/openmem.sh
 chmod +x ~/.config/qtile/scripts/TermApps/opendf.sh
+
+########### Setting up Nitrogen ###########
+mkdir -p ~/Wallpapers/
+git clone https://github.com/AverageBlank/Wallpapers ~/Wallpapers
 
 ########### Changing Defaults ###########
 sudo chsh -s /bin/zsh $USER
