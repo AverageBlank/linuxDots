@@ -19,8 +19,17 @@ mv -rf ~/tempDotfiles/Linux/.zshrc .
 rm -rf ~/tempDotfiles
 
 ########### Installing Packages ###########
-sudo pacman -S zsh, qtile, qtile-extras, starship, alacritty, rofi, brave, thunar, ttf-ubuntu-font-family, ttf-ubuntu-nerd, ttf-ubuntu-mono-nerd, ttf-jetbrains-mono, ttf-jetbrains-mono-nerd, picom --noconfirm
+sudo pacman -S zsh, qtile, qtile-extras, starship, alacritty, rofi, brave, thunar, ttf-ubuntu-font-family, ttf-ubuntu-nerd, ttf-ubuntu-mono-nerd, ttf-jetbrains-mono, ttf-jetbrains-mono-nerd, picom, network-manager-applet, xfce4-power-manager, blueberry, lxsession, flameshot, xfce4-notifyd, nitrogen --noconfirm
 yay -S shell-color-scripts --noconfirm
+
+## Checking if nvidia GPU
+gpu=$(lspci | grep -i '.* vga .* nvidia .*')
+
+if echo "$gpu" | grep -qi 'nvidia'; then
+    sudo pacman -S optimus-manager --noconfirm
+else
+    echo NO NVIDIA GPU PRESENT
+fi
 
 ########### Setting up Configs ###########
 mkdir -p ~/.zsh-plugins
