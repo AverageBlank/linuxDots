@@ -159,6 +159,10 @@ alias gc="git commit -m"
 alias gp="git push -u origin"
 
 
+#### CD ####
+alias cdcd="cd ~/Coding/Dotfiles"
+
+
 ####  Nvidia ####
 ## Optimus Manager ##
 alias oph='optimus-manager --switch hybrid --no-confirm'
