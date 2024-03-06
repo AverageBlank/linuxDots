@@ -592,6 +592,8 @@ def assign_app_group(client):
         "virtualbox manager",
         "virtualbox machine",
         "vmplayer",
+        "virt-manager",
+        "Virt-manager",
     ]
     d[group_names[5][0]] = ["Spotify", "spotify", "apple music", "Apple Music"]
     d[group_names[6][0]] = ["Vlc", "Mpv" "vlc", "mpv"]
