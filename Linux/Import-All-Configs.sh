@@ -27,53 +27,29 @@ sudo pacman -S zsh qtile qtile-extras starship alacritty rofi brave thunar ttf-u
 paru -S shell-color-scripts --noconfirm
 
 ########### Installing Other Programs ###########
-while true; do
-    read -p "Do you wish to install Virt Manager? " yn
-    case $yn in
-    [Yy]*)
-        curl -s -L https://raw.githubusercontent.com/AverageBlank/Dotfiles/Master/Linux/Install-Virt-Manager.sh | bash
-        break
-        ;;
-    [Nn]*) break ;;
-    *) echo "Please answer yes or no." ;;
-    esac
-done
+if (dialog --title "Message" --yesno "Do you want to install Virt Manager?" 6 25); then
+    curl -s -L https://raw.githubusercontent.com/AverageBlank/Dotfiles/Master/Linux/Install-Virt-Manager.sh | bash
+else
+    echo "Skipping Virt-Manager"
+fi
 
-while true; do
-    read -p "Do you wish to install Visual Studio Code? " yn
-    case $yn in
-    [Yy]*)
-        paru -S visual-studio-code-bin --noconfirm
-        break
-        ;;
-    [Nn]*) break ;;
-    *) echo "Please answer yes or no." ;;
-    esac
-done
+if (dialog --title "Message" --yesno "Do you want to install Visual Studio Code?" 6 25); then
+    paru -S visual-studio-code-bin --noconfirm
+else
+    echo "Skipping Visual Studio Code"
+fi
 
-while true; do
-    read -p "Do you wish to install discord? " yn
-    case $yn in
-    [Yy]*)
-        sudo pacman -S discord --noconfirm
-        break
-        ;;
-    [Nn]*) break ;;
-    *) echo "Please answer yes or no." ;;
-    esac
-done
+if (dialog --title "Message" --yesno "Do you want to install Discord?" 6 25); then
+    sudo pacman -S discord --noconfirm
+else
+    echo "Skipping discord"
+fi
 
-while true; do
-    read -p "Do you wish to install discord? " yn
-    case $yn in
-    [Yy]*)
-        paru -S apple-music-desktop --noconfirm
-        break
-        ;;
-    [Nn]*) break ;;
-    *) echo "Please answer yes or no." ;;
-    esac
-done
+if (dialog --title "Message" --yesno "Do you want to install Apple Music?" 6 25); then
+    paru -S apple-music-desktop --noconfirm
+else
+    echo "Skipping Apple Music"
+fi
 
 ## Checking if nvidia GPU
 gpu=$(lspci | grep -i '.* vga .* nvidia .*')
