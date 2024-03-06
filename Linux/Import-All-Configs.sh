@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ########### Taking backups of Files if they exist ###########
-cp -Rf ~/.config/alacritty ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/backups-$(date +%Y.%m.%d-%H.%M.%S)/
+mkdir -p ~/.config-backup
+cp -Rf ~/.config/alacritty ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/.config-backup/
 
 ########### CLoning the directory ###########
 mkdir -p ~/tempDotfiles
