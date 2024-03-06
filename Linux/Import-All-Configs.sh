@@ -27,47 +27,51 @@ sudo pacman -S zsh qtile qtile-extras starship alacritty rofi brave thunar ttf-u
 paru -S shell-color-scripts --noconfirm
 
 ########### Installing Other Programs ###########
-echo "Do you wish to install Virt Manager?"
-select yn in "Yes" "No"; do
+while true; do
+    read -p "Do you wish to install Virt Manager? " yn
     case $yn in
-    Yes)
+    [Yy]*)
         curl -s -L https://raw.githubusercontent.com/AverageBlank/Dotfiles/Master/Linux/Install-Virt-Manager.sh | bash
         break
         ;;
-    No) break ;;
+    [Nn]*) break ;;
+    *) echo "Please answer yes or no." ;;
     esac
 done
 
-echo "Do you wish to install Visual Studio Code?"
-select yn in "Yes" "No"; do
+while true; do
+    read -p "Do you wish to install Visual Studio Code? " yn
     case $yn in
-    Yes)
+    [Yy]*)
         paru -S visual-studio-code-bin --noconfirm
         break
         ;;
-    No) break ;;
+    [Nn]*) break ;;
+    *) echo "Please answer yes or no." ;;
     esac
 done
 
-echo "Do you wish to install Discord?"
-select yn in "Yes" "No"; do
+while true; do
+    read -p "Do you wish to install discord? " yn
     case $yn in
-    Yes)
-        paru -S discord --noconfirm
+    [Yy]*)
+        sudo pacman -S discord --noconfirm
         break
         ;;
-    No) break ;;
+    [Nn]*) break ;;
+    *) echo "Please answer yes or no." ;;
     esac
 done
 
-echo "Do you wish to install Apple Music?"
-select yn in "Yes" "No"; do
+while true; do
+    read -p "Do you wish to install discord? " yn
     case $yn in
-    Yes)
+    [Yy]*)
         paru -S apple-music-desktop --noconfirm
         break
         ;;
-    No) break ;;
+    [Nn]*) break ;;
+    *) echo "Please answer yes or no." ;;
     esac
 done
 
