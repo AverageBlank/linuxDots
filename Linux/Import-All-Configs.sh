@@ -26,7 +26,7 @@ rm -rf ~/tempDotfiles
 ########### Installing Packages ###########
 sudo pacman -Syyy
 sudo pacman -S zsh qtile qtile-extras starship alacritty rofi brave thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv --noconfirm
-paru -S shell-color-scripts, betterlockscreen --noconfirm
+paru -S shell-color-scripts betterlockscreen zathura --noconfirm
 
 ########### Installing Other Programs ###########
 if (dialog --title "Message" --yesno "Do you want to install Virt Manager?" 6 25); then
@@ -76,6 +76,7 @@ chmod +x ~/.config/qtile/scripts/TermApps/opencal.sh
 chmod +x ~/.config/qtile/scripts/TermApps/opencpu.sh
 chmod +x ~/.config/qtile/scripts/TermApps/openmem.sh
 chmod +x ~/.config/qtile/scripts/TermApps/opendf.sh
+chmod +x ~/.config/qtile/scripts/TermApps/updates.sh
 chmod +x ~/.config/qtile/rofi/launcher.sh
 chmod +x ~/.config/qtile/rofi/logout.sh
 cd ~/.config/qtile/cbatticon

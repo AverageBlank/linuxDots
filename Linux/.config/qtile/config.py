@@ -3,13 +3,11 @@
 #! ---------- Imports
 #! --------------------------------------------------
 import os
-import socket
 import subprocess
 from typing import List
 from libqtile import layout, bar, widget, hook, qtile
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule, KeyChord
+from libqtile.config import Drag, Group, Key, Match, Screen, Rule, KeyChord
 from libqtile.command import lazy
-from libqtile.widget import spacer
 
 
 # ? Requires qtile-extras package from pacman
@@ -424,6 +422,29 @@ def init_widgets_list():
             text="|", font="Ubuntu Mono", foreground=colors[1], padding=2, fontsize=14
         ),
         widget.WindowName(foreground=colors[6], max_chars=40),
+        widget.CheckUpdates(
+            update_interval=60,
+            distro="Arch_checkupdates",
+            fmt="🗘  {}",
+            colour_have_updates=colors[5],
+            colour_no_updates=colors[5],
+            foreground=colors[3],
+            decorations=[
+                BorderDecoration(
+                    colour=colors[5],
+                    border_width=[0, 0, 2, 0],
+                )
+            ],
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(
+                    terminal
+                    + " -e "
+                    + home
+                    + "/.config/qtile/scripts/TermApps/updates.sh"
+                )
+            },
+        ),
+        widget.Spacer(length=8),
         widget.GenPollText(
             update_interval=300,
             func=lambda: subprocess.check_output(
@@ -503,11 +524,11 @@ def init_widgets_list():
         ),
         widget.Spacer(length=8),
         widget.Volume(
-            foreground=colors[7],
+            foreground=colors[3],
             fmt="🕫  Vol: {}",
             decorations=[
                 BorderDecoration(
-                    colour=colors[7],
+                    colour=colors[3],
                     border_width=[0, 0, 2, 0],
                 )
             ],
