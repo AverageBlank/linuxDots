@@ -11,12 +11,14 @@ git clone https://github.com/AverageBlank/dotfiles ~/tempDotfiles
 ########### Creating directories ###########
 mkdir -p ~/.config/alacritty/
 mkdir -p ~/.config/qtile/
+mkdir -p ~/.local/share/fonts
 
 ########### Moving files ###########
 cp -rf ~/tempDotfiles/Linux/.config/alacritty/alacritty.toml .config/alacritty/
 cp -rf ~/tempDotfiles/Linux/.config/qtile/* .config/qtile/
 cp -rf ~/tempDotfiles/Linux/.config/starship.toml .config/
 cp -rf ~/tempDotfiles/Linux/.zshrc .
+cp -rf ~/tempDotfiles/Linux/.local/share/fonts/* .local/share/fonts
 
 ########### Removing the cloned directory ###########
 rm -rf ~/tempDotfiles
@@ -24,7 +26,7 @@ rm -rf ~/tempDotfiles
 ########### Installing Packages ###########
 sudo pacman -Syyy
 sudo pacman -S zsh qtile qtile-extras starship alacritty rofi brave thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv --noconfirm
-paru -S shell-color-scripts --noconfirm
+paru -S shell-color-scripts, betterlockscreen --noconfirm
 
 ########### Installing Other Programs ###########
 if (dialog --title "Message" --yesno "Do you want to install Virt Manager?" 6 25); then
@@ -74,10 +76,14 @@ chmod +x ~/.config/qtile/scripts/TermApps/opencal.sh
 chmod +x ~/.config/qtile/scripts/TermApps/opencpu.sh
 chmod +x ~/.config/qtile/scripts/TermApps/openmem.sh
 chmod +x ~/.config/qtile/scripts/TermApps/opendf.sh
+chmod +x ~/.config/qtile/rofi/launcher.sh
+chmod +x ~/.config/qtile/rofi/logout.sh
+cd ~/.config/qtile/cbatticon
+make
 
 ########### Setting up Nitrogen ###########
-mkdir -p ~/Wallpapers/
-git clone https://github.com/AverageBlank/Wallpapers ~/Wallpapers
+mkdir -p ~/wallpapers/
+git clone https://github.com/AverageBlank/Wallpapers ~/wallpapers
 
 ########### Changing Defaults ###########
 sudo chsh -s /bin/zsh $USER

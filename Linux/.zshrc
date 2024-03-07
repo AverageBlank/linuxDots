@@ -120,7 +120,7 @@ alias cpzshrc="cp -rf ~/.zshrc ~/Coding/Dotfiles/Linux/"
 # Nvimrc
 alias cpnvimrc="cp -rf ~/.config/nvim/init.vim ~/Coding/Dotfiles/Linux/.config/nvim/"
 # Qtile
-alias cpqtile="cp -rf ~/.config/qtile/config.py ~/.config/qtile/cbatticon ~/.config/qtile/icons ~/.config/qtile/scripts ~/Coding/Dotfiles/Linux/.config/qtile"
+alias cpqtile="cp -rf ~/.config/qtile/config.py ~/.config/qtile/cbatticon ~/.config/qtile/rofi ~/.config/qtile/icons ~/.config/qtile/scripts ~/Coding/Dotfiles/Linux/.config/qtile"
 ## Opening Configs ##
 # .config Alacritty
 alias valacritty="vim ~/.config/alacritty/alacritty.toml"
@@ -176,7 +176,7 @@ alias opi='optimus-manager --switch integrated --no-confirm'
 alias ops='optimus-manager --print-mode'
 
 ####  ArcoLinux ####
-alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
+alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 
 ########### Extracting Files ###########

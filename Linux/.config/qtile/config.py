@@ -34,8 +34,8 @@ home = os.path.expanduser("~")
 browser = "brave"
 code = "code"
 files = "thunar"
-logout = "archlinux-logout"
-run = "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/qtile/scripts/launcher.rasi"
+logout = home + "/.config/qtile/rofi/logout.sh"
+run = home + "/.config/qtile/rofi/launcher.sh"
 terminal = "alacritty"
 taskmanager = f"{terminal} -e 'htop'"
 calendar = f"{terminal} -e bash -c \"cal -y; read -p 'Press Enter to exit...'\""
@@ -202,7 +202,11 @@ keys = [
             Key([], "r", lazy.spawn("shutdown now -r")),
             Key([], "s", lazy.spawn("killall qtile")),
             Key([], "l", lazy.spawn('betterlockscreen -l dim -- --time-str="%H:%M"')),
-            Key([], "h", lazy.spawn("systemctl suspend")),
+            Key(
+                [],
+                "h",
+                lazy.spawn("amixer set Master mute; mpc -q pause; systemctl suspend"),
+            ),
         ],
     ),
     # ? --- Changing Wallpaper ---
