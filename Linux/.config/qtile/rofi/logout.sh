@@ -46,10 +46,10 @@ $reboot)
     shutdown now -r
     ;;
 $lock)
-    betterlockscreen -l
+    betterlockscreen -l dim -- --time-str="%H:%M"
     ;;
 $suspend)
-    betterlockscreen -l dim -- --time-str="%H:%M"
+    amixer set Master mute; mpc -q pause; systemctl suspend
     ;;
 $logout)
     killall qtile
