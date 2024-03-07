@@ -387,7 +387,7 @@ def init_widgets_list():
         widget.Image(
             filename="~/.config/qtile/icons/python.png",
             scale="False",
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal)},
+            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(run)},
         ),
         widget.Prompt(font="Ubuntu Mono", fontsize=14, foreground=colors[1]),
         widget.GroupBox(
