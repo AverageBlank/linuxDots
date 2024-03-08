@@ -65,11 +65,24 @@ def maximize_by_switching_layout(qtile):
         qtile.current_group.layout = "monadtall"
 
 
-# ? --- Panic move window to 9th workspace
-@lazy.function
-def panic1(qtile):
-    win1 = lazy.window
-    return win1
+# ? --- Move Window to Previous Screen
+def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen == True:
+            qtile.cmd_to_screen(i - 1)
+
+
+# ? --- Move Window to Next Screen
+def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen == True:
+            qtile.cmd_to_screen(i + 1)
 
 
 keys = [
@@ -131,6 +144,18 @@ keys = [
     Key([leader], "comma", lazy.prev_screen()),
     ## Move focus to next Screen ##
     Key([leader], "period", lazy.next_screen()),
+    ## Move window to previous Screen ##
+    Key(
+        [leader, "shift"],
+        "comma",
+        lazy.function(window_to_next_screen, switch_screen=True),
+    ),
+    ## Move window to next Screen ##
+    Key(
+        [leader, "shift"],
+        "period",
+        lazy.function(window_to_previous_screen, switch_screen=True),
+    ),
     # ? ---- Qtile ----
     ## Exiting and Restarting ##
     # Restart Qtile
@@ -184,11 +209,16 @@ keys = [
         [leader],
         "c",
         [
+            Key([], "o", lazy.spawn(f"{code} {home}/.config/qtile/")),
             Key([], "1", lazy.spawn(f"{code} {home}/.config/qtile/config.py")),
             Key(
                 [], "2", lazy.spawn(f"{code} {home}/.config/qtile/scripts/autostart.sh")
             ),
-            Key([], "3", lazy.spawn(f"{code} {home}/.config/qtile")),
+            Key(
+                [],
+                "h",
+                lazy.spawn(f"{browser} {home}/.config/qtile/scripts/keybindings.html"),
+            ),
         ],
     ),
     # ? --- Logout Hotkeys ---
@@ -279,24 +309,6 @@ mouse = [
 #! --------------------------------------------------
 #! ---------- Workspaces
 #! --------------------------------------------------
-def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
-    i = qtile.screens.index(qtile.current_screen)
-    if i != 0:
-        group = qtile.screens[i - 1].group.name
-        qtile.current_window.togroup(group, switch_group=switch_group)
-        if switch_screen == True:
-            qtile.cmd_to_screen(i - 1)
-
-
-def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
-    i = qtile.screens.index(qtile.current_screen)
-    if i + 1 != len(qtile.screens):
-        group = qtile.screens[i + 1].group.name
-        qtile.current_window.togroup(group, switch_group=switch_group)
-        if switch_screen == True:
-            qtile.cmd_to_screen(i + 1)
-
-
 # * The Names of Applications after the Layout is to Move the Application to the Workspace.
 group_names = [
     ("1", {"layout": "monadtall"}),
@@ -310,21 +322,7 @@ group_names = [
     ("9", {"layout": "monadtall"}),
 ]
 
-keys.extend(
-    [
-        # * Move window to next screen
-        Key(
-            [leader, "shift"],
-            "comma",
-            lazy.function(window_to_next_screen, switch_screen=True),
-        ),
-        Key(
-            [leader, "shift"],
-            "period",
-            lazy.function(window_to_previous_screen, switch_screen=True),
-        ),
-    ]
-)
+
 # ? ---- To switch workspaces ----
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 for i, (name, kwargs) in enumerate(group_names, 1):
@@ -381,7 +379,6 @@ extension_defaults = widget_defaults.copy()
 
 
 ## Widgets ##
-# * Screen 1
 def init_widgets_list():
     widgets_list = [
         widget.Image(
@@ -426,12 +423,12 @@ def init_widgets_list():
             update_interval=60,
             distro="Arch_checkupdates",
             fmt="🗘  {}",
-            colour_have_updates=colors[5],
-            colour_no_updates=colors[5],
-            foreground=colors[3],
+            colour_have_updates=colors[7],
+            colour_no_updates=colors[7],
+            foreground=colors[7],
             decorations=[
                 BorderDecoration(
-                    colour=colors[5],
+                    colour=colors[7],
                     border_width=[0, 0, 2, 0],
                 )
             ],
@@ -524,26 +521,15 @@ def init_widgets_list():
         ),
         widget.Spacer(length=8),
         widget.Volume(
-            foreground=colors[3],
-            fmt="🕫  Vol: {}",
-            decorations=[
-                BorderDecoration(
-                    colour=colors[3],
-                    border_width=[0, 0, 2, 0],
-                )
-            ],
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("pavucontrol")},
-        ),
-        widget.Spacer(length=8),
-        widget.KeyboardLayout(
             foreground=colors[4],
-            fmt="⌨  Kbd: {}",
+            fmt="🕫  Vol: {}",
             decorations=[
                 BorderDecoration(
                     colour=colors[4],
                     border_width=[0, 0, 2, 0],
                 )
             ],
+            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("pavucontrol")},
         ),
         widget.Spacer(length=8),
         widget.Clock(
