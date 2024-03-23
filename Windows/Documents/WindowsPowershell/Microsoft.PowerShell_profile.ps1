@@ -32,9 +32,9 @@ function rm {rm $args -r -force}
 
 #### Package Manager ####
 ## Aliasing Winget ##
-function wns { sudo winget install $args --accept-source-agreements --accept-package-agreements }
-function wnss { winget search $args }
-function wnr { sudo winget uninstall $args }
+function wgs { sudo winget install $args --accept-source-agreements --accept-package-agreements }
+function wgss { winget search $args }
+function wgr { sudo winget uninstall $args }
 ## Aliasing Chocolatey ##
 function chs { sudo choco install $args -y }
 function chss { choco search $args }
