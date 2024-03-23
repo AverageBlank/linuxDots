@@ -6,6 +6,13 @@ To clone the repository, run the following command:
 git clone https://github.com/AverageBlank/dotfiles"
 ```
 
+## Installing :-
+To install all the config files, if you're on arch linux, just run: 
+
+``` sh
+curl -s -L https://raw.githubusercontent.com/AverageBlank/Dotfiles/Master/Linux/Import-All-Configs.sh | bash
+```
+
 ## Vim :-
 
 For the plugins to work, you need to install a plugin manager.

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Bindings</title>
+
+    <!--CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+      * {
+        font-family: "JetBrains Mono";
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-900 p-5 flex items-center flex-col gap-5">
+    <header class="w-full flex items-center flex-col border-b border-zinc-800">
+      <h1 class="text-center text-2xl text-white pb-3 flex gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          fill="#fff"
+          viewBox="0 0 256 256">
+          <path
+            d="M223.51,48h-191A16.51,16.51,0,0,0,16,64.49v127A16.51,16.51,0,0,0,32.49,208h191A16.51,16.51,0,0,0,240,191.51v-127A16.51,16.51,0,0,0,223.51,48ZM224,191.51a.49.49,0,0,1-.49.49h-191a.49.49,0,0,1-.49-.49v-127a.49.49,0,0,1,.49-.49h191a.49.49,0,0,1,.49.49ZM208,128a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,128Zm0-32a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,96ZM72,160a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16h8A8,8,0,0,1,72,160Zm96,0a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,160Zm40,0a8,8,0,0,1-8,8h-8a8,8,0,0,1,0-16h8A8,8,0,0,1,208,160Z"></path></svg
+        >Key Bindings
+      </h1>
+      <hr class="border-zinc-700 opacity-50 m-auto" />
+    </header>
+    <div class="w-1/2 p-5 bg-zinc-800 rounded-lg mb-2">
+      <h1 class="text-xl text-white pb-2">Application Related</h1>
+      <table class="divide-y w-full divide-zinc-700">
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Key Binds
+            </th>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Action
+            </th>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Type
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-zinc-700">
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + Enter
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Rofi
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Run Launcher
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Enter
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Alacritty
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Terminal
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Control + B
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Brave
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Browser
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Control + E
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Visual Studio Code
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Text Editor
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + E
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Thunar
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              File Manager
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + Escape
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Htop
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Task Manager
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Control + V
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Virt Manager
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Virtual Machine Manager
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Control + S
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Apple Music
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Music Player
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Control + D
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Discord
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Chat Tool
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="w-1/2 p-5 bg-zinc-800 rounded-lg mb-2">
+      <h1 class="text-xl text-white pb-2">Layouts/Workspaces Related</h1>
+      <table class="divide-y w-full divide-zinc-700">
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Key Binds
+            </th>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Action
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-zinc-700">
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Alt + Tab
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Swap Between Open Applications on Focused Workspace
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + (1-9)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Swap Workspace - (1-9)
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + (1-9)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Move App and Switch to Workspace - (1-9)
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Control + (1-9)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Move App While Not Switching to Workspace
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Tab
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Swap Layout
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + Space
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Swap Master and Stack Panes
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + T
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Toggle Floating
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + F
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Toggle Fullscreen
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + D
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Minimize all Open Windows
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + X
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Minimize Open Window
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + (H,J,K,L)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Swap Between Windows Using VIM Keys
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + (H,L)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Increase/Decrease Using VIM Keys
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Equal(=)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Increase Focused Window Size
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Minus(-)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Decrease Focused Window Size
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="w-1/2 p-5 bg-zinc-800 rounded-lg mb-2">
+      <h1 class="text-xl text-white pb-2">Miscellaneous</h1>
+      <table class="divide-y w-full divide-zinc-700">
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Key Binds
+            </th>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Action
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-zinc-700">
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + R
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Reload Qtile
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + Q
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Open Logout Menu
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + C
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Close Application
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Comma(,)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Move Focus To Previous Screen
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Period(.)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Move Focus To Next Screen
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + Comma(,)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Move Application To Previous Screen
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Shift + Period(.)
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Move Application To Next Screen
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + Escape
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Launch xkill(To Kill Focused Application)
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              PrintScreen
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              Take Screenshot Using Flameshot
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="w-1/2 p-5 bg-zinc-800 rounded-lg mb-2">
+      <h1 class="text-xl text-white pb-2">Key Chords</h1>
+      <table class="divide-y w-full divide-zinc-700">
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Modifier Keys
+            </th>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Sub Keys
+            </th>
+            <th
+              scope="col"
+              class="px-6 py-3 text-start text-xs font-medium text-zinc-500 uppercase">
+              Action
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-zinc-700">
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + C
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              <li>O(The Letter)</li>
+              <li>1</li>
+              <li>2</li>
+              <li>H</li>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              <li>Open the Qtile Config Folder in Visual Studio Code</li>
+              <li>Open the Qtile Config file in Visual Studio Code</li>
+              <li>Open the Qtile Autostart file in Visual Studio Code</li>
+              <li>Open this Help Document</li>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + X
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              <li>U</li>
+              <li>R</li>
+              <li>S</li>
+              <li>L</li>
+              <li>H</li>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              <li>Shutdown</li>
+              <li>Restart</li>
+              <li>Sign Out</li>
+              <li>Lock</li>
+              <li>Hibernate</li>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              Win + W
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-zinc-800 dark:text-zinc-200">
+              <li>Change Wallpaper on Secondary Screen</li>
+              <li>Change Wallpaper on Primary Screen</li>
+              <li>Change Wallpapers on Both Screens</li>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
