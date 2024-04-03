@@ -22,23 +22,16 @@ code := "code" ;* Code editor, code=Visual Studio Code
 #+,::Send #+{Left} ;* Send window to left screen ==> Win + Shift + ,
 #+.::Send #+{Right} ;* Send window to right screen ==> Win + Shift + .
 #+x::
-    if (Panic1) {
-        WinShow ahk_id %Panic1%
-        WinActivate ahk_id %Panic1%
-        Panic1 := False
+    if (Panic) {
+        Send ^#{Right}
+        Send #+q
+        Send "{Volume_Mute}"
+        Panic := False
     } else {
-        Panic1 := WinExist("A")
-        WinHide ahk_id %Panic1%
-    }
-return
-#+z::
-    if (Panic2) {
-        WinShow ahk_id %Panic2%
-        WinActivate ahk_id %Panic2%
-        Panic2 := False
-    } else {
-        Panic2 := WinExist("A")
-        WinHide ahk_id %Panic2%
+        Send ^#{Left}
+        Send #+q
+        Send "{Volume_Mute}"
+        Panic := True
     }
 return
 

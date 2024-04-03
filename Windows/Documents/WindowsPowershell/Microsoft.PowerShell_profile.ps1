@@ -13,6 +13,10 @@ Set-Alias sudo "C:\tools\gsudo\Current\gsudo.exe"
 Set-Alias gsudo "C:\tools\gsudo\Current\gsudo.exe"
 Set-Alias fucking sudo
 
+### Code Editors ###
+Set-Alias v "nvim"
+Set-Alias c "code"
+
 #### Shutdown/Reboot ####
 function ssn { shutdown -t 0 -s }
 function sr { shutdown -t 0 -r }
