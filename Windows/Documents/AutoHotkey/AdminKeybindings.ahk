@@ -1,10 +1,9 @@
 #SingleInstance
 
-;;;;;;;;;;;! Key Bindings ;;;;;;;;;;;
+;;;;;;;;;;;! Variables ;;;;;;;;;;;
 panic := True
 
 ;;;;;;;;;;;! Key Bindings ;;;;;;;;;;;
-;;;;? Auto Hotkey ;;;;
 #+r::Reload ;* Restart Auto Hotkey ==> Win + Shift + R
 
 ;;;;? Window Modifications ;;;;
@@ -18,15 +17,13 @@ panic := True
         Send ^#{Right}
         Send #+q
         Send "{Volume_Mute}"
+        Send "{Media_Play_Pause}"
         panic := False
     } else {
         Send ^#{Left}
         Send #+q
         Send "{Volume_Mute}"
+        Send "{Media_Play_Pause}"
         panic := True
     }
 return
-
-;;;;? Miscellaneous ;;;;
-CapsLock::Delete ;* Bind Capslock to delete
-
