@@ -12,7 +12,8 @@ panic := True
 #^.::Send ^#{Right} ;* Switch to right desktop ==> Win + Control + .
 #+,::Send #+{Left} ;* Send window to left screen ==> Win + Shift + ,
 #+.::Send #+{Right} ;* Send window to right screen ==> Win + Shift + .
-#+x::
+CapsLock::Delete ;* Map Caps Lock to Delete
+#+x:: ;* When first pressed, switch to right desktop, mute and pause media. Then, switch back to left desktop, unmute, and unpause media ==> Win + Shift + X
     if panic {
         Send ^#{Right}
         Send #+q
