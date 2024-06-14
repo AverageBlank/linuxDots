@@ -34,6 +34,10 @@ function cdcl {cd C:\Coding\LearningCoding}
 #### rm ####
 function rm {rm $args -r -force}
 
+#### touch ####
+function touch {New-Item $args}
+
+
 #### Package Manager ####
 ## Aliasing Winget ##
 function wgs { sudo winget install $args --accept-source-agreements --accept-package-agreements }
