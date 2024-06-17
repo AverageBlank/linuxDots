@@ -25,7 +25,6 @@ noPausePanic := True
     {
         Send, ^!{F6}
     }
-
 return
 
 ;;;;? Window Modifications ;;;;
@@ -34,18 +33,20 @@ return
 #^.::Send ^#{Right} ;* Switch to right desktop ==> Win + Control + .
 #+,::Send #+{Left} ;* Send window to left screen ==> Win + Shift + ,
 #+.::Send #+{Right} ;* Send window to right screen ==> Win + Shift + .
-CapsLock::Delete ;* Map Caps Lock to Delete
-#+/:: ;* Open a file listing all the keybindings. ==> Win + Shift + /
-    FilePath := A_MyDocuments "\AutoHotkey\Keybindings.html"
-
-    Run, %FilePath%
-return
 #+t:: ;* If a window is not maximized, maximized it, and vice-versa ==> Win + Shift + T
     WinGet, State, MinMax, A
     if State = 1
         Send #{Down} ;* Un-Maximizing the window
     else
         Send #{Up} ;* Maximizing the window
+return
+
+;;;;? Miscelanious ;;;;
+CapsLock::Delete ;* Map Caps Lock to Delete
+#+/:: ;* Open a file listing all the keybindings. ==> Win + Shift + /
+    FilePath := A_MyDocuments "\AutoHotkey\Keybindings.html"
+
+    Run, %FilePath%
 return
 #+x:: ;* When first pressed, switches to the right desktop, mutes audio, and pauses any media playing. Then, switches back to the left desktop, unmutes audio, and unpauses media ==> Win + Shift + X
     if panic {
@@ -73,5 +74,28 @@ return
         Send #+q
         Send "{Volume_Mute}"
         noPausePanic := True
+    }
+return
+
+;;;;? Power ;;;;
+#x:: ;* Starting key chord for power menu ==> Win + X
+
+    Input, SingleKey, L1, {Esc} ;* Getting key input
+
+    if (SingleKey = "u") ;* Shutdown System ==> U
+    {
+        Shutdown, 1
+    }
+    else if (SingleKey = "r") ;* Restart System ==> R
+    {
+        Shutdown, 2
+    }
+    else if (SingleKey = "h") ;* Hybernate ==> H
+    {
+        Shutdown, 64
+    }
+    else if (SingleKey = "s") ;* Sign Out ==> S
+    {
+        Shutdown, 0
     }
 return
