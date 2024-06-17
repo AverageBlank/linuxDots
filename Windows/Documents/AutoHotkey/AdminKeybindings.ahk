@@ -90,12 +90,16 @@ return
     {
         Shutdown, 2
     }
-    else if (SingleKey = "h") ;* Hybernate ==> H
+    else if (SingleKey = "h") ;* Hibernate ==> H
     {
-        Shutdown, 64
+        DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
     }
     else if (SingleKey = "s") ;* Sign Out ==> S
     {
         Shutdown, 0
+    }
+    else if (SingleKey = "l") ;* Lock ==> L
+    {
+        DllCall("LockWorkStation")
     }
 return
