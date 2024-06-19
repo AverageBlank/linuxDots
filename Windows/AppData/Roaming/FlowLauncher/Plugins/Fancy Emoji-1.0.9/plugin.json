@@ -1,0 +1,12 @@
+{
+  "ID": "FF2C31D6A47348FFB9ED4EB26F6794E2",
+  "ActionKeyword": "e",
+  "Name": "Fancy Emoji",
+  "Description": "Search for emoji and add to your clipboard automatically.",
+  "Author": "Mave",
+  "Version": "1.0.9",
+  "Language": "python",
+  "Website": "https://github.com/Ma-ve",
+  "ExecuteFileName": "main.py",
+  "IcoPath": "icon.png"
+}

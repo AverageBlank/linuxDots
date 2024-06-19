@@ -1,6 +1,10 @@
 ########### Prompt ###########
 #### Using Starship for Prompt, Check Readme on How to Install ####
+function Invoke-Starship-TransientFunction {
+  &starship module character
+}
 Invoke-Expression (& "C:\Program Files\starship\bin\starship.exe" init powershell --print-full-init | Out-String)
+Enable-TransientPrompt
 
 
 ########### Aliases ###########

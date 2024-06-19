@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Flow.Launcher.Plugin.IPDetails</name>
+    </assembly>
+    <members>
+        <member name="T:Flow.Launcher.Plugin.IPDetails.CachedIpApiResponse">
+            <summary>
+            Represents the data for the IP API response cache.
+            </summary>
+        </member>
+        <member name="P:Flow.Launcher.Plugin.IPDetails.CachedIpApiResponse.Timestamp">
+            <summary>
+            The time when the IP API response was cached.
+            </summary>
+        </member>
+        <member name="P:Flow.Launcher.Plugin.IPDetails.CachedIpApiResponse.Response">
+            <summary>
+            The ipapi.is response.
+            </summary>
+        </member>
+        <member name="T:Flow.Launcher.Plugin.IPDetails.IpApiResponse">
+            <summary>
+            The response from the ipapi.is API.
+            </summary>
+        </member>
+        <member name="T:Flow.Launcher.Plugin.IPDetails.Main">
+            <inheritdoc cref="T:Flow.Launcher.Plugin.IAsyncPlugin" />
+            <inheritdoc cref="T:Flow.Launcher.Plugin.ISettingProvider" />
+        </member>
+        <member name="F:Flow.Launcher.Plugin.IPDetails.Main.Icon">
+            <summary>
+            <a href="https://www.flaticon.com/free-icons/ip" title="IP icons">IP icons created by Design Circle - Flaticon</a>
+            </summary>
+        </member>
+        <member name="M:Flow.Launcher.Plugin.IPDetails.Main.InitAsync(Flow.Launcher.Plugin.PluginInitContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Flow.Launcher.Plugin.IPDetails.Main.QueryAsync(Flow.Launcher.Plugin.Query,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Flow.Launcher.Plugin.IPDetails.Main.CreateSettingPanel">
+            <inheritdoc />
+        </member>
+        <member name="T:Flow.Launcher.Plugin.IPDetails.Settings.SettingsControl">
+            <summary>
+            SettingsControl
+            </summary>
+        </member>
+        <member name="M:Flow.Launcher.Plugin.IPDetails.Settings.SettingsControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>
