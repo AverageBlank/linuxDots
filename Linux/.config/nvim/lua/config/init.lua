@@ -1,4 +1,5 @@
-require("config.lazy")
-require("config.plugins")
-require("config.remaps")
-require("config.settings")
+require 'config.lazy'
+require 'config.plugins'
+require 'config.debugger'
+require 'config.remaps'
+require 'config.settings'
