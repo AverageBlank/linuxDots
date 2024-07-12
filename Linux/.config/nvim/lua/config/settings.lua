@@ -18,6 +18,9 @@ vim.opt.termguicolors = true
 
 vim.opt.showmode = false
 
+-- Netrw
+vim.g.netrw_keepdir = 0
+vim.g.netrw_localcopydircmd = 'cp -r'
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -27,4 +30,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-

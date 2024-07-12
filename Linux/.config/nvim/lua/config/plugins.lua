@@ -124,16 +124,10 @@ require('ibl').setup { scope = { highlight = highlight } }
 
 hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
--- Code Runner
-require('code_runner').setup {
-  filetype = {
-    javascript = 'bash ~/.config/nvim/lua/coderunner/javascriptjs.bash -d "$dir" -f "$fileName"',
-    python = 'bash ~/.config/nvim/lua/coderunner/pythonpy.bash -d "$dir" -f "$fileName"',
-    c = 'bash ~/.config/nvim/lua/coderunner/clangc.bash -d "$dir" -f "$fileName"',
-    cpp = 'bash ~/.config/nvim/lua/coderunner/clangcpp.bash -d "$dir" -f "$fileName"',
-  },
+-- Neo Tree
+require('neo-tree').setup {
+  hijack_netrw_behavior = 'open_default',
 }
-
 -- Conform (Auto Format)
 require('conform').setup {
   notify_on_error = false,

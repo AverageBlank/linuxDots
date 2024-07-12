@@ -7,9 +7,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous err
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next error message' })
 vim.keymap.set('n', '<leader>f', vim.diagnostic.setloclist, { desc = 'Show all error messages' })
 
--- File Management
-vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open Netrw' })
-
 -- Changes to file
 vim.keymap.set('n', '<C-s>', vim.cmd.w, { desc = 'Save file' })
 vim.keymap.set('i', '<C-s>', '<cmd>w<CR><C-c>', { desc = 'Save file' })
@@ -51,10 +48,14 @@ vim.keymap.set('n', '<leader>7', '7gt', { desc = 'Swap to tab 7' })
 vim.keymap.set('n', '<leader>8', '8gt', { desc = 'Swap to tab 8' })
 vim.keymap.set('n', '<leader>9', '9gt', { desc = 'Swap to tab 9' })
 vim.keymap.set('n', '<leader>tc', vim.cmd.tabclose, { desc = 'Close current tab' })
+vim.keymap.set('n', '<leader>tt', vim.cmd.tabe, { desc = 'Close current tab' })
 vim.keymap.set('n', '<leader>to', function()
   vim.cmd 'tabe'
   require('telescope.builtin').find_files {}
 end, { desc = 'Open new tab' })
+
+-- Neo Tree
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<CR>', { desc = 'Open Neotree' })
 
 -- Exit terminal
 vim.keymap.set('t', '<C-o>', '<C-\\><C-n>', { desc = 'Exit insert mode inside terminal' })
@@ -76,9 +77,6 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Show undo tre
 
 -- Vim Fugitive
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git status' })
-
--- Code Runner
-vim.keymap.set('n', '<leader>r', ':RunCode<CR>', { noremap = true, silent = false, desc = 'Run Code' })
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -117,8 +115,4 @@ vim.keymap.set('n', '<F10>', dap.disconnect, { desc = 'Stop/Kill Dap(debugging)'
 vim.keymap.set('n', '<F12>', dap.restart, { desc = 'Restart Dap(debugging)' })
 vim.keymap.set('n', '<leader>?', function()
   require('dapui').eval(nil, { enter = true })
-end, { desc = 'Show variabel info' })
-
--- Compile C/C++ Files
-vim.keymap.set('n', '<leader>gp', '<cmd>!g++ -g % -o %:r<CR>', { desc = 'Compile C++ file' })
-vim.keymap.set('n', '<leader>gc', '<cmd>!gcc -g % -o %:r<CR>', { desc = 'Compile C file' })
+end, { desc = 'Show variable info' })
