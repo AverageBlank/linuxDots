@@ -54,6 +54,9 @@ alias clear='clear && colorscript random'
 alias cd..='cd ..'
 alias pdw='pwd'
 
+#### Coding ####
+alias cdc="cd ~/Coding"
+
 #### Grep With Better Colors ####
 alias grep='grep --color=auto'
 
@@ -230,9 +233,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 
 ########### Key Bindings ###########
-bindkey '^H' backward-kill-word
 bindkey '^[[1;5C' forward-word
 bindkey "^[[1;5D" backward-word
-bindkey -s '' "clear\n"
+bindkey -s '' "clear\n"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down

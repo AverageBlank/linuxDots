@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugins
 require('lazy').setup {
   spec = {
-    { 'm4xshen/autoclose.nvim' },
+    -- { 'm4xshen/autoclose.nvim' },
     { 'tpope/vim-commentary' },
     { 'tpope/vim-surround' },
     { 'mbbill/undotree' },
@@ -34,6 +34,11 @@ require('lazy').setup {
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
+    {
+      'windwp/nvim-autopairs',
+      event = 'InsertEnter',
+      config = true,
+    },
     {
       'rcarriga/nvim-dap-ui',
       dependencies = {
