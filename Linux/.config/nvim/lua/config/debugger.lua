@@ -77,7 +77,6 @@ dap.adapters.lldb = {
   command = '/usr/bin/lldb-dap', -- adjust as needed, must be absolute path
   name = 'lldb',
 }
-local dap = require 'dap'
 dap.configurations.cpp = {
   {
     name = 'Launch',

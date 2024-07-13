@@ -21,8 +21,14 @@ cd "$dir" || exit
 # Join the directory and file name to create the new directory path
 newDir="$dir/$fileName"
 
+# Determine the file name without extension
+fileNameWithoutExt="${fileName%.*}"
+
 if [[ "$dir" == *src* ]]; then
     cd ..
+    printDir="${dir/src/build}/$fileNameWithoutExt"
+else
+    printDir="$dir/build/$fileNameWithoutExt"
 fi
 
 # Clear the screen
@@ -32,33 +38,35 @@ clear
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-# Determine the file name without extension
-fileNameWithoutExt="${fileName%.*}"
-
-
 case $runwith in
     r)
-        echo -e "${YELLOW}[Running] \"${dir/src/build}/$fileNameWithoutExt\"\n$(printf '%*s' 75 | tr ' ' -)${NC}"
+        echo -e "${YELLOW}[Running] \"$printDir\"\n$(printf '%*s' 75 | tr ' ' -)${NC}"
         "./build/$fileNameWithoutExt" "${program_args[@]}"
         ;;
     b)
         mkdir -p build
-        echo -e "${YELLOW}[Rebuilding]\n$(printf '%*s' 75 | tr ' ' -)${NC}"
+        echo -e "${YELLOW}[Rebuilding] \"$newDir\"\n$(printf '%*s' 75 | tr ' ' -)${NC}"
         if [ -f "./build/$fileNameWithoutExt" ]; then
             rm "./build/$fileNameWithoutExt"
         fi
         gcc "$newDir" -o "./build/$fileNameWithoutExt"
-        echo "Compiled to: \"${dir/src/build}/$fileNameWithoutExt\""
+        echo "Compiled to: \"$printDir\""
+        ;;
+    d)
+        mkdir -p build
+        echo -e "${YELLOW}[Debug Compiling] \"$newDir\"\n$(printf '%*s' 75 | tr ' ' -)${NC}"
+        gcc -g "$newDir" -o "./build/$fileNameWithoutExt"
+        echo "Compiled to: \"$printDir\""
         ;;
     c)
         mkdir -p build
-        echo -e "${YELLOW}[Compiling]\n$(printf '%*s' 75 | tr ' ' -)${NC}"
+        echo -e "${YELLOW}[Compiling] \"$newDir\"\n$(printf '%*s' 75 | tr ' ' -)${NC}"
         gcc "$newDir" -o "./build/$fileNameWithoutExt"
-        echo "Compiled to: \"${dir/src/build}/$fileNameWithoutExt\""
+        echo "Compiled to: \"$printDir\""
         ;;
     *)
         mkdir -p build
-        echo -e "${YELLOW}[Compiling and Running] \"${dir/src/build}/$fileNameWithoutExt\"\n$(printf '%*s' 75 | tr ' ' -)${NC}"
+        echo -e "${YELLOW}[Compiling and Running] \"$newDir\"\n$(printf '%*s' 75 | tr ' ' -)${NC}"
         if [ -f "./build/$fileNameWithoutExt" ]; then
             rm "./build/$fileNameWithoutExt"
         fi
