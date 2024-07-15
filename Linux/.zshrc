@@ -214,6 +214,10 @@ export LC_CTYPE="en_US.utf8"
 
 
 ########### On Terminal Startup ###########
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+# Otherwise start tmux
+[[ -z "$TMUX" ]] && exec tmux
 colorscript random
 
 

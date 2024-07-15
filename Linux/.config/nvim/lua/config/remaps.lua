@@ -32,8 +32,8 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Page up but centered' })
 vim.keymap.set('n', '<C-u>', '<C-u>', { desc = 'Page down but centered' })
 
 -- Yank and Pastes
-vim.keymap.set('v', '<leader>y', '"+y', { desc = 'System Clipboard Paste' })
-vim.keymap.set('v', '<leader>p', '"+p', { desc = 'System Clipboard Yank' })
+vim.keymap.set('v', '<leader>y', '"+y', { desc = 'System Clipboard Yank' })
+vim.keymap.set('v', '<leader>p', '"+p', { desc = 'System Clipboard Paste' })
 vim.keymap.set('i', '<C-a>', '<Esc>pa', { desc = 'Paste in insert mode' })
 vim.keymap.set('n', '<CR>', 'o<Esc>', { desc = 'Create new line without exiting normal mode' })
 
