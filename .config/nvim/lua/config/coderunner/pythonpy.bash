@@ -32,4 +32,5 @@ echo -e "${YELLOW}[Running] python -u \"$dir/$fileName\"${NC}"
 echo -e "${YELLOW}$(printf '%*s' 75 | tr ' ' -)${NC}"
 
 # Run the Python script
-python -u "$fileName"
+# python -u "$fileName" -- Arch
+python3 -u "$fileName" -- Ubuntu

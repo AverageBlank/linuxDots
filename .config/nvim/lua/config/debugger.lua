@@ -65,7 +65,8 @@ dap.configurations.python = {
             elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
                 return cwd .. '/.venv/bin/python'
             else
-                return '/usr/bin/python'
+                -- return '/usr/bin/python' -- Arch
+                return '/usr/bin/python3' -- Ubuntu
             end
         end,
     },
@@ -75,7 +76,7 @@ dap.configurations.python = {
 dap.adapters.lldb = {
     type = 'executable',
     -- command = '/usr/bin/lldb-dap', -- Arch
-    command = '/usr/bin/lldb-vscode-14', -- Ubuntu
+    command = '/usr/bin/lldb-dap-18', -- Ubuntu
     name = 'lldb',
 }
 dap.configurations.cpp = {
