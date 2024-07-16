@@ -1,4 +1,0 @@
-flowlauncher
-python-dotenv
-requests
-typing
