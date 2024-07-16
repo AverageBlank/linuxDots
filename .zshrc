@@ -3,7 +3,6 @@ setopt autocd
 
 
 ########### Setting NeoVim as default editor ###########
-export PATH="$PATH:/opt/nvim/" # Ubuntu Only
 export EDITOR='nvim'
 export VISUAL='nvim'
 
