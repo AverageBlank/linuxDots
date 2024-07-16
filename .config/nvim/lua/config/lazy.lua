@@ -87,3 +87,4 @@ require('lazy').setup {
   install = { colorscheme = { 'rose-pine' } },
   checker = { enabled = true, notify = false },
 }
+
