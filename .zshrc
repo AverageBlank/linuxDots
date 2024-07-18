@@ -8,12 +8,21 @@ export VISUAL='nvim'
 
 
 ########### Paths ###########
+# bin
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
 fi
 
+# localbin
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
+fi
+
+# fnm
+FNM_PATH="/home/hussain/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/hussain/.local/share/fnm:$PATH"
+  eval "`fnm env`"
 fi
 
 
@@ -214,10 +223,6 @@ export LC_CTYPE="en_US.utf8"
 
 
 ########### On Terminal Startup ###########
-# If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-# Otherwise start tmux
-[[ -z "$TMUX" ]] && exec tmux
 colorscript random
 
 
@@ -242,3 +247,4 @@ bindkey "^[[1;5D" backward-word
 bindkey -s '' "clear\n"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+

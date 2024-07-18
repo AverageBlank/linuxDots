@@ -70,7 +70,7 @@ lsp.defaults.cmp_mappings {
 require('mason').setup {}
 local lsp_config = require 'lspconfig'
 require('mason-lspconfig').setup {
-    ensure_installed = { 'eslint', 'tsserver', 'pylsp', 'clangd', 'lua_ls', 'bashls', 'emmet_language_server' },
+    ensure_installed = { 'eslint', 'tsserver', 'pyright', 'clangd', 'lua_ls', 'bashls', 'emmet_language_server' },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup {}
