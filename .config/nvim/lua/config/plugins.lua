@@ -123,10 +123,18 @@ vim.g.rainbow_delimiters = { highlight = highlight }
 require('ibl').setup { scope = { highlight = highlight } }
 hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
--- Neo Tree
-require('neo-tree').setup {
-    hijack_netrw_behavior = 'open_default',
-}
+-- Oil.nvim
+require("oil").setup({
+    default_file_explorer = true,
+    columns = { "icon" },
+    keymaps = {
+        ["<C-h>"] = false,
+    },
+    view_options = {
+        show_hidden = true,
+    }
+})
+
 
 
 -- Conform (Auto Format)

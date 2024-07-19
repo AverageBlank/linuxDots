@@ -18,7 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugins
 require('lazy').setup {
     spec = {
-        -- { 'm4xshen/autoclose.nvim' },
         { 'tpope/vim-commentary' },
         { 'tpope/vim-surround' },
         { 'mbbill/undotree' },
@@ -35,14 +34,9 @@ require('lazy').setup {
         { 'hrsh7th/nvim-cmp' },
         { 'L3MON4D3/LuaSnip' },
         {
-            'nvim-neo-tree/neo-tree.nvim',
-            branch = 'v3.x',
-            dependencies = {
-                'nvim-lua/plenary.nvim',
-                'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-                'MunifTanjim/nui.nvim',
-                '3rd/image.nvim',              -- Optional image support in preview window: See `# Preview Mode` for more information
-            },
+            'stevearc/oil.nvim',
+            opts = {},
+            dependencies = { "nvim-tree/nvim-web-devicons" }
         },
         {
             'windwp/nvim-autopairs',
@@ -59,6 +53,10 @@ require('lazy').setup {
         },
         {
             'nvim-telescope/telescope-fzf-native.nvim',
+            dependencies = {
+                'nvim-telescope/telescope.nvim',
+                'nvim-lua/plenary.nvim'
+            },
             build = 'make',
         },
         {
@@ -68,11 +66,6 @@ require('lazy').setup {
         {
             'nvim-treesitter/nvim-treesitter',
             build = ':TSUpdate',
-        },
-        {
-            'nvim-telescope/telescope.nvim',
-            tag = '0.1.8',
-            dependencies = { 'nvim-lua/plenary.nvim' },
         },
         {
             'nvim-lualine/lualine.nvim',
