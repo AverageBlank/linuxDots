@@ -76,6 +76,11 @@ require('lazy').setup {
             dependencies = { 'nvim-lua/plenary.nvim' },
             opts = {},
         },
+        {
+            "folke/trouble.nvim",
+            cmd = "Trouble",
+            opts = {}, -- for default options, refer to the configuration section for custom setup.
+        },
     },
     install = { colorscheme = { 'rose-pine' } },
     checker = { enabled = true, notify = false },

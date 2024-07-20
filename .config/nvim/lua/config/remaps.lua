@@ -5,7 +5,7 @@ vim.g.maplocalleader = '\\'
 -- Eror Messages
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous error message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next error message' })
-vim.keymap.set('n', '<leader>f', vim.diagnostic.setloclist, { desc = 'Show all error messages' })
+vim.keymap.set('n', '<leader>e', "<cmd>Trouble diagnostics toggle<CR>", { desc = 'Show all error messages' })
 
 -- Changes to file
 vim.keymap.set('n', '<C-s>', vim.cmd.w, { desc = 'Save file' })
@@ -55,7 +55,7 @@ vim.keymap.set('n', '<leader>to', function()
 end, { desc = 'Open new tab' })
 
 -- Oil.nvim
-vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Open Parent Directory using oil.nvim' })
+vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open Parent Directory using oil.nvim' })
 
 -- Exit terminal
 vim.keymap.set('t', '<C-o>', '<C-\\><C-n>', { desc = 'Exit insert mode inside terminal' })
