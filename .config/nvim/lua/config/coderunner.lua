@@ -30,7 +30,7 @@ local function get_command(filetype, quickRun)
     elseif filetype == 'javascript' then
         return 'bash ~/.config/nvim/lua/config/coderunner/javascriptjs.bash -d "$dir" -f "$fileName"'
     elseif filetype == 'html' then
-        return 'google-chrome "$file"'
+        return 'sensible-browser "$file"' -- Ubuntu/Debian
     else
         return nil
     end

@@ -33,6 +33,10 @@ require('lazy').setup {
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/nvim-cmp' },
         { 'L3MON4D3/LuaSnip' },
+        { "catppuccin/nvim",
+            name = "catppuccin",
+            priority = 1000
+        },
         {
             'stevearc/oil.nvim',
             opts = {},
@@ -58,10 +62,6 @@ require('lazy').setup {
                 'nvim-lua/plenary.nvim'
             },
             build = 'make',
-        },
-        {
-            'rose-pine/neovim',
-            name = 'rose-pine',
         },
         {
             'nvim-treesitter/nvim-treesitter',

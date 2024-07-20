@@ -2,57 +2,53 @@
 require('telescope').setup()
 require('telescope').load_extension 'fzf'
 
-
 -- Color Scheme
-vim.cmd.colorscheme 'rose-pine'
+vim.cmd.colorscheme 'catppuccin-mocha'
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-
 
 -- Treesitter
 local npairs = require 'nvim-autopairs'
 local Rule = require 'nvim-autopairs.rule'
 require('nvim-treesitter.configs').setup {
-    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-    ensure_installed = { 'c', 'lua', 'vim', 'markdown', 'cpp', 'javascript', 'typescript', 'python' },
+  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+  ensure_installed = { 'c', 'lua', 'vim', 'markdown', 'cpp', 'javascript', 'typescript', 'python' },
 
-    -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
 
-    -- Automatically install missing parsers when entering buffer
-    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-    auto_install = true,
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = true,
 
-    highlight = {
-        enable = true,
+  highlight = {
+    enable = true,
 
-        additional_vim_regex_highlighting = false,
-    },
+    additional_vim_regex_highlighting = false,
+  },
 }
 npairs.setup {
-    check_ts = true,
-    ts_config = {
-        lua = { 'string' }, -- it will not add a pair on that treesitter node
-        javascript = { 'template_string' },
-    },
+  check_ts = true,
+  ts_config = {
+    lua = { 'string' }, -- it will not add a pair on that treesitter node
+    javascript = { 'template_string' },
+  },
 }
 local ts_conds = require 'nvim-autopairs.ts-conds'
 -- press % => %% only while inside a comment or string
 npairs.add_rules {
-    Rule('%', '%', 'lua'):with_pair(ts_conds.is_ts_node { 'string', 'comment' }),
-    Rule('$', '$', 'lua'):with_pair(ts_conds.is_not_ts_node { 'function' }),
+  Rule('%', '%', 'lua'):with_pair(ts_conds.is_ts_node { 'string', 'comment' }),
+  Rule('$', '$', 'lua'):with_pair(ts_conds.is_not_ts_node { 'function' }),
 }
-
 
 -- Auto Close Bracket
 require('nvim-autopairs').setup {
-    enable_check_bracket_line = false,
-    ignored_next_char = '[%w%.]',
+  enable_check_bracket_line = false,
+  ignored_next_char = '[%w%.]',
 }
 npairs.setup {
-    fast_wrap = {},
+  fast_wrap = {},
 }
-
 
 -- LSP
 local lsp = require 'lsp-zero'
@@ -62,94 +58,89 @@ local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 lsp.defaults.cmp_mappings {
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm { select = true },
-    ['<C-Space>'] = cmp.mapping.complete(),
+  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-y>'] = cmp.mapping.confirm { select = true },
+  ['<C-Space>'] = cmp.mapping.complete(),
 }
 require('mason').setup {}
 local lsp_config = require 'lspconfig'
 require('mason-lspconfig').setup {
-    ensure_installed = { 'eslint', 'tsserver', 'pyright', 'clangd', 'lua_ls', 'bashls', 'emmet_language_server' },
-    handlers = {
-        function(server_name)
-            require('lspconfig')[server_name].setup {}
-        end,
-    },
+  ensure_installed = { 'eslint', 'tsserver', 'pyright', 'clangd', 'lua_ls', 'bashls', 'emmet_language_server' },
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup {}
+    end,
+  },
 }
 lsp_config.lua_ls.setup {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' },
-            },
-        },
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      },
     },
+  },
 }
 lsp.setup()
-
 
 -- Autoclose html Tags
 require('nvim-ts-autotag').setup()
 
-
 -- Lua line
 require('lualine').setup {
-    options = { theme = 'rose-pine' },
+  options = { theme = 'catppuccin-mocha' },
 }
-
 
 -- Highlight Indents
 local highlight = {
-    'RainbowRed',
-    'RainbowYellow',
-    'RainbowBlue',
-    'RainbowOrange',
-    'RainbowGreen',
-    'RainbowViolet',
-    'RainbowCyan',
+  'RainbowRed',
+  'RainbowYellow',
+  'RainbowBlue',
+  'RainbowOrange',
+  'RainbowGreen',
+  'RainbowViolet',
+  'RainbowCyan',
 }
 local hooks = require 'ibl.hooks'
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-    vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#E06C75' })
-    vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#E5C07B' })
-    vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#61AFEF' })
-    vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#D19A66' })
-    vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#98C379' })
-    vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#C678DD' })
-    vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#56B6C2' })
+  vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#E06C75' })
+  vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#E5C07B' })
+  vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#61AFEF' })
+  vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#D19A66' })
+  vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#98C379' })
+  vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#C678DD' })
+  vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#56B6C2' })
 end)
 vim.g.rainbow_delimiters = { highlight = highlight }
 require('ibl').setup { scope = { highlight = highlight } }
 hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
 -- Oil.nvim
-require("oil").setup({
-    default_file_explorer = true,
-    columns = { "icon" },
-    keymaps = {
-        ["<C-h>"] = false,
-    },
-    view_options = {
-        show_hidden = true,
-    }
-})
-
-
+require('oil').setup {
+  default_file_explorer = true,
+  columns = { 'icon' },
+  keymaps = {
+    ['<C-h>'] = false,
+  },
+  view_options = {
+    show_hidden = true,
+  },
+}
 
 -- Conform (Auto Format)
 require('conform').setup {
-    notify_on_error = false,
-    format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-    },
-    formatters_by_ft = {
-        lua = { 'stylua' },
-        python = { 'black' },
-        javascript = { { 'prettierd', 'prettier' } },
-        html = { { 'prettierd', 'prettier' } },
-        c = { 'clang-format' },
-        cpp = { 'clang-format' },
-    },
+  notify_on_error = false,
+  format_on_save = {
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
+  formatters_by_ft = {
+    lua = { 'stylua' },
+    python = { 'black' },
+    javascript = { 'prettierd', 'prettier', stop_after_first = true },
+    html = { 'prettierd', 'prettier', stop_after_first = true },
+    c = { 'clang-format' },
+    cpp = { 'clang-format' },
+  },
 }

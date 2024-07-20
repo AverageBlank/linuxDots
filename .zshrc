@@ -44,9 +44,10 @@ setopt HIST_SAVE_NO_DUPS
 
 ########### Aliases ###########
 #### Ls Commands Better ####
-alias ls='ls --color=auto'
-alias l='ls -la'
-alias ll='ls -la'
+alias ls='eza'
+alias l='eza -la --icons --git'
+alias ll='eza -la --icons --git'
+alias tree='eza --tree --level=2 --long --icons --git'
 
 #### Setting Vim as NeoVim ####
 alias vvim='vi'
