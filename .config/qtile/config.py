@@ -7,7 +7,7 @@ import subprocess
 from typing import List
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Drag, Group, Key, Match, Screen, Rule, KeyChord
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 
 
 # ? Requires qtile-extras package from pacman
@@ -246,7 +246,7 @@ keys = [
                 [],
                 "1",
                 lazy.spawn(
-                    f"nitrogen --head=1 --random --set-zoom-fill {home}/wallpapers"
+                    f"nitrogen --random --set-zoom-fill {home}/wallpapers"
                 ),
             ),
             Key(
