@@ -4,9 +4,8 @@
 #! --------------------------------------------------
 import os
 import subprocess
-from typing import List
 from libqtile import layout, bar, widget, hook, qtile
-from libqtile.config import Drag, Group, Key, Match, Screen, Rule, KeyChord
+from libqtile.config import Drag, Group, Key, Match, Screen, KeyChord
 from libqtile.lazy import lazy
 
 
@@ -30,11 +29,11 @@ home = os.path.expanduser("~")
 
 # ? ---- Applications ----
 browser = "brave"
-code = "code"
 files = "thunar"
 logout = home + "/.config/qtile/rofi/logout.sh"
 run = home + "/.config/qtile/rofi/launcher.sh"
 terminal = "alacritty"
+code = f"{terminal} -e nvim"
 taskmanager = f"{terminal} -e 'htop'"
 calendar = f"{terminal} -e bash -c \"cal -y; read -p 'Press Enter to exit...'\""
 chat = "discord"
@@ -223,7 +222,7 @@ keys = [
     ),
     # ? --- Logout Hotkeys ---
     KeyChord(
-        [leader],
+        [leader, "shift"],
         "x",
         [
             Key([], "u", lazy.spawn("shutdown now")),
@@ -245,9 +244,7 @@ keys = [
             Key(
                 [],
                 "1",
-                lazy.spawn(
-                    f"nitrogen --random --set-zoom-fill {home}/wallpapers"
-                ),
+                lazy.spawn(f"nitrogen --random --set-zoom-fill {home}/wallpapers"),
             ),
             Key(
                 [],
