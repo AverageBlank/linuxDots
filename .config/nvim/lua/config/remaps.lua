@@ -37,6 +37,12 @@ vim.keymap.set('v', '<leader>p', '"+p', { desc = 'System Clipboard Paste' })
 vim.keymap.set('i', '<C-a>', '<Esc>pa', { desc = 'Paste in insert mode' })
 vim.keymap.set('n', '<CR>', 'o<Esc>', { desc = 'Create new line without exiting normal mode' })
 
+-- For Visual Block mode...
+vim.keymap.set('i', '<C-C>', '<Esc>')
+
+-- Switching Projects
+vim.keymap.set('n', '<C-f>', '<cmd> silent !tmux neww ~/.config/tmuxthing<CR>')
+
 -- Tabs
 vim.keymap.set('n', '<leader>1', '1gt', { desc = 'Swap to tab 1' })
 vim.keymap.set('n', '<leader>2', '2gt', { desc = 'Swap to tab 2' })
