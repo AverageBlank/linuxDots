@@ -43,6 +43,9 @@ vim.keymap.set('i', '<C-C>', '<Esc>')
 -- Switching Projects
 vim.keymap.set('n', '<C-f>', '<cmd> silent !tmux neww ~/.config/tmuxthing<CR>')
 
+-- Find and Replace
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 -- Tabs
 vim.keymap.set('n', '<leader>1', '1gt', { desc = 'Swap to tab 1' })
 vim.keymap.set('n', '<leader>2', '2gt', { desc = 'Swap to tab 2' })
