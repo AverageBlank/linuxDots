@@ -5,7 +5,7 @@ vim.g.maplocalleader = '\\'
 -- Eror Messages
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous error message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next error message' })
-vim.keymap.set('n', '<leader>e', "<cmd>Trouble diagnostics toggle<CR>", { desc = 'Show all error messages' })
+vim.keymap.set('n', '<leader>e', '<cmd>Trouble diagnostics toggle<CR>', { desc = 'Show all error messages' })
 
 -- Changes to file
 vim.keymap.set('n', '<C-s>', vim.cmd.w, { desc = 'Save file' })
@@ -50,8 +50,8 @@ vim.keymap.set('n', '<leader>9', '9gt', { desc = 'Swap to tab 9' })
 vim.keymap.set('n', '<leader>tc', vim.cmd.tabclose, { desc = 'Close current tab' })
 vim.keymap.set('n', '<leader>tt', vim.cmd.tabe, { desc = 'Close current tab' })
 vim.keymap.set('n', '<leader>to', function()
-    vim.cmd 'tabe'
-    require('telescope.builtin').find_files {}
+  vim.cmd 'tabe'
+  require('telescope.builtin').find_files {}
 end, { desc = 'Open new tab' })
 
 -- Oil.nvim
@@ -62,11 +62,15 @@ vim.keymap.set('t', '<C-o>', '<C-\\><C-n>', { desc = 'Exit insert mode inside te
 
 -- Telescope
 local builtin = require 'telescope.builtin'
-vim.keymap.set('n', '<leader><space>', builtin.find_files, { desc = 'Show file search' })
+vim.keymap.set(
+  'n',
+  '<leader><space>',
+  "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>"
+)
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Show Help' })
 vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Search word between files' })
 vim.keymap.set('n', '<leader>sn', function()
-    builtin.find_files { cwd = vim.fn.stdpath 'config' }
+  builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[S]earch [N]eovim files' })
 vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Search Keymaps' })
 vim.keymap.set('n', '<leader>.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
@@ -80,22 +84,22 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git status' })
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
-    callback = function(event)
-        local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-        end
+  group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+  callback = function(event)
+    local map = function(keys, func, desc)
+      vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+    end
 
-        map('gd', require('telescope.builtin').lsp_definitions, 'Goto Definition')
-        map('gr', require('telescope.builtin').lsp_references, 'Goto References')
-        map('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
-        map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
-    end,
+    map('gd', require('telescope.builtin').lsp_definitions, 'Goto Definition')
+    map('gr', require('telescope.builtin').lsp_references, 'Goto References')
+    map('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
+    map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+  end,
 })
 
 -- Format File
 vim.keymap.set('n', '<leader>af', function()
-    require('conform').format { async = true, lsp_fallback = true }
+  require('conform').format { async = true, lsp_fallback = true }
 end, { desc = 'Format File' })
 
 -- Todo Comments
@@ -114,5 +118,5 @@ vim.keymap.set('n', '<F9>', dapui.toggle, { desc = 'Toggle Dap(debugging) ui' })
 vim.keymap.set('n', '<F10>', dap.disconnect, { desc = 'Stop/Kill Dap(debugging)' })
 vim.keymap.set('n', '<F12>', dap.restart, { desc = 'Restart Dap(debugging)' })
 vim.keymap.set('n', '<leader>?', function()
-    require('dapui').eval(nil, { enter = true })
+  require('dapui').eval(nil, { enter = true })
 end, { desc = 'Show variable info' })
