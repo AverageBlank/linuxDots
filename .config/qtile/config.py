@@ -604,6 +604,8 @@ def assign_app_group(client):
         "google-chrome",
         "brave",
         "brave-browser",
+        "microsoft-edge",
+        "Microsoft-edge",
     ]
     d[group_names[1][0]] = [
         "Atom",
@@ -623,7 +625,7 @@ def assign_app_group(client):
         "telegramDesktop",
         "discord",
     ]
-    d[group_names[2][0]] = ["Alacritty", "Konsole", "alacritty", "konsole"]
+    d[group_names[2][0]] = ["Alacritty", "Konsole", "alacritty", "konsole", "kitty"]
     d[group_names[3][0]] = ["TelegramDesktop", "Discord", "telegramDesktop", "discord"]
     d[group_names[4][0]] = [
         "VirtualBox Manager",
