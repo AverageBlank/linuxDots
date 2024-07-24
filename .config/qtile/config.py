@@ -300,7 +300,7 @@ mouse = [
 
 
 #! --------------------------------------------------
-#! ---------- Workspaces
+#! ---------- Groups
 #! --------------------------------------------------
 # * The Names of Applications after the Layout is to Move the Application to the Workspace.
 group_names = [
