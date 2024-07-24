@@ -23,7 +23,6 @@ leader = "mod4"  # ? Windows/Super Key
 alt = "mod1"
 ctrl = "control"
 
-# ? ---- Special Characters ----
 # * -- The home directory
 home = os.path.expanduser("~")
 
@@ -54,14 +53,12 @@ def minimize_all(qtile):
                 win.toggle_minimize()
 
 
-# ? --- A function to maximize current window ---
+# ? --- A function to maximize all open windows ---
 @lazy.function
-def maximize_by_switching_layout(qtile):
-    current_layout_name = qtile.current_group.layout.name
-    if current_layout_name == "monadtall":
-        qtile.current_group.layout = "max"
-    elif current_layout_name == "max":
-        qtile.current_group.layout = "monadtall"
+def toggleFullscreenAll(qtile):
+    for group in qtile.groups:
+        for window in group.windows:
+            window.toggle_fullscreen()
 
 
 # ? --- Move Window to Previous Screen
@@ -120,7 +117,6 @@ keys = [
     Key([leader, "shift"], "space", lazy.layout.flip()),
     ## Change the Layout ##
     Key([leader], "Tab", lazy.next_layout()),
-    ## Toggle Full Screen ##
     ## Toggle Floating ##
     Key([leader, "shift"], "t", lazy.window.toggle_floating()),
     ## Growing/ Shrinking the layouts ##
@@ -130,12 +126,11 @@ keys = [
     Key([leader], "d", minimize_all()),
     ## Hide/Unhide a singular window ##
     Key([leader, "shift"], "x", lazy.window.toggle_minimize()),
-    ## Maximize Window ##
+    ## Maximize All Windows and Hide Bar ##
     Key(
         [leader, "shift"],
         "f",
-        maximize_by_switching_layout(),
-        lazy.window.toggle_fullscreen(),
+        toggleFullscreenAll(),
         lazy.hide_show_bar(),
     ),
     # ? --- Moving Windows through Screens ---
