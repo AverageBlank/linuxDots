@@ -203,6 +203,7 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
     # Decrease Brightness
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
+    # ? --- Key Chords ---
     # ? --- Spawning Config ---
     KeyChord(
         [leader],
@@ -393,6 +394,7 @@ def init_widgets_list():
             borderwidth=3,
             active=colors[8],
             inactive=colors[1],
+            hide_unused=True,
             rounded=False,
             highlight_color=colors[2],
             highlight_method="line",
