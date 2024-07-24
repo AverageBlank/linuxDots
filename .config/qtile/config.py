@@ -302,17 +302,16 @@ mouse = [
 #! --------------------------------------------------
 #! ---------- Groups
 #! --------------------------------------------------
-# * The Names of Applications after the Layout is to Move the Application to the Workspace.
 group_names = [
-    ("1", {"layout": "monadtall"}),
-    ("2", {"layout": "monadtall"}),
-    ("3", {"layout": "monadtall"}),
-    ("4", {"layout": "monadtall"}),
-    ("5", {"layout": "monadtall"}),
-    ("6", {"layout": "monadtall"}),
-    ("7", {"layout": "monadtall"}),
-    ("8", {"layout": "monadtall"}),
-    ("9", {"layout": "monadtall"}),
+    ("1", {"layout": "monadtall"}),  # Web
+    ("2", {"layout": "monadtall"}),  # Dev??
+    ("3", {"layout": "monadtall"}),  # Term
+    ("4", {"layout": "monadtall"}),  # Chat
+    ("5", {"layout": "monadtall"}),  # Vbox
+    ("6", {"layout": "monadtall"}),  # Music
+    ("7", {"layout": "monadtall"}),  # Media
+    ("8", {"layout": "monadtall"}),  # Misc 1
+    ("9", {"layout": "monadtall"}),  # Misc 2
 ]
 
 
@@ -633,7 +632,6 @@ def assign_app_group(client):
     ]
     d[group_names[5][0]] = ["Spotify", "spotify", "apple music", "Apple Music"]
     d[group_names[6][0]] = ["Vlc", "Mpv" "vlc", "mpv"]
-    d[group_names[7][0]] = []
 
     # ? ---- Moving them ----
     wm_class = client.window.get_wm_class()[0]
