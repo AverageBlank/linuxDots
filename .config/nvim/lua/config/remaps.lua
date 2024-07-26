@@ -15,6 +15,8 @@ vim.keymap.set('i', '<C-z>', '<Esc>ua', { desc = 'Undo Changes' })
 -- Exit vim
 vim.keymap.set('n', '<leader>w', '<cmd>wqa<CR>', { desc = 'Save and quit' })
 vim.keymap.set('n', '<leader>q', '<cmd>qa!<CR>', { desc = 'Quit without saving' })
+vim.keymap.set('v', '<leader>w', '<cmd>wqa<CR>', { desc = 'Save and quit visual mode' })
+vim.keymap.set('v', '<leader>q', '<cmd>qa!<CR>', { desc = 'Quit without saving visual mode' })
 
 -- Splits
 vim.keymap.set('n', '<leader>c', '<C-w>c', { desc = 'Close highlighted split' })

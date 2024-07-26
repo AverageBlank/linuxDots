@@ -126,6 +126,8 @@ keys = [
     Key([leader], "d", minimize_all()),
     ## Hide/Unhide a singular window ##
     Key([leader, "shift"], "x", lazy.window.toggle_minimize()),
+    ## Maximize open window ##
+    Key([leader], "f", lazy.window.toggle_fullscreen()),
     ## Maximize All Windows and Hide Bar ##
     Key(
         [leader, "shift"],
