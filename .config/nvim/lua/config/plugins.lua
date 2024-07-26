@@ -54,6 +54,7 @@ npairs.setup {
 local lsp = require 'lsp-zero'
 lsp.preset 'recommended'
 local cmp = require 'cmp'
+require('nvim-highlight-colors').setup {}
 local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
@@ -62,6 +63,11 @@ lsp.defaults.cmp_mappings {
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm { select = true },
   ['<C-Space>'] = cmp.mapping.complete(),
+}
+require('cmp').setup {
+  formatting = {
+    format = require('nvim-highlight-colors').format,
+  },
 }
 require('mason').setup {}
 local lsp_config = require 'lspconfig'
