@@ -410,7 +410,7 @@ def init_widgets_list():
         widget.TextBox(
             text="|", font="Ubuntu Mono", foreground=colors[1], padding=2, fontsize=14
         ),
-        widget.WindowName(foreground=colors[6], max_chars=40),
+        widget.WindowName(foreground=colors[6]),
         widget.CheckUpdates(
             update_interval=60,
             distro="Arch_checkupdates",
