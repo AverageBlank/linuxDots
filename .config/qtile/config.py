@@ -306,22 +306,22 @@ mouse = [
 #! --------------------------------------------------
 group_names = [
     ("1", {"layout": "monadtall"}),  # Web
-    ("2", {"layout": "monadtall"}),  # Dev??
-    ("3", {"layout": "monadtall"}),  # Term
-    ("4", {"layout": "monadtall"}),  # Chat
-    ("5", {"layout": "monadtall"}),  # Vbox
-    ("6", {"layout": "monadtall"}),  # Music
-    ("7", {"layout": "monadtall"}),  # Media
-    ("8", {"layout": "monadtall"}),  # Misc 1
-    ("9", {"layout": "monadtall"}),  # Misc 2
     ("Sub-1", {"layout": "monadtall"}),  # Sub Web
+    ("2", {"layout": "monadtall"}),  # Dev??
     ("Sub-2", {"layout": "monadtall"}),  # Sub Dev??
+    ("3", {"layout": "monadtall"}),  # Term
     ("Sub-3", {"layout": "monadtall"}),  # Sub Term
+    ("4", {"layout": "monadtall"}),  # Chat
     ("Sub-4", {"layout": "monadtall"}),  # Sub Chat
+    ("5", {"layout": "monadtall"}),  # Vbox
     ("Sub-5", {"layout": "monadtall"}),  # Sub Vbox
+    ("6", {"layout": "monadtall"}),  # Music
     ("Sub-6", {"layout": "monadtall"}),  # Sub Music
+    ("7", {"layout": "monadtall"}),  # Media
     ("Sub-7", {"layout": "monadtall"}),  # Sub Media
+    ("8", {"layout": "monadtall"}),  # Misc 1
     ("Sub-8", {"layout": "monadtall"}),  # Sub Misc 1
+    ("9", {"layout": "monadtall"}),  # Misc 2
     ("Sub-9", {"layout": "monadtall"}),  # Sub Misc 2
 ]
 
@@ -329,17 +329,18 @@ group_names = [
 # ? ---- To switch workspaces ----
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 # * --- Main Space ---
-for i, (name, kwargs) in enumerate(group_names[:9], 1):
-    keys.append(Key([leader], str(i), lazy.group[name].toscreen()))
+for i in range(1, 10):
+    i = str(i)
+    keys.append(Key([leader], i, lazy.group[i].toscreen()))
     keys.append(
         Key(
             [leader, "shift"],
-            str(i),
-            lazy.window.togroup(name),
-            lazy.group[name].toscreen(),
+            i,
+            lazy.window.togroup(i),
+            lazy.group[i].toscreen(),
         )
     )
-    keys.append(Key([leader, ctrl], str(i), lazy.window.togroup(name)))
+    keys.append(Key([leader, ctrl], i, lazy.window.togroup(i)))
 
 # * --- Sub Space ---
 keys.append(
@@ -650,27 +651,23 @@ def assign_app_group(client):
         "microsoft-edge",
         "Microsoft-edge",
     ]
-    d[group_names[1][0]] = [
+    d[group_names[2][0]] = [
         "Atom",
         "Subl",
         "Geany",
         "Brackets",
         "Code-oss",
         "Code",
-        "TelegramDesktop",
-        "Discord",
         "atom",
         "subl",
         "geany",
         "brackets",
         "code-oss",
         "code",
-        "telegramDesktop",
-        "discord",
     ]
-    d[group_names[2][0]] = ["Alacritty", "Konsole", "alacritty", "konsole", "kitty"]
-    d[group_names[3][0]] = ["TelegramDesktop", "Discord", "telegramDesktop", "discord"]
-    d[group_names[4][0]] = [
+    d[group_names[4][0]] = ["Alacritty", "Konsole", "alacritty", "konsole", "kitty"]
+    d[group_names[6][0]] = ["TelegramDesktop", "Discord", "telegramDesktop", "discord"]
+    d[group_names[8][0]] = [
         "VirtualBox Manager",
         "VirtualBox Machine",
         "Vmplayer",
@@ -680,8 +677,8 @@ def assign_app_group(client):
         "virt-manager",
         "Virt-manager",
     ]
-    d[group_names[5][0]] = ["Spotify", "spotify", "apple music", "Apple Music"]
-    d[group_names[6][0]] = ["Vlc", "Mpv" "vlc", "mpv"]
+    d[group_names[10][0]] = ["Spotify", "spotify", "apple music", "Apple Music"]
+    d[group_names[12][0]] = ["Vlc", "Mpv" "vlc", "mpv", "gl"]
 
     # ? ---- Moving them ----
     wm_class = client.window.get_wm_class()[0]
