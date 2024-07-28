@@ -346,17 +346,37 @@ keys.append(
     KeyChord(
         [leader],
         "s",
-        [Key([], str(i), lazy.group[f"Sub-{i}"].toscreen()) for i in range(1, 10)]
-        + [
+        [Key([], str(i), lazy.group[f"Sub-{i}"].toscreen()) for i in range(1, 10)],
+    )
+)
+keys.append(
+    KeyChord(
+        [leader, "shift"],
+        "s",
+        [
             Key(
-                ["shift"],
+                [],
                 str(i),
                 lazy.window.togroup(f"Sub-{i}"),
                 lazy.group[f"Sub-{i}"].toscreen(),
             )
             for i in range(1, 10)
         ],
-    )
+    ),
+)
+keys.append(
+    KeyChord(
+        [leader, ctrl],
+        "s",
+        [
+            Key(
+                [],
+                str(i),
+                lazy.window.togroup(f"Sub-{i}"),
+            )
+            for i in range(1, 10)
+        ],
+    ),
 )
 
 
