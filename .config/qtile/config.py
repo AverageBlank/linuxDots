@@ -314,12 +314,22 @@ group_names = [
     ("7", {"layout": "monadtall"}),  # Media
     ("8", {"layout": "monadtall"}),  # Misc 1
     ("9", {"layout": "monadtall"}),  # Misc 2
+    ("Sub-1", {"layout": "monadtall"}),  # Sub Web
+    ("Sub-2", {"layout": "monadtall"}),  # Sub Dev??
+    ("Sub-3", {"layout": "monadtall"}),  # Sub Term
+    ("Sub-4", {"layout": "monadtall"}),  # Sub Chat
+    ("Sub-5", {"layout": "monadtall"}),  # Sub Vbox
+    ("Sub-6", {"layout": "monadtall"}),  # Sub Music
+    ("Sub-7", {"layout": "monadtall"}),  # Sub Media
+    ("Sub-8", {"layout": "monadtall"}),  # Sub Misc 1
+    ("Sub-9", {"layout": "monadtall"}),  # Sub Misc 2
 ]
 
 
 # ? ---- To switch workspaces ----
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
-for i, (name, kwargs) in enumerate(group_names, 1):
+# * --- Main Space ---
+for i, (name, kwargs) in enumerate(group_names[:9], 1):
     keys.append(Key([leader], str(i), lazy.group[name].toscreen()))
     keys.append(
         Key(
@@ -330,6 +340,24 @@ for i, (name, kwargs) in enumerate(group_names, 1):
         )
     )
     keys.append(Key([leader, ctrl], str(i), lazy.window.togroup(name)))
+
+# * --- Sub Space ---
+keys.append(
+    KeyChord(
+        [leader],
+        "s",
+        [Key([], str(i), lazy.group[f"Sub-{i}"].toscreen()) for i in range(1, 10)]
+        + [
+            Key(
+                ["shift"],
+                str(i),
+                lazy.window.togroup(f"Sub-{i}"),
+                lazy.group[f"Sub-{i}"].toscreen(),
+            )
+            for i in range(1, 10)
+        ],
+    )
+)
 
 
 #! --------------------------------------------------
@@ -410,7 +438,7 @@ def init_widgets_list():
         widget.TextBox(
             text="|", font="Ubuntu Mono", foreground=colors[1], padding=2, fontsize=14
         ),
-        widget.WindowName(foreground=colors[6]),
+        widget.WindowName(foreground=colors[6], max_chars=120),
         widget.CheckUpdates(
             update_interval=60,
             distro="Arch_checkupdates",
