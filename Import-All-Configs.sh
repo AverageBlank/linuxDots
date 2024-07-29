@@ -81,7 +81,7 @@ install_package() {
 }
 
 # Virt Manager
-install_package "Virt-Manager" "" "https://raw.githubusercontent.com/AverageBlank/linuxDots/Master/Linux/Install-Virt-Manager.sh"
+install_package "Virt-Manager" "" "https://raw.githubusercontent.com/AverageBlank/linuxDots/Master/Install-Virt-Manager.sh"
 
 # Discord
 install_package "Discord" "discord"
