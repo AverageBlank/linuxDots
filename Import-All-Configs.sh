@@ -1,66 +1,96 @@
 #!/bin/bash
 
-########### Taking backups of Files if they exist ###########
+########### Creating Backups ###########
+echo "Creating Backups..."
 mkdir -p ~/.config-backup/
-cp -Rf ~/.config/alacritty ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/.config-backup/
+for dir in ~/.config/alacritty ~/.config/kitty ~/.config/kitty/nvim ~/.config/tmuxthing ~/.config/volumeicon ~/.config/qtile ~/.config/starship.toml ~/.zshrc ~/linuxDots; do
+    if [ -e "$dir" ]; then
+        cp -rf "$dir" ~/.config-backup/
+    else
+        echo "Skipping $dir as it does not exist."
+    fi
+done
+echo "Backup Complete"
 
-########### CLoning the directory ###########
-mkdir -p ~/tempDotfiles/
-git clone https://github.com/AverageBlank/dotfiles ~/tempDotfiles
-
-########### Creating directories ###########
-mkdir -p ~/.config/alacritty/
-mkdir -p ~/.config/qtile/
-mkdir -p ~/.local/share/fonts
+########### Cloning the directory ###########
+echo "Cloning repo, and moving config files..."
+rm -rf ~/linuxDots
+git clone https://github.com/AverageBlank/linuxDots ~/linuxDots
 
 ########### Moving files ###########
-cp -rf ~/tempDotfiles/Linux/.config/alacritty/alacritty.toml .config/alacritty/
-cp -rf ~/tempDotfiles/Linux/.config/qtile/* .config/qtile/
-cp -rf ~/tempDotfiles/Linux/.config/starship.toml .config/
-cp -rf ~/tempDotfiles/Linux/.zshrc .
-cp -rf ~/tempDotfiles/Linux/.local/share/fonts/* .local/share/fonts
+# Ensuring .config exists
+mkdir -p ~/.config
 
-########### Removing the cloned directory ###########
-rm -rf ~/tempDotfiles
+mv -f ~/linuxDots/.config/* ~/.config/
+mv -f ~/linuxDots/.zshrc .
+echo "Files Moved."
 
 ########### Installing Packages ###########
-sudo pacman -Syyy
-sudo pacman -S zsh qtile qtile-extras starship alacritty rofi brave thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv --noconfirm
-paru -S shell-color-scripts betterlockscreen zathura --noconfirm
-
-########### Installing Other Programs ###########
-if (dialog --title "Message" --yesno "Do you want to install Virt Manager?" 6 25); then
-    curl -s -L https://raw.githubusercontent.com/AverageBlank/Dotfiles/Master/Linux/Install-Virt-Manager.sh | bash
+echo "Installing Required Packages..."
+# Check if paru is installed before using it
+if ! command -v paru > /dev/null; then
+    echo "Paru is not installed, installing..."
+    rm -rf ~/paru
+    git clone https://aur.archlinux.org/paru.git ~/paru
+    cd ~/paru
+    makepkg -si
+    if [ $? -ne 0 ]; then
+        echo "Failed to install paru, skipping paru packages."
+        cd
+        rm -rf ~/paru
+        sudo pacman -Syu --noconfirm
+        sudo pacman -S --needed base-devel zsh qtile qtile-extras neovim htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog --noconfirm
+    else
+        cd
+        rm -rf ~/paru
+        paru -Syu --noconfirm
+        paru -S --needed base-devel zsh qtile qtile-extras neovim htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
+    fi
 else
-    echo "Skipping Virt-Manager"
+    paru -Syu --noconfirm
+    paru -S --needed base-devel zsh qtile qtile-extras neovim htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
 fi
+echo "Package installation complete."
 
-if (dialog --title "Message" --yesno "Do you want to install Visual Studio Code?" 6 25); then
-    paru -S visual-studio-code-bin --noconfirm
-else
-    echo "Skipping Visual Studio Code"
-fi
+########### Installing Other Packages ###########
+# Function to check if a package is installed
+is_installed() {
+    local package=$1
+    command -v "$package" > /dev/null 2>&1
+}
 
-if (dialog --title "Message" --yesno "Do you want to install Discord?" 6 25); then
-    sudo pacman -S discord --noconfirm
-else
-    echo "Skipping discord"
-fi
+# Function to install a package
+install_package() {
+    local package_name=$1
+    local install_command=$2
+    local install_url=$3
 
-if (dialog --title "Message" --yesno "Do you want to install Apple Music?" 6 25); then
-    paru -S apple-music-desktop --noconfirm
-else
-    echo "Skipping Apple Music"
-fi
+    if ! is_installed "$install_command"; then
+        if (dialog --title "Message" --yesno "Do you want to install ${package_name}?" 6 25); then
+            if [[ -n $install_url ]]; then
+                curl -s -L "$install_url" | bash
+            else
+                sudo pacman -S "$install_command" --noconfirm
+            fi
+        else
+            echo "Skipping ${package_name}"
+        fi
+    else
+        echo "${package_name} is already installed."
+    fi
+}
 
-## Checking if nvidia GPU
-gpu=$(lspci | grep -i '.* vga .* nvidia .*')
+# Virt Manager
+install_package "Virt-Manager" "" "https://raw.githubusercontent.com/AverageBlank/linuxDots/Master/Linux/Install-Virt-Manager.sh"
 
-if echo "$gpu" | grep -qi 'nvidia'; then
-    sudo pacman -S optimus-manager --noconfirm
-else
-    echo NO NVIDIA GPU PRESENT
-fi
+# Discord
+install_package "Discord" "discord"
+
+# Spotify
+install_package "Spotify" "spotify"
+
+# Display Manager
+install_package "Sddm (Display Manager)" "sddm"
 
 ########### Setting up Configs ###########
 mkdir -p ~/.zsh-plugins
@@ -68,17 +98,7 @@ cd ~/.zsh-plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search
-chmod +x ~/.config/qtile/scripts/autostart.sh
-chmod +x ~/.config/qtile/scripts/nitrogen1.sh
-chmod +x ~/.config/qtile/scripts/nitrogen2.sh
-chmod +x ~/.config/qtile/scripts/nitrogen3.sh
-chmod +x ~/.config/qtile/scripts/TermApps/opencal.sh
-chmod +x ~/.config/qtile/scripts/TermApps/opencpu.sh
-chmod +x ~/.config/qtile/scripts/TermApps/openmem.sh
-chmod +x ~/.config/qtile/scripts/TermApps/opendf.sh
-chmod +x ~/.config/qtile/scripts/TermApps/updates.sh
-chmod +x ~/.config/qtile/rofi/launcher.sh
-chmod +x ~/.config/qtile/rofi/logout.sh
+
 cd ~/.config/qtile/cbatticon
 make
 
@@ -87,5 +107,10 @@ mkdir -p ~/wallpapers/
 git clone https://github.com/AverageBlank/Wallpapers ~/wallpapers
 
 ########### Changing Defaults ###########
-sudo chsh -s /bin/zsh $USER
-cd
+sudo chsh -s /bin/zsh "$USER"
+if (dialog --title "Message" --yesno "Reboot Now?" 6 25); then
+    sudo reboot
+else
+    echo "All done, it is recommended to reboot your system."
+fi
+
