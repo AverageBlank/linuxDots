@@ -20,9 +20,11 @@ git clone https://github.com/AverageBlank/linuxDots ~/linuxDots
 ########### Moving files ###########
 # Ensuring .config exists
 mkdir -p ~/.config
+mkdir -p ~/.local/share
 
 mv -f ~/linuxDots/.config/* ~/.config/
-mv -f ~/linuxDots/.zshrc .
+mv -f ~/linuxDots/.zshrc ~/
+mv -f ~/linuxDots/.local/* ~/.local/
 echo "Files Moved."
 
 ########### Installing Packages ###########
