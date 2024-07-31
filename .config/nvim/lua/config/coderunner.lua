@@ -16,11 +16,10 @@ local function get_command(filetype, quickRun)
       RUNWITH = string.lower(vim.fn.input 'Run(r)/Rebuild(b)/DebugCompile(d)/Compile(c)/CompileAndRun(cr): ')
     end
     if RUNWITH == 'r' or RUNWITH == 'cr' then
-      local args =
-        string.lower(vim.fn.input 'If required, enter arguments in format (numOfArgs+1<space>argsSeparatedBySpaces): ')
+      local args = vim.fn.input 'If required, enter arguments in format (numOfArgs+1<space>argsSeparatedBySpaces): '
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"' .. args
     else
-      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH
+      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
     end
   -- Python
   elseif filetype == 'python' then
@@ -35,6 +34,13 @@ local function get_command(filetype, quickRun)
     -- return 'open "$file"' -- Mac OS
     -- SH
   elseif filetype == 'sh' then
+    -- RUN = 'bash ~/.config/nvim/lua/config/coderunner/bashsh.bash -d "$dir" -f "$fileName"'
+    -- if quickRun then
+    --   return RUN
+    -- else
+    --   local args = vim.fn.input 'If required, enter space separated arguments: '
+    --   return RUN .. args
+    -- end
     return 'bash ~/.config/nvim/lua/config/coderunner/bashsh.bash -d "$dir" -f "$fileName"'
   else
     return nil
