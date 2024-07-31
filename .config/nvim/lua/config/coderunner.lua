@@ -18,9 +18,9 @@ local function get_command(filetype, quickRun)
     if RUNWITH == 'r' or RUNWITH == 'cr' then
       local args =
         string.lower(vim.fn.input 'If required, enter arguments in format (numOfArgs+1<space>argsSeparatedBySpaces): ')
-      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '" ' .. args
+      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"' .. args
     else
-      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
+      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH
     end
   -- Python
   elseif filetype == 'python' then
