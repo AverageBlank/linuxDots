@@ -14,6 +14,7 @@ shift $((OPTIND-1))
 
 # Store any additional arguments to pass to the compiled program
 program_args=("$@")
+unset 'program_args[${#program_args[@]}-1]' 2>/dev/null
 
 # Change to the specified directory
 cd "$dir" || exit
