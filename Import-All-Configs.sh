@@ -45,16 +45,16 @@ if ! command -v paru > /dev/null; then
         cd
         rm -rf ~/paru
         sudo pacman -Syu --noconfirm
-        sudo pacman -S --needed base-devel zsh qtile qtile-extras neovim htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog --noconfirm
+        sudo pacman -S --needed base-devel zsh qtile eza qtile-extras neovim htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog --noconfirm
     else
         cd
         rm -rf ~/paru
         paru -Syu --noconfirm
-        paru -S --needed base-devel zsh qtile qtile-extras neovim htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
+        paru -S --needed base-devel zsh qtile qtile-extras eza neovim htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
     fi
 else
     paru -Syu --noconfirm
-    paru -S --needed base-devel zsh qtile qtile-extras neovim htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
+    paru -S --needed base-devel zsh qtile qtile-extras neovim eza htop starship kitty rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
 fi
 echo "Package installation complete."
 

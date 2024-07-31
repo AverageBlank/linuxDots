@@ -176,6 +176,11 @@ keys = [
     Key([leader], "Escape", lazy.spawn("xkill")),
     # Run Launcher
     Key([leader, "shift"], "Return", lazy.spawn(run)),
+    Key(
+        [leader, "shift"],
+        "d",
+        lazy.spawn("dmenu_run -p 'Run:' -fn 'NotoMonoRegular:bold:pixelsize=14'"),
+    ),
     # Task Manager
     Key([ctrl, "shift"], "Escape", lazy.spawn(taskmanager)),
     # Virtualization Software
@@ -305,29 +310,31 @@ mouse = [
 #! ---------- Groups
 #! --------------------------------------------------
 group_names = [
-    ("1", {"layout": "monadtall"}),  # Web
-    ("Sub-1", {"layout": "monadtall"}),  # Sub Web
-    ("2", {"layout": "monadtall"}),  # Dev??
-    ("Sub-2", {"layout": "monadtall"}),  # Sub Dev??
-    ("3", {"layout": "monadtall"}),  # Term
-    ("Sub-3", {"layout": "monadtall"}),  # Sub Term
-    ("4", {"layout": "monadtall"}),  # Chat
-    ("Sub-4", {"layout": "monadtall"}),  # Sub Chat
-    ("5", {"layout": "monadtall"}),  # Vbox
-    ("Sub-5", {"layout": "monadtall"}),  # Sub Vbox
-    ("6", {"layout": "monadtall"}),  # Music
-    ("Sub-6", {"layout": "monadtall"}),  # Sub Music
-    ("7", {"layout": "monadtall"}),  # Media
-    ("Sub-7", {"layout": "monadtall"}),  # Sub Media
-    ("8", {"layout": "monadtall"}),  # Misc 1
-    ("Sub-8", {"layout": "monadtall"}),  # Sub Misc 1
-    ("9", {"layout": "monadtall"}),  # Misc 2
-    ("Sub-9", {"layout": "monadtall"}),  # Sub Misc 2
+    ("1", "monadtall"),  # Web
+    ("Sub-1", "monadtall"),  # Sub Web
+    ("2", "monadtall"),  # Dev??
+    ("Sub-2", "monadtall"),  # Sub Dev??
+    ("3", "monadtall"),  # Term
+    ("Sub-3", "monadtall"),  # Sub Term
+    ("4", "monadtall"),  # Chat
+    ("Sub-4", "monadtall"),  # Sub Chat
+    ("5", "monadtall"),  # Vbox
+    ("Sub-5", "monadtall"),  # Sub Vbox
+    ("6", "monadtall"),  # Music
+    ("Sub-6", "monadtall"),  # Sub Music
+    ("7", "monadtall"),  # Media
+    ("Sub-7", "monadtall"),  # Sub Media
+    ("8", "monadtall"),  # Misc 1
+    ("Sub-8", "monadtall"),  # Sub Misc 1
+    ("9", "monadtall"),  # Misc 2
+    ("Sub-9", "monadtall"),  # Sub Misc 2
 ]
+groups = []
+for i in range(len(group_names)):
+    groups.append(Group(name=group_names[i][0], layout=group_names[i][1].lower()))
 
 
 # ? ---- To switch workspaces ----
-groups = [Group(name, **kwargs) for name, kwargs in group_names]
 # * --- Main Space ---
 for i in range(1, 10):
     i = str(i)

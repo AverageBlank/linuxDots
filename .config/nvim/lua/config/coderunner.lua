@@ -3,7 +3,6 @@ local function get_command(filetype, quickRun)
   -- Getting Dir and FileName
   local dir = vim.fn.expand '%:p:h'
   local fileName = vim.fn.expand '%:t'
-
   -- C/C++
   if filetype == 'cpp' or filetype == 'c' then
     if filetype == 'cpp' then
@@ -23,16 +22,20 @@ local function get_command(filetype, quickRun)
     else
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
     end
-    -- Python
+  -- Python
   elseif filetype == 'python' then
     return 'bash ~/.config/nvim/lua/config/coderunner/pythonpy.bash -d "$dir" -f "$fileName"'
-    -- JavaScript
+  -- JavaScript
   elseif filetype == 'javascript' then
     return 'bash ~/.config/nvim/lua/config/coderunner/javascriptjs.bash -d "$dir" -f "$fileName"'
+  -- HTML
   elseif filetype == 'html' then
     return 'xdg-open "$file"' -- Running native Linux
     -- return 'sensible-browser "$file"' -- WSL
     -- return 'open "$file"' -- Mac OS
+    -- SH
+  elseif filetype == 'sh' then
+    return 'bash ~/.config/nvim/lua/config/coderunner/bashsh.bash -d "$dir" -f "$fileName"'
   else
     return nil
   end
