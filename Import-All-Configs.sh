@@ -20,7 +20,7 @@ git clone https://github.com/AverageBlank/linuxDots ~/linuxDots
 ########### Moving files ###########
 # Ensuring .config exists
 mkdir -p ~/.config
-mkdir -p ~/.local/share
+mkdir -p ~/.local/share/fonts
 
 mv -f ~/linuxDots/.config/* ~/.config/
 mv -f ~/linuxDots/.zshrc ~/
