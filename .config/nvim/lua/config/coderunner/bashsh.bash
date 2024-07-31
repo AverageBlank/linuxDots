@@ -19,6 +19,11 @@ fi
 # Navigate to the specified directory
 cd "$dir" || exit
 
+# Making File executable if not already.
+if [[ ! -x "$fileName" ]]; then
+  chmod +x "$fileName"
+fi
+
 # Clear the screen
 clear
 
