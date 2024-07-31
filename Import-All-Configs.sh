@@ -18,13 +18,17 @@ rm -rf ~/linuxDots
 git clone https://github.com/AverageBlank/linuxDots ~/linuxDots
 
 ########### Moving files ###########
-# Ensuring .config exists
+# Ensuring required folders exist
 mkdir -p ~/.config
 mkdir -p ~/.local/share/fonts
 
+# Moving Files
 mv -f ~/linuxDots/.config/* ~/.config/
 mv -f ~/linuxDots/.zshrc ~/
 mv -f ~/linuxDots/.local/* ~/.local/
+
+# Regenerating font cache
+fc-cache
 echo "Files Moved."
 
 ########### Installing Packages ###########
