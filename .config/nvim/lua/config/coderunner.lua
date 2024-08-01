@@ -16,7 +16,7 @@ local function get_command(filetype, quickRun)
       RUNWITH = string.lower(vim.fn.input 'Run(r)/Rebuild(b)/DebugCompile(d)/Compile(c)/CompileAndRun(cr): ')
     end
     if RUNWITH == 'r' or RUNWITH == 'cr' then
-      local args = vim.fn.input 'If required, enter arguments in format (numOfArgs+1<space>argsSeparatedBySpaces): '
+      local args = '2 ' .. vim.fn.input 'If required, enter space separated arguemnts: '
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"' .. args
     else
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
