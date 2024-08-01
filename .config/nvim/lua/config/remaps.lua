@@ -62,7 +62,7 @@ vim.keymap.set('n', '<leader>tc', vim.cmd.tabclose, { desc = 'Close current tab'
 vim.keymap.set('n', '<leader>tt', vim.cmd.tabe, { desc = 'Close current tab' })
 vim.keymap.set('n', '<leader>to', function()
   vim.cmd 'tabe'
-  require('telescope.builtin').find_files {}
+  require('telescope.builtin').find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
 end, { desc = 'Open new tab' })
 
 -- Oil.nvim

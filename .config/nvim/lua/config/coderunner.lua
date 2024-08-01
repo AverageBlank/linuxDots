@@ -21,6 +21,17 @@ local function get_command(filetype, quickRun)
     else
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
     end
+  -- SH
+  elseif filetype == 'sh' then
+    -- TODO: Add argument support for sh
+    -- RUN = 'bash ~/.config/nvim/lua/config/coderunner/bashsh.bash -d "$dir" -f "$fileName"'
+    -- if quickRun then
+    --   return RUN
+    -- else
+    --   local args = vim.fn.input 'If required, enter space separated arguments: '
+    --   return RUN .. args
+    -- end
+    return 'bash ~/.config/nvim/lua/config/coderunner/bashsh.bash -d "$dir" -f "$fileName"'
   -- Python
   elseif filetype == 'python' then
     return 'bash ~/.config/nvim/lua/config/coderunner/pythonpy.bash -d "$dir" -f "$fileName"'
@@ -32,16 +43,6 @@ local function get_command(filetype, quickRun)
     return 'xdg-open "$file"' -- Running native Linux
     -- return 'sensible-browser "$file"' -- WSL
     -- return 'open "$file"' -- Mac OS
-    -- SH
-  elseif filetype == 'sh' then
-    -- RUN = 'bash ~/.config/nvim/lua/config/coderunner/bashsh.bash -d "$dir" -f "$fileName"'
-    -- if quickRun then
-    --   return RUN
-    -- else
-    --   local args = vim.fn.input 'If required, enter space separated arguments: '
-    --   return RUN .. args
-    -- end
-    return 'bash ~/.config/nvim/lua/config/coderunner/bashsh.bash -d "$dir" -f "$fileName"'
   else
     return nil
   end
