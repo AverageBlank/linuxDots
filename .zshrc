@@ -25,6 +25,12 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
+# nix packages
+if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ];
+then
+     source $HOME/.nix-profile/etc/profile.d/nix.sh
+fi
+
 
 ########### Prompt ###########
 #### Using Starship for Prompt, Check Readme on How to Install ####
