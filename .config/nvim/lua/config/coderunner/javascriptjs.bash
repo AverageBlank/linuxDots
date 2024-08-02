@@ -10,12 +10,6 @@ while getopts "d:f:" opt; do
     esac
 done
 
-# Check if both arguments were provided
-if [ -z "$dir" ] || [ -z "$fileName" ]; then
-    echo "Usage: $0 -d <directory> -f <file name>"
-    exit 1
-fi
-
 # Navigate to the specified directory
 cd "$dir" || exit
 

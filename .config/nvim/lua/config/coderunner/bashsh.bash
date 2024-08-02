@@ -1,20 +1,20 @@
 #!/bin/bash
 
 # Parse the input arguments
-while getopts "d:f:" opt; do
+while getopts "d:f:r:" opt; do
     case "$opt" in
         d) dir=$OPTARG ;;
         f) fileName=$OPTARG ;;
-        *) echo "Usage: $0 -d <directory> -f <file name>"
-           exit 1 ;;
+        r) runwith=$OPTARG ;;
     esac
 done
 
-# Check if both arguments were provided
-if [ -z "$dir" ] || [ -z "$fileName" ]; then
-    echo "Usage: $0 -d <directory> -f <file name>"
-    exit 1
-fi
+# Remove the parsed options from the arguments list
+shift $((OPTIND-1))
+
+# Store any additional arguments to pass to the compiled program
+program_args=("$@")
+unset 'program_args[${#program_args[@]}-1]' 2>/dev/null
 
 # Navigate to the specified directory
 cd "$dir" || exit
@@ -37,4 +37,4 @@ echo -e "${YELLOW}[Running] bash \"$dir/$fileName\"${NC}"
 echo -e "${YELLOW}$(printf '%*s' 75 | tr ' ' -)${NC}"
 
 # Run the shell scripting file
-bash "$fileName"
+bash "$fileName" "${program_args[@]}"
