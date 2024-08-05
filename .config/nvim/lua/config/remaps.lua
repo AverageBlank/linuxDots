@@ -59,11 +59,16 @@ vim.keymap.set('n', '<leader>7', '7gt', { desc = 'Swap to tab 7' })
 vim.keymap.set('n', '<leader>8', '8gt', { desc = 'Swap to tab 8' })
 vim.keymap.set('n', '<leader>9', '9gt', { desc = 'Swap to tab 9' })
 vim.keymap.set('n', '<leader>tc', vim.cmd.tabclose, { desc = 'Close current tab' })
-vim.keymap.set('n', '<leader>tt', vim.cmd.tabe, { desc = 'Close current tab' })
+vim.keymap.set('n', '<leader>tt', vim.cmd.tabnew, { desc = 'Open a new tab' })
+vim.keymap.set('n', '<leader>tT', '<cmd>-1tabnew<CR>', { desc = 'Open a new tab to the left' })
 vim.keymap.set('n', '<leader>to', function()
   vim.cmd 'tabe'
   require('telescope.builtin').find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
-end, { desc = 'Open new tab' })
+end, { desc = 'Open a new tab along with telescope' })
+vim.keymap.set('n', '<leader>tO', function()
+  vim.cmd '-1tabnew'
+  require('telescope.builtin').find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
+end, { desc = 'Open a new tab along with telescope to the left' })
 
 -- Oil.nvim
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open Parent Directory using oil.nvim' })
@@ -115,6 +120,12 @@ end, { desc = 'Format File' })
 
 -- Todo Comments
 vim.keymap.set('n', '<leader>t', '<cmd>TodoTelescope<CR>', { desc = 'Search for todo comments' })
+vim.keymap.set(
+  'n',
+  '<leader>et',
+  '<cmd>Trouble todo filter = {tag = {TODO,FIX,HACK,WARN,PERF,NOTE,TEST}}<CR>',
+  { desc = 'Show all todo comments using trouble' }
+)
 
 -- Debugger
 local dap = require 'dap'

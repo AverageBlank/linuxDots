@@ -35,6 +35,7 @@ require('lazy').setup {
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+    { 'Djancyp/better-comments.nvim' },
     {
       'stevearc/oil.nvim',
       opts = {},

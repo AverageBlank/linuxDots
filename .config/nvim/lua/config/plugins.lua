@@ -50,6 +50,48 @@ npairs.setup {
   fast_wrap = {},
 }
 
+-- Better Comments
+require('better-comment').Setup {
+  tags = {
+    {
+      name = 'TODO',
+      fg = '',
+      bg = '',
+      bold = false,
+    },
+    {
+      name = 'WARNING',
+      fg = '',
+      bg = '',
+      bold = false,
+    },
+    {
+      name = 'FIX',
+      fg = '',
+      bg = '',
+      bold = false,
+    },
+    {
+      name = '!',
+      fg = '#FF2D00',
+      bg = '',
+      bold = true,
+    },
+    {
+      name = '?',
+      fg = '#3498DB',
+      bg = '',
+      bold = false,
+    },
+    {
+      name = '*',
+      fg = '#98C379',
+      bg = '',
+      bold = false,
+    },
+  },
+}
+
 -- LSP
 local lsp = require 'lsp-zero'
 lsp.preset 'recommended'
@@ -126,6 +168,7 @@ hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_ex
 require('oil').setup {
   default_file_explorer = true,
   columns = { 'icon' },
+  skip_confirm_for_simple_edits = true,
   keymaps = {
     ['<C-h>'] = false,
   },

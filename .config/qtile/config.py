@@ -634,7 +634,7 @@ dgroups_app_rules = []
 
 
 #! --------------------------------------------------
-#! ---------- Assign apps to different screens
+#! ---------- Assign apps to different Workspaces
 #! --------------------------------------------------
 @hook.subscribe.client_new
 def assign_app_group(client):
@@ -671,6 +671,8 @@ def assign_app_group(client):
         "brackets",
         "code-oss",
         "code",
+        "github desktop",
+        "Github Desktop",
     ]
     d[group_names[4][0]] = ["Alacritty", "Konsole", "alacritty", "konsole", "kitty"]
     d[group_names[6][0]] = ["TelegramDesktop", "Discord", "telegramDesktop", "discord"]
