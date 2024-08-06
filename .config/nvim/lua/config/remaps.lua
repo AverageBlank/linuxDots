@@ -99,7 +99,7 @@ vim.keymap.set('n', '<leader>sn', function()
 end, { desc = '[S]earch [N]eovim files' })
 vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Search Keymaps' })
 vim.keymap.set('n', '<leader>.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
-vim.keymap.set('n', '<leader>bf', builtin.buffers, { desc = 'Search between existing buffers' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Search between existing buffers' })
 
 -- Undo Tree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Show undo tree' })
