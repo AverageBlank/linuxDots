@@ -1,0 +1,49 @@
+## Requirements
+base-devel
+wget
+python
+python-pip
+
+## Terminal
+zsh
+starship
+shell-color-scripts
+dialog
+eza
+htim
+
+## NeoVim
+neovim
+unzip
+nodejs
+llvm
+
+## Qtile
+qtile
+qtile-extras
+kitty
+rofi
+dmenu
+thunar
+picom
+network-manager-applet
+xfce4-power-manager
+lxsession
+flameshot
+xfce4-notifyd
+nitrogen
+betterlockscreen
+zathura
+brave-bin
+mpv
+
+## Fonts
+ttf-ubuntu-font-family
+ttf-ubuntu-nerd
+ttf-ubuntu-mono-nerd
+ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
+
+## Services
+blueberry
+
