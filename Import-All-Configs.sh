@@ -99,12 +99,6 @@ install_package "Spotify" "spotify"
 install_package "Sddm (Display Manager)" "sddm"
 
 ########### Setting up Configs ###########
-mkdir -p ~/.zsh-plugins
-cd ~/.zsh-plugins
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-git clone https://github.com/zsh-users/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-history-substring-search
-
 cd ~/.config/qtile/cbatticon
 make
 
