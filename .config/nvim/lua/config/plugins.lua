@@ -171,6 +171,9 @@ require('oil').setup {
   skip_confirm_for_simple_edits = true,
   keymaps = {
     ['<C-h>'] = false,
+    ['<C-j>'] = false,
+    ['<C-k>'] = false,
+    ['<C-l>'] = false,
   },
   view_options = {
     show_hidden = true,
