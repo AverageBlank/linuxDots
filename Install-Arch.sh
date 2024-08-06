@@ -50,11 +50,11 @@ if ! command -v paru > /dev/null; then
         cd
         rm -rf ~/paru
         paru -Syu --noconfirm
-        paru -S --needed base-devel unzip python nodejs llvm zsh qtile qtile-extras eza neovim htop starship kitty dmenu rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
+        paru -S --needed base-devel unzip python nodejs llvm zsh qtile qtile-extras eza neovim htim starship kitty dmenu rofi thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
     fi
 else
     paru -Syu --noconfirm
-    paru -S --needed base-devel unzip python nodejs llvm zsh qtile qtile-extras neovim eza htop starship kitty rofi dmenu thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
+    paru -S --needed base-devel unzip python nodejs llvm zsh qtile qtile-extras neovim eza htim starship kitty rofi dmenu thunar ttf-ubuntu-font-family ttf-ubuntu-nerd ttf-ubuntu-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd picom network-manager-applet xfce4-power-manager blueberry lxsession flameshot xfce4-notifyd nitrogen mpv dialog shell-color-scripts betterlockscreen zathura brave --noconfirm
 fi
 echo "Package installation complete."
 
