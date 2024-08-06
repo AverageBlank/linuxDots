@@ -59,6 +59,7 @@ vim.keymap.set('n', '<leader>7', '7gt', { desc = 'Swap to tab 7' })
 vim.keymap.set('n', '<leader>8', '8gt', { desc = 'Swap to tab 8' })
 vim.keymap.set('n', '<leader>9', '9gt', { desc = 'Swap to tab 9' })
 vim.keymap.set('n', '<leader>tc', vim.cmd.tabclose, { desc = 'Close current tab' })
+vim.keymap.set('n', '<leader>tC', vim.cmd.tabonly, { desc = 'Close everything but the current tab' })
 vim.keymap.set('n', '<leader>tt', vim.cmd.tabnew, { desc = 'Open a new tab' })
 vim.keymap.set('n', '<leader>tT', '<cmd>-1tabnew<CR>', { desc = 'Open a new tab to the left' })
 vim.keymap.set('n', '<leader>to', function()
@@ -69,6 +70,14 @@ vim.keymap.set('n', '<leader>tO', function()
   vim.cmd '-1tabnew'
   require('telescope.builtin').find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
 end, { desc = 'Open a new tab along with telescope to the left' })
+vim.keymap.set('n', '<leader>t-', function()
+  vim.cmd 'tabe'
+  vim.cmd 'Oil'
+end, { desc = 'Open a new tab along with oil.nvim' })
+vim.keymap.set('n', '<leader>t_', function()
+  vim.cmd '-1tabnew'
+  vim.cmd 'Oil'
+end, { desc = 'Open a new tab along with oil.nvim to the left' })
 
 -- Oil.nvim
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open Parent Directory using oil.nvim' })
