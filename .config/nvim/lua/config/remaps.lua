@@ -34,6 +34,7 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Page up but centered' })
 vim.keymap.set('n', '<C-u>', '<C-u>', { desc = 'Page down but centered' })
 
 -- Yank and Pastes
+vim.keymap.set('x', 'p', [["_dP]], { desc = 'Paste without deleting text' })
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'System Clipboard Yank' })
 vim.keymap.set('v', '<leader>p', '"+p', { desc = 'System Clipboard Paste' })
 vim.keymap.set('i', '<C-a>', '<Esc>pa', { desc = 'Paste in insert mode' })
@@ -46,7 +47,19 @@ vim.keymap.set('i', '<C-C>', '<Esc>')
 vim.keymap.set('n', '<C-f>', '<cmd> silent !tmux neww ~/.config/tmuxthing<CR>')
 
 -- Find and Replace
-vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Find and Replace' })
+vim.keymap.set(
+  'n',
+  '<leader>S',
+  '<cmd>lua require("spectre").toggle(); vim.cmd("wincmd L")<CR>',
+  { desc = 'Find and Replace entire project' }
+)
+vim.keymap.set(
+  'n',
+  '<leader>sf',
+  '<cmd>lua require("spectre").open_file_search(); vim.cmd("wincmd L")<CR>',
+  { desc = 'Find and Replace in file' }
+)
 
 -- Tabs
 vim.keymap.set('n', '<leader>1', '1gt', { desc = 'Swap to tab 1' })
@@ -141,10 +154,10 @@ local dap = require 'dap'
 local dapui = require 'dapui'
 vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Toggle Breakpoint' })
 vim.keymap.set('n', '<leader>R', dap.continue, { desc = 'Start Dap(debugging)' })
-vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Step into' })
-vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Step over' })
-vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Step out' })
-vim.keymap.set('n', '<F4>', dap.step_back, { desc = 'Start back' })
+vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Step into Dap(debugging)' })
+vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Step over Dap(debugging)' })
+vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Step out Dap(debugging)' })
+vim.keymap.set('n', '<F4>', dap.step_back, { desc = 'Start back Dap(debugging)' })
 vim.keymap.set('n', '<F9>', dapui.toggle, { desc = 'Toggle Dap(debugging) ui' })
 vim.keymap.set('n', '<F10>', dap.disconnect, { desc = 'Stop/Kill Dap(debugging)' })
 vim.keymap.set('n', '<F12>', dap.restart, { desc = 'Restart Dap(debugging)' })

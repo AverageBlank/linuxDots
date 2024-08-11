@@ -74,7 +74,8 @@ dap.configurations.python = {
 -- C/C++
 dap.adapters.lldb = {
   type = 'executable',
-  command = '/usr/bin/lldb-dap', -- Arch
+  -- command = '/usr/bin/lldb-dap', -- Arch
+  command = '/opt/homebrew/opt/llvm/bin/lldb-dap', -- Mac
   -- command = '/usr/bin/lldb-dap-18', -- Ubuntu
   name = 'lldb',
 }

@@ -63,9 +63,6 @@ alias v='nvim'
 #### Visual Studio Code ####
 alias c="code"
 
-### Clear Command ###
-alias clear='clear && colorscript random'
-
 #### Obvous Typos ####
 alias cd..='cd ..'
 alias pdw='pwd'
@@ -230,7 +227,10 @@ export LC_CTYPE="en_US.utf8"
 
 
 ########### On Terminal Startup ###########
-colorscript random
+case "$OSTYPE" in
+  linux*)
+    colorscript random
+esac
 
 
 ########### Plugins ###########

@@ -34,6 +34,7 @@ require('lazy').setup {
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
+    { 'nvim-pack/nvim-spectre' },
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
     { 'Djancyp/better-comments.nvim' },
     {
