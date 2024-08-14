@@ -23,6 +23,32 @@ sign('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStopped',
 
 -- Python
 dap.adapters.python = function(cb, config)
+  local debugPyPath = vim.fn.expand '~/.virtualenvs/debugpy'
+
+  local function path_exists(path)
+    return (vim.uv or vim.loop).fs_stat(path) ~= nil
+  end
+
+  if not path_exists(debugPyPath) then
+    print 'DebugPy not found, installing!'
+    local commands = {
+      'mkdir -p ~/.virtualenvs',
+      'python3 -m venv ~/.virtualenvs/debugpy',
+      '~/.virtualenvs/debugpy/bin/python -m pip install debugpy',
+    }
+
+    -- Run each command in sequence
+    for _, cmd in ipairs(commands) do
+      local out = vim.fn.system(cmd)
+      if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+          { 'Failed to execute command:\n', 'ErrorMsg' },
+          { out, 'WarningMsg' },
+        }, true, {})
+        vim.fn.getchar()
+      end
+    end
+  end
   if config.request == 'attach' then
     ---@diagnostic disable-next-line: undefined-field
     local port = (config.connect or config).port
