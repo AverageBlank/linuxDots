@@ -191,6 +191,7 @@ require('conform').setup {
     lua = { 'stylua' },
     python = { 'black' },
     javascript = { 'prettierd', 'prettier', stop_after_first = true },
+    json = { 'prettierd', 'prettier', stop_after_first = true },
     html = { 'prettierd', 'prettier', stop_after_first = true },
     c = { 'clang-format' },
     cpp = { 'clang-format' },
