@@ -1182,6 +1182,22 @@
               },
               {
                 "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
                   "key_code": "n",
                   "modifiers": {
                     "mandatory": ["fn"],
