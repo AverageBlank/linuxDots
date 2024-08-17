@@ -55,6 +55,10 @@ alias l='eza -la --icons --git'
 alias ll='eza -la --icons --git'
 alias tree='eza --tree --level=2 --long --icons --git'
 
+
+#### Aliases ####
+alias caly="cal -y"
+
 #### Setting Vim as NeoVim ####
 alias vvim='vi'
 alias vim='nvim'
@@ -279,3 +283,4 @@ bindkey -s '^L' "clear\n"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -s '^F' '~/.config/tmuxthing\n'
+bindkey -s '^U' '~/.config/vimthing\n'

@@ -1,1224 +1,1261 @@
 {
-    "profiles": [
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Rebind fn + F1-F12 to F1-F12",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "f1",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f1" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f2",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f2" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f3",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f3" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f4",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f4" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f5",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f5" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f6",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f6" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f7",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f7" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f8",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f8" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f9",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f9" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f10",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f10" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f11",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f11" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f12",
+                  "modifiers": { "mandatory": ["fn"] }
+                },
+                "to": [{ "key_code": "f12" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change option + l to command + l",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_option"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + caps lock and ctrl + caps lock to option + delete foward",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_forward",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_forward",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + delete and control + delete to option + delete",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "delete_or_backspace",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_or_backspace",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "delete_or_backspace",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_or_backspace",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + t and control + t to command + t",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + shift + h/j/k/l to option + shift + arrow keys",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": ["left_option", "left_shift"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "down_arrow",
+                    "modifiers": ["left_option", "left_shift"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "up_arrow",
+                    "modifiers": ["left_option", "left_shift"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_option", "left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change control + command + h/j/k/l and fn + command + h/j/k/l to option + arrow keys",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "down_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "up_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "down_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "up_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change command + h/j/k/l to arrow keys",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "key_code": "left_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "key_code": "down_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "key_code": "up_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "key_code": "right_arrow" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Turn Caps Lock into Delete Backward",
+            "manipulators": [
+              {
+                "from": { "key_code": "caps_lock" },
+                "to": [{ "key_code": "delete_forward" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + x and control + x to command + x",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "x",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "x",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "x",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "x",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Swap desktops with command + control/fn + ,(left) or .(right)",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "period",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "mandatory": ["left_command", "fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "period",
+                  "modifiers": {
+                    "mandatory": ["left_command", "fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + right_arrow and control + right_arrow to option + right_arrow",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "right_arrow",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "right_arrow",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + left_arrow and control + left_arrow to option + left_arrow",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "left_arrow",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "left_arrow",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": ["left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + shift + v and control + shift + v to command + v",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "v",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "v",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "v",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "v",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + shift + c and control + shift + c to command + c",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + z and control + z to command + z",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "z",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "z",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "z",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "z",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + a and control + a to command + a",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "a",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "a",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open Kitty when Command + Enter is pressed",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "mandatory": ["left_command"],
+                    "optional": []
+                  }
+                },
+                "to": [{ "shell_command": "open -a Kitty" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open Arc when Command + Control + B or Command + FN + B is pressed",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_control"],
+                    "optional": []
+                  }
+                },
+                "to": [{ "shell_command": "open -a Arc" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "mandatory": ["left_command", "fn"],
+                    "optional": []
+                  }
+                },
+                "to": [{ "shell_command": "open -a Arc" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open Discord when Command + Control + D or Command + FN + D is pressed",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_control"],
+                    "optional": []
+                  }
+                },
+                "to": [{ "shell_command": "open -a Arc" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": ["left_command", "fn"],
+                    "optional": []
+                  }
+                },
+                "to": [{ "shell_command": "open -a discord" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Run Command + Q when Command + Shift + C is pressed",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "For Arc Users!!",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "mandatory": ["fn", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": ["left_control", "left_shift"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "For Vim and tmux Users!!",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "r",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "d",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "u",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "b",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "w",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "w",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "h",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "s",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "a",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "z",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "z",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "n",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "y",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "y",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "g",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "g",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      },
+      "devices": [
         {
-            "complex_modifications": {
-                "rules": [
-                    {
-                        "description": "Rebind fn + F1-F12 to F1-F12",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f1",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f1" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f2",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f2" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f3",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f3" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f4",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f4" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f5",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f5" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f6",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f6" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f7",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f7" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f8",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f8" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f9",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f9" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f10",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f10" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f11",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f11" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f12",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "key_code": "f12" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change option + l to command + l",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "l",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + caps lock and ctrl + caps lock to option + delete foward",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + delete and control + delete to option + delete",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + t and control + t to command + t",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "t",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "t",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + shift + h/j/k/l to option + shift + arrow keys",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_option", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": ["left_option", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["left_option", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_option", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change control + command + h/j/k/l and fn + command + h/j/k/l to option + arrow keys",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["left_control", "left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["left_control", "left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["left_control", "left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["left_control", "left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change command + h/j/k/l to arrow keys",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "left_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "down_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "up_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "right_arrow" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Turn Caps Lock into Delete Backward",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "caps_lock" },
-                                "to": [{ "key_code": "delete_forward" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + x and control + x to command + x",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "x",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "x",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "x",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "x",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Swap desktops with command + control/fn + ,(left) or .(right)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + right_arrow and control + right_arrow to option + right_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_arrow",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_arrow",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + left_arrow and control + left_arrow to option + left_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_arrow",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "left_arrow",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + shift + v and control + shift + v to command + v",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "v",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "mandatory": ["left_control", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "v",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + shift + c and control + shift + c to command + c",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": ["fn", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "c",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": ["left_control", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "c",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + z and control + z to command + z",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change fn + a and control + a to command + a",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "a",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "a",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open Kitty when Command + Enter is pressed",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "return_or_enter",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [{ "shell_command": "open -a Kitty" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open Arc when Command + Control + B or Command + FN + B is pressed",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "left_control"],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [{ "shell_command": "open -a Arc" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "fn"],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [{ "shell_command": "open -a Arc" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open Discord when Command + Control + D or Command + FN + D is pressed",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "left_control"],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [{ "shell_command": "open -a Arc" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "fn"],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [{ "shell_command": "open -a discord" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Run Command + Q when Command + Shift + C is pressed",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "q",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "For Vim and tmux Users!!",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "c",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "r",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "d",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "u",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "b",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "w",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "h",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "j",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "k",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "l",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "s",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "a",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "n",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "p",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "p",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "y",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "y",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "g",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "g",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "devices": [
-                {
-                    "identifiers": { "is_keyboard": true },
-                    "manipulate_caps_lock_led": false
-                }
-            ],
-            "name": "Default profile",
-            "selected": true
+          "identifiers": { "is_keyboard": true },
+          "manipulate_caps_lock_led": false
         }
-    ]
+      ],
+      "name": "Default profile",
+      "selected": true
+    }
+  ]
 }

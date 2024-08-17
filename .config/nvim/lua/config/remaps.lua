@@ -8,8 +8,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next error m
 vim.keymap.set('n', '<leader>e', '<cmd>Trouble diagnostics toggle<CR>', { desc = 'Show all error messages' })
 
 -- Changes to file
-vim.keymap.set('n', '<C-s>', vim.cmd.w, { desc = 'Save file' })
-vim.keymap.set('i', '<C-s>', '<cmd>w<CR><C-c>', { desc = 'Save file' })
 vim.keymap.set('i', '<C-z>', '<Esc>ua', { desc = 'Undo Changes' })
 
 -- Exit vim
@@ -45,6 +43,7 @@ vim.keymap.set('i', '<C-C>', '<Esc>')
 
 -- Switching Projects
 vim.keymap.set('n', '<C-f>', '<cmd> silent !tmux neww ~/.config/tmuxthing<CR>')
+vim.keymap.set('n', '<C-u>', '<cmd> silent !tmux neww ~/.config/vimthing<CR>')
 
 -- Find and Replace
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Find and Replace' })

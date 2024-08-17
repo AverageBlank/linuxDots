@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(rg --files --hidden | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+nvim $selected
