@@ -23,7 +23,7 @@ NC='\033[0m'
 # Print the running message
 case $runwith in
     v)
-        echo -e "${YELLOW}[Running] npm run dev"
+        echo -e "${YELLOW}[Running] npm run dev${NC}"
         echo -e "${YELLOW}$(printf '%*s' 75 | tr ' ' -)${NC}"
         npm run dev
         ;;

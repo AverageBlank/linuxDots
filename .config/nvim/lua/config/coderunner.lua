@@ -42,6 +42,9 @@ local function get_command(filetype, quickRun)
       RUNWITH = vim.fn.input 'Vite(v)/Node(n): '
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
     end
+  -- Svelte
+  elseif filetype == 'svelte' then
+    return 'bash ~/.config/nvim/lua/config/coderunner/sveltesv.bash -d "$dir" -f "$fileName"'
   -- Python
   elseif filetype == 'python' then
     return 'bash ~/.config/nvim/lua/config/coderunner/pythonpy.bash -d "$dir" -f "$fileName"'
