@@ -32,12 +32,19 @@ local function get_command(filetype, quickRun)
       local args = '2 ' .. vim.fn.input 'If required, enter space separated arguemnts: '
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"' .. args
     end
+  -- JavaScript
+  elseif filetype == 'javascript' then
+    RUN = 'bash ~/.config/nvim/lua/config/coderunner/javascriptjs.bash -d "'
+    if quickRun then
+      RUNWITH = ' '
+      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
+    else
+      RUNWITH = vim.fn.input 'Vite(v)/Node(n): '
+      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
+    end
   -- Python
   elseif filetype == 'python' then
     return 'bash ~/.config/nvim/lua/config/coderunner/pythonpy.bash -d "$dir" -f "$fileName"'
-  -- JavaScript
-  elseif filetype == 'javascript' then
-    return 'bash ~/.config/nvim/lua/config/coderunner/javascriptjs.bash -d "$dir" -f "$fileName"'
   -- HTML
   elseif filetype == 'html' then
     return 'xdg-open "$file"' -- Running native Linux

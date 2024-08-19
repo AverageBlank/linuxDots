@@ -1,12 +1,11 @@
 #!/bin/bash
 
 # Parse the input arguments
-while getopts "d:f:" opt; do
+while getopts "d:f:r:" opt; do
     case "$opt" in
         d) dir=$OPTARG ;;
         f) fileName=$OPTARG ;;
-        *) echo "Usage: $0 -d <directory> -f <file name>"
-           exit 1 ;;
+        r) runwith=$OPTARG ;;
     esac
 done
 
@@ -22,8 +21,15 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 # Print the running message
-echo -e "${YELLOW}[Running] node \"$dir/$fileName\"${NC}"
-echo -e "${YELLOW}$(printf '%*s' 75 | tr ' ' -)${NC}"
-
-# Run the Javascript file
-node "$fileName"
+case $runwith in
+    v)
+        echo -e "${YELLOW}[Running] npm run dev"
+        echo -e "${YELLOW}$(printf '%*s' 75 | tr ' ' -)${NC}"
+        npm run dev
+        ;;
+    *)
+        echo -e "${YELLOW}[Running] node \"$dir/$fileName\"${NC}"
+        echo -e "${YELLOW}$(printf '%*s' 75 | tr ' ' -)${NC}"
+        node "$fileName"
+        ;;
+esac
