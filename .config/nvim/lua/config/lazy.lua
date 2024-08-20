@@ -38,6 +38,15 @@ require('lazy').setup {
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
     { 'Djancyp/better-comments.nvim' },
     {
+      'iamcco/markdown-preview.nvim',
+      cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+      build = 'cd app && yarn install',
+      init = function()
+        vim.g.mkdp_filetypes = { 'markdown' }
+      end,
+      ft = { 'markdown' },
+    },
+    {
       'stevearc/oil.nvim',
       opts = {},
       dependencies = { 'nvim-tree/nvim-web-devicons' },

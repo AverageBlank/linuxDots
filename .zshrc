@@ -58,6 +58,7 @@ alias tree='eza --tree --level=2 --long --icons --git'
 
 #### Aliases ####
 alias caly="cal -y"
+alias sp="source .venv/bin/activate"
 
 #### Setting Vim as NeoVim ####
 alias vvim='vi'
