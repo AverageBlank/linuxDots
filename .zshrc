@@ -58,7 +58,6 @@ alias tree='eza --tree --level=2 --long --icons --git'
 
 #### Aliases ####
 alias caly="cal -y"
-alias sp="source .venv/bin/activate"
 
 #### Setting Vim as NeoVim ####
 alias vvim='vi'
@@ -200,7 +199,8 @@ alias ops='optimus-manager --print-mode'
 alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 
-########### Extracting Files ###########
+########### Functions  ###########
+#### Extracting Files ####
 ex ()
 {
   if [ -f $1 ] ; then
@@ -225,6 +225,18 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+#### Python Virtual Environment ####
+function activate_python_venv() {
+    if [ -d ".venv" ]; then
+        # Activate the existing virtual environment
+        source .venv/bin/activate
+    else
+        # Create a new virtual environment and activate it
+        python3 -m venv .venv
+        source .venv/bin/activate
+    fi
+}
+alias pv="activate_python_venv"
 
 
 ########### Setting Locale ###########
