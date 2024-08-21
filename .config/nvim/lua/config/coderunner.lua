@@ -93,7 +93,6 @@ vim.keymap.set('n', '<leader><CR>', function()
                 [filetype] = command,
             },
         }
-        vim.cmd 'RunCode'
         if filetype == 'markdown' then
             vim.cmd 'MarkdownPreview'
         else
