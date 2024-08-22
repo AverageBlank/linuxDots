@@ -296,4 +296,3 @@ bindkey -s '^L' "clear\n"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -s '^F' '~/.config/tmuxthing\n'
-bindkey -s '^T' '~/.config/vimthing\n'

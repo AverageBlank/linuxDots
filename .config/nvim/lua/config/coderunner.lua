@@ -70,6 +70,7 @@ vim.keymap.set('n', '<leader>r', function()
                 [filetype] = command,
             },
         }
+        vim.cmd 'w'
         if filetype == 'markdown' then
             vim.cmd 'MarkdownPreview'
         else
@@ -93,6 +94,7 @@ vim.keymap.set('n', '<leader><CR>', function()
                 [filetype] = command,
             },
         }
+        vim.cmd 'w'
         if filetype == 'markdown' then
             vim.cmd 'MarkdownPreview'
         else
