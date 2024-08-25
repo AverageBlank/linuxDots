@@ -85,13 +85,13 @@ keys = [
     # ? ---- Layout Modifications ----
     ## Switching Between Open Applications ##
     # Switch Between Apps
-    Key([leader], "k", lazy.layout.up()),
+    Key([leader, alt], "k", lazy.layout.up()),
     # Switch Between Apps
-    Key([leader], "j", lazy.layout.down()),
+    Key([leader, alt], "j", lazy.layout.down()),
     # Switch Between Apps
-    Key([leader], "l", lazy.layout.right()),
+    Key([leader, alt], "l", lazy.layout.right()),
     # Switch Between Apps
-    Key([leader], "h", lazy.layout.left()),
+    Key([leader, alt], "h", lazy.layout.left()),
     # Switch Between Apps
     Key([alt], "Tab", lazy.layout.next()),
     ## Changing the Size of Open Applications ##
