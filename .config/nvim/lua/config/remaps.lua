@@ -45,18 +45,23 @@ vim.keymap.set('i', '<C-C>', '<Esc>')
 vim.keymap.set({ 'i', 'v', 'n' }, '<C-f>', '<cmd> silent !tmux neww ~/.config/tmuxthing<CR>')
 
 -- Find and Replace
-vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Find and Replace' })
 vim.keymap.set(
-    'n',
-    '<leader>S',
-    '<cmd>lua require("spectre").toggle(); vim.cmd("wincmd L")<CR>',
-    { desc = 'Find and Replace entire project' }
+  'n',
+  '<leader>s',
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = 'Find and Replace/Rename' }
 )
 vim.keymap.set(
-    'n',
-    '<leader>sf',
-    '<cmd>lua require("spectre").open_file_search(); vim.cmd("wincmd L")<CR>',
-    { desc = 'Find and Replace in file' }
+  'n',
+  '<leader>S',
+  '<cmd>lua require("spectre").toggle(); vim.cmd("wincmd L")<CR>',
+  { desc = 'Find and Replace entire project' }
+)
+vim.keymap.set(
+  'n',
+  '<leader>sf',
+  '<cmd>lua require("spectre").open_file_search(); vim.cmd("wincmd L")<CR>',
+  { desc = 'Find and Replace in file' }
 )
 
 -- Tabs
@@ -74,20 +79,20 @@ vim.keymap.set('n', '<leader>tC', vim.cmd.tabonly, { desc = 'Close everything bu
 vim.keymap.set('n', '<leader>tt', vim.cmd.tabnew, { desc = 'Open a new tab' })
 vim.keymap.set('n', '<leader>tT', '<cmd>-1tabnew<CR>', { desc = 'Open a new tab to the left' })
 vim.keymap.set('n', '<leader>to', function()
-    vim.cmd 'tabe'
-    require('telescope.builtin').find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
+  vim.cmd 'tabe'
+  require('telescope.builtin').find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
 end, { desc = 'Open a new tab along with telescope' })
 vim.keymap.set('n', '<leader>tO', function()
-    vim.cmd '-1tabnew'
-    require('telescope.builtin').find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
+  vim.cmd '-1tabnew'
+  require('telescope.builtin').find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
 end, { desc = 'Open a new tab along with telescope to the left' })
 vim.keymap.set('n', '<leader>t-', function()
-    vim.cmd 'tabe'
-    vim.cmd 'Oil'
+  vim.cmd 'tabe'
+  vim.cmd 'Oil'
 end, { desc = 'Open a new tab along with oil.nvim' })
 vim.keymap.set('n', '<leader>t_', function()
-    vim.cmd '-1tabnew'
-    vim.cmd 'Oil'
+  vim.cmd '-1tabnew'
+  vim.cmd 'Oil'
 end, { desc = 'Open a new tab along with oil.nvim to the left' })
 
 -- Oil.nvim
@@ -99,14 +104,14 @@ vim.keymap.set('t', '<C-o>', '<C-\\><C-n>', { desc = 'Exit insert mode inside te
 -- Telescope
 local builtin = require 'telescope.builtin'
 vim.keymap.set(
-    'n',
-    '<leader><space>',
-    "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>"
+  'n',
+  '<leader><space>',
+  "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>"
 )
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Show Help' })
 vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Search word between files' })
 vim.keymap.set('n', '<leader>sn', function()
-    builtin.find_files { cwd = vim.fn.stdpath 'config' }
+  builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[S]earch [N]eovim files' })
 vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Search Keymaps' })
 vim.keymap.set('n', '<leader>.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
@@ -120,31 +125,31 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git status' })
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
-    callback = function(event)
-        local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-        end
+  group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+  callback = function(event)
+    local map = function(keys, func, desc)
+      vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+    end
 
-        map('gd', require('telescope.builtin').lsp_definitions, 'Goto Definition')
-        map('gr', require('telescope.builtin').lsp_references, 'Goto References')
-        map('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
-        map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
-    end,
+    map('gd', require('telescope.builtin').lsp_definitions, 'Goto Definition')
+    map('gr', require('telescope.builtin').lsp_references, 'Goto References')
+    map('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
+    map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+  end,
 })
 
 -- Format File
 vim.keymap.set('n', '<leader>af', function()
-    require('conform').format { async = true, lsp_fallback = true }
+  require('conform').format { async = true, lsp_fallback = true }
 end, { desc = 'Format File' })
 
 -- Todo Comments
 vim.keymap.set('n', '<leader>t', '<cmd>TodoTelescope<CR>', { desc = 'Search for todo comments' })
 vim.keymap.set(
-    'n',
-    '<leader>et',
-    '<cmd>Trouble todo filter = {tag = {TODO,FIX,HACK,WARN,PERF,NOTE,TEST}}<CR>',
-    { desc = 'Show all todo comments using trouble' }
+  'n',
+  '<leader>et',
+  '<cmd>Trouble todo filter = {tag = {TODO,FIX,HACK,WARN,PERF,NOTE,TEST}}<CR>',
+  { desc = 'Show all todo comments using trouble' }
 )
 
 -- Debugger
@@ -160,5 +165,5 @@ vim.keymap.set('n', '<F9>', dapui.toggle, { desc = 'Toggle Dap(debugging) ui' })
 vim.keymap.set('n', '<F10>', dap.disconnect, { desc = 'Stop/Kill Dap(debugging)' })
 vim.keymap.set('n', '<F12>', dap.restart, { desc = 'Restart Dap(debugging)' })
 vim.keymap.set('n', '<leader>?', function()
-    require('dapui').eval(nil, { enter = true })
+  require('dapui').eval(nil, { enter = true })
 end, { desc = 'Show variable info' })
