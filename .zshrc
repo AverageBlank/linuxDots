@@ -241,6 +241,8 @@ alias pv="activate_python_venv"
 
 ########### Setting Locale ###########
 export LC_CTYPE="en_US.utf8"
+export LC_ALL="en_US.UTF-8"
+
 
 
 ########### On Terminal Startup ###########
