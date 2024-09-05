@@ -717,7 +717,7 @@
             ]
           },
           {
-            "description": "Swap desktops with command + control/fn + ,(left) or .(right)",
+            "description": "Swap desktops with command/control + control/fn + ,(left) or .(right)",
             "manipulators": [
               {
                 "from": {
@@ -755,7 +755,7 @@
                 "from": {
                   "key_code": "comma",
                   "modifiers": {
-                    "mandatory": ["left_command", "fn"],
+                    "mandatory": ["fn", "left_control"],
                     "optional": ["any"]
                   }
                 },
@@ -771,7 +771,7 @@
                 "from": {
                   "key_code": "period",
                   "modifiers": {
-                    "mandatory": ["left_command", "fn"],
+                    "mandatory": ["fn", "left_control"],
                     "optional": ["any"]
                   }
                 },
