@@ -239,17 +239,23 @@ function pv() {
 }
 
 #### Toggle Disable Sleep on MacOS ####
-function slt() {
+# `sltr` for "Sleep Toggle Raycast"
+# To run, `sltr {user password}`
+function sltr() {
     current_status=$(pmset -g | grep SleepDisabled | awk '{print $2}')
+    stty -echo
     
     if [ "$current_status" -eq 1 ]; then
-        sudo pmset -a disablesleep 0
+        echo -e "$1" | sudo -S pmset -a disablesleep 0 > /dev/null 2>&1
+        stty echo
         echo "Sleep Enabled."
     else
-        sudo pmset -a disablesleep 1
+        echo -e "$1" | sudo -S pmset -a disablesleep 1 > /dev/null 2>&1
+        stty echo
         echo "Sleep Disabled."
     fi
 }
+
 
 
 ########### Setting Locale ###########
