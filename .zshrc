@@ -241,7 +241,7 @@ function pv() {
 #### Toggle Disable Sleep on MacOS ####
 # `slt` for "Sleep Toggle"
 # To run, `slt {user password}`
-function slt() {
+function st() {
     current_status=$(pmset -g | grep SleepDisabled | awk '{print $2}')
     stty -echo
     
