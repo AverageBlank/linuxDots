@@ -225,8 +225,9 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
 #### Python Virtual Environment ####
-function activate_python_venv() {
+function pv() {
     if [ -d ".venv" ]; then
         # Activate the existing virtual environment
         source .venv/bin/activate
@@ -236,7 +237,19 @@ function activate_python_venv() {
         source .venv/bin/activate
     fi
 }
-alias pv="activate_python_venv"
+
+#### Toggle Disable Sleep on MacOS ####
+function slt() {
+    current_status=$(pmset -g | grep SleepDisabled | awk '{print $2}')
+    
+    if [ "$current_status" -eq 1 ]; then
+        sudo pmset -a disablesleep 0
+        echo "Sleep Enabled."
+    else
+        sudo pmset -a disablesleep 1
+        echo "Sleep Disabled."
+    fi
+}
 
 
 ########### Setting Locale ###########
