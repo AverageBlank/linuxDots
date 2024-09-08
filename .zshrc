@@ -239,9 +239,9 @@ function pv() {
 }
 
 #### Toggle Disable Sleep on MacOS ####
-# `sltr` for "Sleep Toggle Raycast"
-# To run, `sltr {user password}`
-function sltr() {
+# `slt` for "Sleep Toggle"
+# To run, `slt {user password}`
+function slt() {
     current_status=$(pmset -g | grep SleepDisabled | awk '{print $2}')
     stty -echo
     
