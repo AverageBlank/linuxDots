@@ -126,6 +126,27 @@
             ]
           },
           {
+            "description": "Change Command + Space to Control + Shift + Enter",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Change option + k to command + k",
             "manipulators": [
               {
@@ -774,22 +795,6 @@
                   }
                 ],
                 "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "c",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_shift"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "c",
-                    "modifiers": ["left_command"]
-                  }
-                ],
-                "type": "basic"
               }
             ]
           },
@@ -884,7 +889,23 @@
             ]
           },
           {
-            "description": "Open Arc when Command + Control + B or Command + FN + B is pressed",
+            "description": "Open Kitty when Control + Enter is pressed",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": []
+                  }
+                },
+                "to": [{ "shell_command": "open -a Kitty" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open Arc when Command + Control + B or Command/Control + FN + B is pressed",
             "manipulators": [
               {
                 "from": {
@@ -902,6 +923,17 @@
                   "key_code": "b",
                   "modifiers": {
                     "mandatory": ["left_command", "fn"],
+                    "optional": []
+                  }
+                },
+                "to": [{ "shell_command": "open -a Arc" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "mandatory": ["left_control", "fn"],
                     "optional": []
                   }
                 },
@@ -945,6 +977,48 @@
                   "key_code": "c",
                   "modifiers": {
                     "mandatory": ["left_command", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Run Command + Q when Command + Shift + C is pressed",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Run Command + Q when Control + Shift + C is pressed",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"],
                     "optional": ["any"]
                   }
                 },

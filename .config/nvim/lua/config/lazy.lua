@@ -38,6 +38,11 @@ require('lazy').setup {
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
     { 'Djancyp/better-comments.nvim' },
     {
+      'MeanderingProgrammer/render-markdown.nvim',
+      opts = {},
+      dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    },
+    {
       'iamcco/markdown-preview.nvim',
       cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
       build = 'cd app && npm install',
