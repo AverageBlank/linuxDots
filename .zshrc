@@ -37,6 +37,11 @@ fi
 eval "$(starship init zsh)"
 
 
+########### Zoxide ###########
+#### Using zoxide as a better cd ####
+eval "$(zoxide init zsh)"
+
+
 ########### History ###########
 mkdir -p ~/.zsh-cache
 export HISTFILE=~/.zsh-cache/zshhist
@@ -49,17 +54,14 @@ setopt HIST_SAVE_NO_DUPS
 
 
 ########### Aliases ###########
-#### Ls Commands Better ####
+#### Terminal Utilities ####
 alias ls='eza'
 alias l='eza -la --icons --git'
 alias ll='eza -la --icons --git'
+alias y='yazi'
+alias cd='z'
 alias tree='eza --tree --level=2 --long --icons --git'
 
-#### Zoxide ####
-alias z='zoxide'
-
-#### Terminal File Manager ####
-alias y='yazi'
 
 #### calendar ####
 alias caly="cal -y"
