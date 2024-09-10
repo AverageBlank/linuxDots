@@ -55,6 +55,9 @@ alias l='eza -la --icons --git'
 alias ll='eza -la --icons --git'
 alias tree='eza --tree --level=2 --long --icons --git'
 
+#### Zoxide ####
+alias z='zoxide'
+
 #### Terminal File Manager ####
 alias y='yazi'
 
