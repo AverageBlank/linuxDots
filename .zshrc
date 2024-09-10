@@ -55,8 +55,10 @@ alias l='eza -la --icons --git'
 alias ll='eza -la --icons --git'
 alias tree='eza --tree --level=2 --long --icons --git'
 
+#### Terminal File Manager ####
+alias y='yazi'
 
-#### Aliases ####
+#### calendar ####
 alias caly="cal -y"
 
 #### Setting Vim as NeoVim ####
