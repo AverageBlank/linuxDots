@@ -25,6 +25,8 @@ require('lazy').setup {
     { 'brenoprata10/nvim-highlight-colors' },
     { 'CRAG666/code_runner.nvim' },
     { 'tpope/vim-fugitive' },
+    { 'nvim-lua/plenary.nvim' },
+    { 'ThePrimeagen/harpoon' },
     { 'stevearc/conform.nvim' },
     { 'windwp/nvim-ts-autotag' },
     { 'williamboman/mason.nvim' },
