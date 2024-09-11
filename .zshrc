@@ -65,13 +65,13 @@ if command -v eza &> /dev/null; then
     alias l='eza -la --icons --git'
     alias ll='eza -la --icons --git'
     alias tree='eza --tree --level=2 --long --icons --git'
-    # Long Listing with Numeric Permissions
+    # Long Listing with Octal Permissions
     alias lln="ll --octal-permissions"
 else
     alias ls='ls --color=auto'
     alias l='ls'
     alias ll='ls -la'
-    # Long Listing with Numeric Permissions
+    # Long Listing with Octal Permissions
     alias lln="ll | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
 fi
 
@@ -282,7 +282,6 @@ function st() {
 ########### Setting Locale ###########
 export LC_CTYPE="en_US.utf8"
 export LC_ALL="en_US.UTF-8"
-
 
 
 ########### On Terminal Startup ###########
