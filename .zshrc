@@ -34,12 +34,17 @@ fi
 
 ########### Prompt ###########
 #### Using Starship for Prompt, Check Readme on How to Install ####
-eval "$(starship init zsh)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init zsh)"
+    alias cd='z'
+fi
 
 
 ########### Zoxide ###########
 #### Using zoxide as a better cd ####
-eval "$(zoxide init zsh)"
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
 
 
 ########### History ###########
@@ -55,21 +60,22 @@ setopt HIST_SAVE_NO_DUPS
 
 ########### Aliases ###########
 #### Terminal Utilities ####
-alias ls='eza'
-alias l='eza -la --icons --git'
-alias ll='eza -la --icons --git'
-alias y='yazi'
-alias cd='z'
-alias tree='eza --tree --level=2 --long --icons --git'
-
+if command -v eza &> /dev/null; then
+    alias ls='eza'
+    alias l='eza -la --icons --git'
+    alias ll='eza -la --icons --git'
+    alias tree='eza --tree --level=2 --long --icons --git'
+fi
 
 #### calendar ####
 alias caly="cal -y"
 
 #### Setting Vim as NeoVim ####
-alias vvim='vi'
-alias vim='nvim'
-alias v='nvim'
+if command -v nvim &> /dev/null; then
+    alias vvim='vi'
+    alias vim='nvim'
+    alias v='nvim'
+fi
 
 #### Visual Studio Code ####
 alias c="code"

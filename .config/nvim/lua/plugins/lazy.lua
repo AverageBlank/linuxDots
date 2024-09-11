@@ -98,6 +98,6 @@ require('lazy').setup {
       opts = {}, -- for default options, refer to the configuration section for custom setup.
     },
   },
-  install = { colorscheme = { 'rose-pine' } },
+  install = { colorscheme = { 'catppuccin-mocha' } },
   checker = { enabled = true, notify = false },
 }
