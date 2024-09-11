@@ -66,6 +66,8 @@ if command -v eza &> /dev/null; then
     alias ll='eza -la --icons --git'
     alias tree='eza --tree --level=2 --long --icons --git'
 fi
+# Long Listing with Numeric Permissions
+alias lln="ls -l | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
 
 #### calendar ####
 alias caly="cal -y"
@@ -252,8 +254,8 @@ function pv() {
 }
 
 #### Toggle Disable Sleep on MacOS ####
-# `slt` for "Sleep Toggle"
-# To run, `slt {user password}`
+# `st` for "Sleep Toggle"
+# To run, `st {user password}`
 function st() {
     current_status=$(pmset -g | grep SleepDisabled | awk '{print $2}')
     stty -echo
