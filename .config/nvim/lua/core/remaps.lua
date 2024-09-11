@@ -100,6 +100,7 @@ vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open Parent Directory using o
 
 -- Exit terminal
 vim.keymap.set('t', '<C-o>', '<C-\\><C-n>', { desc = 'Exit insert mode inside terminal' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit insert mode inside terminal' })
 
 -- Telescope
 local builtin = require 'telescope.builtin'
