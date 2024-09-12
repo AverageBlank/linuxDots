@@ -67,13 +67,13 @@ if command -v eza &> /dev/null; then
     alias ll='eza -la --icons --git'
     alias tree='eza --tree --level=2 --long --icons --git'
     # Long Listing with Octal Permissions
-    alias lln="ll --octal-permissions"
+    alias lln="ls -la --octal-permissions"
 else
     alias ls='ls --color=auto'
     alias l='ls'
     alias ll='ls -la'
     # Long Listing with Octal Permissions
-    alias lln="ll | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
+    alias lln="ls -la | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
 fi
 # If Yazi Exists
 if command -v yazi &> /dev/null; then
