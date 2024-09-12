@@ -36,7 +36,6 @@ fi
 #### Using Starship for Prompt, Check Readme on How to Install ####
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
-    alias cd='z'
 fi
 
 
@@ -44,6 +43,7 @@ fi
 #### Using zoxide as a better cd ####
 if command -v zoxide &> /dev/null; then
     eval "$(zoxide init zsh)"
+    alias cd='z'
 fi
 
 
@@ -60,6 +60,7 @@ setopt HIST_SAVE_NO_DUPS
 
 ########### Aliases ###########
 #### Terminal Utilities ####
+# If eza exists
 if command -v eza &> /dev/null; then
     alias ls='eza'
     alias l='eza -la --icons --git'
@@ -73,6 +74,10 @@ else
     alias ll='ls -la'
     # Long Listing with Octal Permissions
     alias lln="ll | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
+fi
+# If Yazi Exists
+if command -v yazi &> /dev/null; then
+    alias y='yazi'
 fi
 
 #### calendar ####
