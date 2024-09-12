@@ -147,48 +147,6 @@
             ]
           },
           {
-            "description": "Change option + k to command + k",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "mandatory": ["left_option"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "k",
-                    "modifiers": ["left_command"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Change option + l to command + l",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "mandatory": ["left_option"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "l",
-                    "modifiers": ["left_command"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "Change fn + caps lock and ctrl + caps lock to option + delete foward",
             "manipulators": [
               {
@@ -535,6 +493,12 @@
                   }
                 },
                 "to": [{ "key_code": "up_arrow" }],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": ["^com\\.spotify\\.client$"]
+                  }
+                ],
                 "type": "basic"
               },
               {
@@ -546,6 +510,12 @@
                   }
                 },
                 "to": [{ "key_code": "right_arrow" }],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": ["^com\\.spotify\\.client$"]
+                  }
+                ],
                 "type": "basic"
               }
             ]
