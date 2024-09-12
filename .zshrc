@@ -341,4 +341,7 @@ bindkey "^[[1;5D" backward-word
 bindkey -s '^L' "clear\n"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey -s '^F' '~/.config/tmuxthing\n'
+bindkey -s '^F' '~/.config/zshScripts/tmuxthing\n'
+bindkey -s '^T' '~/.config/zshScripts/vimthing\n'
+bindkey -s '^Y' '~/.config/zshScripts/yazithing\n'
+bindkey -s '^E' 'source ~/.config/zshScripts/cdthing\n'

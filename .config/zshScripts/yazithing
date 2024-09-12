@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(find . -type d \( ! -path '*/.*' -o -path './.*' \) | fzf)
+fi
+
+if [[ $selected ]]; then
+    yazi $selected
+fi
+

@@ -237,6 +237,12 @@
                     "modifiers": ["left_command"]
                   }
                 ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"]
+                  }
+                ],
                 "type": "basic"
               },
               {
@@ -251,6 +257,39 @@
                   {
                     "key_code": "t",
                     "modifiers": ["left_command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change fn + t to control + t only in kitty",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"]
                   }
                 ],
                 "type": "basic"
@@ -493,12 +532,6 @@
                   }
                 },
                 "to": [{ "key_code": "up_arrow" }],
-                "conditions": [
-                  {
-                    "type": "frontmost_application_unless",
-                    "bundle_identifiers": ["^com\\.spotify\\.client$"]
-                  }
-                ],
                 "type": "basic"
               },
               {
@@ -510,10 +543,25 @@
                   }
                 },
                 "to": [{ "key_code": "right_arrow" }],
-                "conditions": [
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Change option + k to command + k",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_option"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
                   {
-                    "type": "frontmost_application_unless",
-                    "bundle_identifiers": ["^com\\.spotify\\.client$"]
+                    "key_code": "k",
+                    "modifiers": ["left_command"]
                   }
                 ],
                 "type": "basic"
@@ -521,7 +569,28 @@
             ]
           },
           {
-            "description": "Turn Caps Lock into Delete Backward",
+            "description": "Change option + l to command + l",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_option"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Turn Caps Lock into Delete Forward",
             "manipulators": [
               {
                 "from": { "key_code": "caps_lock" },
@@ -1065,6 +1134,22 @@
                 "to": [
                   {
                     "key_code": "c",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "e",
                     "modifiers": ["left_control"]
                   }
                 ],
