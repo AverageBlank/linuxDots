@@ -6,6 +6,6 @@ else
 fi
 
 if [[ $selected ]]; then
-    cd $selected
+    cd "$selected"
 fi
 

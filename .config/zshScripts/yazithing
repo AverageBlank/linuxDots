@@ -6,6 +6,6 @@ else
 fi
 
 if [[ $selected ]]; then
-    yazi $selected
+    yazi "$selected"
 fi
 
