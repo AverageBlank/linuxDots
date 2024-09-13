@@ -147,6 +147,7 @@ alias gss="git status"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git push -u origin"
+alias gpl="git pull"
 
 ####  Nvidia ####
 ## Optimus Manager ##
