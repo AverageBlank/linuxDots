@@ -42,7 +42,7 @@ vim.keymap.set('n', '<CR>', 'o<Esc>', { desc = 'Create new line without exiting 
 vim.keymap.set('i', '<C-C>', '<Esc>')
 
 -- Switching Projects
-vim.keymap.set({ 'i', 'v', 'n' }, '<C-f>', '<cmd> silent !tmux neww ~/.config/tmuxthing<CR>')
+vim.keymap.set({ 'i', 'v', 'n' }, '<C-f>', '<cmd> silent !tmux neww ~/.config/zshScripts/tmuxthing<CR>')
 
 -- Find and Replace
 vim.keymap.set(
