@@ -1,1 +1,6 @@
 .config/nvim/lazy-lock.json
+.local/share
+.local/state
+.config/byobu
+.config/google-chrome
+.config/htop
