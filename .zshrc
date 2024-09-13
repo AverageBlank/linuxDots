@@ -19,9 +19,8 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 # fnm
-FNM_PATH="/home/hussain/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/hussain/.local/share/fnm:$PATH"
+if [ -d "$HOME/.local/share/fnm" ]; then
+  export PATH="$HOME/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
 
@@ -33,7 +32,7 @@ fi
 
 
 ########### Prompt ###########
-#### Using Starship for Prompt, Check Readme on How to Install ####
+#### Using Starship for Prompt####
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
@@ -80,7 +79,7 @@ if command -v yazi &> /dev/null; then
     alias y='yazi'
 fi
 
-#### calendar ####
+#### Calendar ####
 alias caly="cal -y"
 
 #### Setting Vim as NeoVim ####
@@ -89,16 +88,6 @@ if command -v nvim &> /dev/null; then
     alias vim='nvim'
     alias v='nvim'
 fi
-
-#### Visual Studio Code ####
-alias c="code"
-
-#### Obvous Typos ####
-alias cd..='cd ..'
-alias pdw='pwd'
-
-#### Coding ####
-alias cdc="cd ~/Coding"
 
 #### Grep With Better Colors ####
 alias grep='grep --color=auto'
@@ -114,7 +103,9 @@ alias spq='sudo pacman -Q'
 ## Unlocking Pacman ##
 alias punlock='sudo rm /var/lib/pacman/db.lck'
 ## Using Yay as Paru ##
-alias yay='paru'
+if command -v paru &> /dev/null; then
+    alias yay='paru'
+fi
 ## Aliasing Yay ##
 alias yys='yay -S $1 --noconfirm'
 alias yyss='yay -Ss'
@@ -126,9 +117,7 @@ alias upall='yay -Syu --noconfirm'
 
 #### Fastest Mirrors ####
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
 alias mirrorlist="sudo reflector --age 6 --latest 21 --fastest 21 --threads 21 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 
 #### Miscellaneous ####
@@ -146,73 +135,18 @@ alias emacs="emacsclient -c -a 'emacs'"
 alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 ## Shutdown/Reboot ##
 alias ssn="sudo shutdown now"
-alias sr="reboot"
+alias sr="sudo reboot"
 alias sfr="sudo systemctl reboot --firmware-setup"
-## Systemctl ##
-alias sce="sudo systemctl enable"
-alias scs="sudo systemctl start"
-alias scd="sudo systemctl disable"
 ## Superuser Do ##
 alias fucking="sudo"
-
-####  Configurations ####
-## Copying Configs ##
-# Plasma
-alias cpplasma="cp -rf ~/.config/kwinrc ~/.config/khotkeysrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmarc ~/.config/kglobalshortcutsrc ~/.config/kdeglobals ~/.config/systemsettingsrc ~/Coding/Dotfiles/Linux/.config && cp -rf ~/.local/share/plasma/ ~/.local/share/color-schemes/ ~/Github\ Projects/Dotfiles/Linux/.local"
-# Alacritty
-alias cpalacritty="cp -rf ~/.config/alacritty/alacritty.toml ~/Coding/Dotfiles/Linux/.config/alacritty"
-# Zshrc
-alias cpzshrc="cp -rf ~/.zshrc ~/Coding/Dotfiles/Linux/"
-# Nvimrc
-alias cpnvimrc="cp -rf ~/.config/nvim/init.vim ~/Coding/Dotfiles/Linux/.config/nvim/"
-# Qtile
-alias cpqtile="cp -rf ~/.config/qtile/config.py ~/.config/qtile/cbatticon ~/.config/qtile/rofi ~/.config/qtile/icons ~/.config/qtile/scripts ~/Coding/Dotfiles/Linux/.config/qtile"
-## Opening Configs ##
-# .config Alacritty
-alias valacritty="vim ~/.config/alacritty/alacritty.toml"
-alias ealacritty="emacs ~/.config/alacritty/alacritty.toml"
-alias calacritty="code ~/.config/alacritty/alacritty.toml"
-# github Alacritty
-alias vgalacritty="vim ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.toml"
-alias egalacritty="emacs ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.toml"
-alias cgalacritty="code ~/Coding/Dotfiles/Linux/.config/alacritty/alacritty.toml"
-# .zshrc
-alias vzshrc="vim ~/.zshrc"
-alias ezshrc="emacs ~/.zshrc"
-alias czshrc="code ~/.zshrc"
-# github zshrc
-alias vgzshrc="vim ~/Coding/Dotfiles/Linux/.zshrc"
-alias egzshrc="emacs ~/Coding/Dotfiles/Linux/.zshrc"
-alias cgzshrc="code ~/Coding/Dotfiles/Linux/.zshrc"
-# .config qtile
-alias vqtile="vim ~/.config/qtile/config.py"
-alias eqtile="emacs ~/.config/qtile/config.py"
-alias cqtile="code ~/.config/qtile/config.py"
-# github qtile
-alias vgqtile="vim ~/Coding/Dotfiles/Linux/.config/qtile/config.py"
-alias egqtile="emacs ~/Coding/Dotfiles/Linux/.config/qtile/config.py"
-alias cgqtile="code ~/Coding/Dotfiles/Linux/.config/qtile/config.py"
-# .config nvim
-alias vnvimrc="vim ~/.config/nvim/init.vim"
-alias envimrc="emacs ~/.config/nvim/init.vim"
-alias cnvimrc="code ~/.config/nvim/init.vim"
-# github nvim
-alias vgnvimrc="vim ~/Coding/Dotfiles/Linux/.config/nvim/init.vim"
-alias egnvimrc="emacs ~/Coding/Dotfiles/Linux/.config/nvim/init.vim"
-alias cgnvimrc="code ~/Coding/Dotfiles/Linux/.config/nvim/init.vim"
-
+## Exit Terminal ##
+alias kys="echo 'Fakyu, I also have feelings. ☹️'; sleep 1; exit"
 
 ####  Git ####
 alias gss="git status"
 alias ga="git add ."
-alias gr="git remove"
 alias gc="git commit -m"
 alias gp="git push -u origin"
-
-
-#### CD ####
-alias cdcd="cd ~/Coding/Dotfiles"
-
 
 ####  Nvidia ####
 ## Optimus Manager ##
@@ -227,7 +161,7 @@ alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 ########### Functions  ###########
 #### Extracting Files ####
-ex ()
+function ex ()
 {
   if [ -f $1 ] ; then
     case $1 in
@@ -283,17 +217,15 @@ function st() {
 }
 
 
-
 ########### Setting Locale ###########
 export LC_CTYPE="en_US.utf8"
 export LC_ALL="en_US.UTF-8"
 
 
 ########### On Terminal Startup ###########
-case "$OSTYPE" in
-  linux*)
+if command -v colorscript &> /dev/null; then
     colorscript random
-esac
+fi
 
 
 ########### Plugins ###########
@@ -324,7 +256,7 @@ if [ ! -d "$HOME/.zsh-plugins/zsh-history-substring-search" ]; then
   git clone https://github.com/zsh-users/zsh-history-substring-search
 fi
 
-#### Autosuggestions press ->(right arrow) to activate ####
+#### Autosuggestions press -> (right arrow) to activate ####
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #### Syntax Highlighting ####
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -338,10 +270,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 ########### Key Bindings ###########
 bindkey '^[[1;5C' forward-word
 bindkey "^[[1;5D" backward-word
-bindkey -s '^L' "clear\n"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey -s '^L' "clear\n"
 bindkey -s '^F' '~/.config/zshScripts/tmuxthing\n'
 bindkey -s '^T' '~/.config/zshScripts/vimthing\n'
 bindkey -s '^Y' '~/.config/zshScripts/yazithing\n'
 bindkey -s '^E' 'source ~/.config/zshScripts/cdthing\n'
+

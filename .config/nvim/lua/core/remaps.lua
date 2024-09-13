@@ -7,9 +7,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous err
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next error message' })
 vim.keymap.set('n', '<leader>e', '<cmd>Trouble diagnostics toggle<CR>', { desc = 'Show all error messages' })
 
--- Changes to file
-vim.keymap.set('i', '<C-z>', '<Esc>ua', { desc = 'Undo Changes' })
-
 -- Exit vim
 vim.keymap.set('n', '<leader>w', '<cmd>wqa<CR>', { desc = 'Save and quit' })
 vim.keymap.set('n', '<leader>q', '<cmd>qa!<CR>', { desc = 'Quit without saving' })
@@ -39,7 +36,7 @@ vim.keymap.set('i', '<C-a>', '<Esc>pa', { desc = 'Paste in insert mode' })
 vim.keymap.set('n', '<CR>', 'o<Esc>', { desc = 'Create new line without exiting normal mode' })
 
 -- For Visual Block mode...
-vim.keymap.set('i', '<C-C>', '<Esc>')
+vim.keymap.set('i', '<C-C>', '<Esc>', { desc = 'Just exit any current mode.' })
 
 -- Switching Projects
 vim.keymap.set({ 'i', 'v', 'n' }, '<C-f>', '<cmd> silent !tmux neww ~/.config/zshScripts/tmuxthing<CR>')
@@ -49,19 +46,19 @@ vim.keymap.set(
   'n',
   '<leader>s',
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = 'Find and Replace/Rename' }
+  { desc = 'Find and Replace/Rename using vim method' }
 )
 vim.keymap.set(
   'n',
   '<leader>S',
   '<cmd>lua require("spectre").toggle(); vim.cmd("wincmd L")<CR>',
-  { desc = 'Find and Replace entire project' }
+  { desc = 'Find and Replace entire project using nvim spectre' }
 )
 vim.keymap.set(
   'n',
   '<leader>sf',
   '<cmd>lua require("spectre").open_file_search(); vim.cmd("wincmd L")<CR>',
-  { desc = 'Find and Replace in file' }
+  { desc = 'Find and Replace in file using nvim spectre' }
 )
 
 -- Tabs
@@ -107,22 +104,23 @@ local builtin = require 'telescope.builtin'
 vim.keymap.set(
   'n',
   '<leader><space>',
-  "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>"
+  "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+  { desc = 'Open telescope' }
 )
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Show Help' })
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]how [H]elp' })
 vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Search word between files' })
 vim.keymap.set('n', '<leader>sn', function()
   builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[S]earch [N]eovim files' })
-vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Search Keymaps' })
-vim.keymap.set('n', '<leader>.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Search between existing buffers' })
+vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]how [K]eymaps' })
+vim.keymap.set('n', '<leader>.', builtin.oldfiles, { desc = 'Show Recent Files ("." for repeat)' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Show between existing buffers' })
 
 -- Undo Tree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Show undo tree' })
 
 -- Vim Fugitive
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git status' })
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -145,7 +143,7 @@ vim.keymap.set('n', '<leader>af', function()
 end, { desc = 'Format File' })
 
 -- Todo Comments
-vim.keymap.set('n', '<leader>t', '<cmd>TodoTelescope<CR>', { desc = 'Search for todo comments' })
+vim.keymap.set('n', '<leader>t', '<cmd>TodoTelescope<CR>', { desc = 'Show all todo comments' })
 vim.keymap.set(
   'n',
   '<leader>et',
@@ -170,18 +168,93 @@ vim.keymap.set('n', '<leader>?', function()
 end, { desc = 'Show variable info' })
 
 -- Harpoon
-vim.keymap.set('n', '<leader>ha', "<cmd>lua require('harpoon.mark').add_file()<CR>", {})
-vim.keymap.set('n', '<leader>hs', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", {})
-vim.keymap.set('n', '<M-1>', "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", {})
-vim.keymap.set('n', '<M-2>', "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", {})
-vim.keymap.set('n', '<M-3>', "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", {})
-vim.keymap.set('n', '<M-4>', "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", {})
-vim.keymap.set('n', '<M-5>', "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", {})
-vim.keymap.set('n', '<M-6>', "<cmd>lua require('harpoon.ui').nav_file(6)<CR>", {})
-vim.keymap.set('n', '<M-7>', "<cmd>lua require('harpoon.ui').nav_file(7)<CR>", {})
-vim.keymap.set('n', '<M-8>', "<cmd>lua require('harpoon.ui').nav_file(8)<CR>", {})
-vim.keymap.set('n', '<M-9>', "<cmd>lua require('harpoon.ui').nav_file(9)<CR>", {})
-vim.keymap.set('n', '<M-q>', "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", {})
-vim.keymap.set('n', '<M-w>', "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>", {})
-vim.keymap.set('n', '<M-e>', "<cmd>lua require('harpoon.term').gotoTerminal(3)<CR>", {})
-vim.keymap.set('n', '<M-r>', "<cmd>lua require('harpoon.term').gotoTerminal(4)<CR>", {})
+vim.keymap.set(
+  'n',
+  '<leader>ha',
+  "<cmd>lua require('harpoon.mark').add_file()<CR>",
+  { desc = 'Add File using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<leader>hs',
+  "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+  { desc = 'Show Harpoon Files' }
+)
+vim.keymap.set(
+  'n',
+  '<M-1>',
+  "<cmd>lua require('harpoon.ui').nav_file(1)<CR>",
+  { desc = 'Navigate to File 1 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-2>',
+  "<cmd>lua require('harpoon.ui').nav_file(2)<CR>",
+  { desc = 'Navigate to File 2 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-3>',
+  "<cmd>lua require('harpoon.ui').nav_file(3)<CR>",
+  { desc = 'Navigate to File 3 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-4>',
+  "<cmd>lua require('harpoon.ui').nav_file(4)<CR>",
+  { desc = 'Navigate to File 4 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-5>',
+  "<cmd>lua require('harpoon.ui').nav_file(5)<CR>",
+  { desc = 'Navigate to File 5 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-6>',
+  "<cmd>lua require('harpoon.ui').nav_file(6)<CR>",
+  { desc = 'Navigate to File 6 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-7>',
+  "<cmd>lua require('harpoon.ui').nav_file(7)<CR>",
+  { desc = 'Navigate to File 7 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-8>',
+  "<cmd>lua require('harpoon.ui').nav_file(8)<CR>",
+  { desc = 'Navigate to File 8 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-9>',
+  "<cmd>lua require('harpoon.ui').nav_file(9)<CR>",
+  { desc = 'Navigate to File 9 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-q>',
+  "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>",
+  { desc = 'Navigate to Terminal 1 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-w>',
+  "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>",
+  { desc = 'Navigate to Terminal 2 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-e>',
+  "<cmd>lua require('harpoon.term').gotoTerminal(3)<CR>",
+  { desc = 'Navigate to Terminal 4 using Harpoon' }
+)
+vim.keymap.set(
+  'n',
+  '<M-r>',
+  "<cmd>lua require('harpoon.term').gotoTerminal(4)<CR>",
+  { desc = 'Navigate to Terminal 4 using Harpoon' }
+)
