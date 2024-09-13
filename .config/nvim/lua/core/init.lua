@@ -1,6 +1,6 @@
 require 'plugins.lazy'
 require 'plugins.plugins'
-require 'core.remaps'
+require 'core.keymaps'
 require 'core.settings'
 require 'codeExec.debugger'
 require 'codeExec.coderunner'

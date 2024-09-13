@@ -114,6 +114,12 @@ alias yyq='yay -Q'
 ## Updating the System ##
 alias update='sudo pacman -Syu --noconfirm'
 alias upall='yay -Syu --noconfirm'
+### HomeBrew ###
+## Aliasing brew ##
+alias hbs='brew install $1'
+alias hbss='brew search $1'
+alias hbr='brew uninstall $1'
+alias hbq='brew list'
 
 #### Fastest Mirrors ####
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
