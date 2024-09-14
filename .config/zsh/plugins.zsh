@@ -6,24 +6,24 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 ## Auto Suggestions ##
 if [ ! -d "$HOME/.zsh-plugins/zsh-autosuggestions" ]; then
-  echo "${YELLOW}zsh-autosuggestions plugin does not exist. Cloning plugin...${NC}"
-  mkdir -p "$HOME/.zsh-plugins"
-  cd "$HOME/.zsh-plugins" || exit
-  git clone https://github.com/zsh-users/zsh-autosuggestions
+    echo "${YELLOW}zsh-autosuggestions plugin does not exist. Cloning plugin...${NC}"
+    mkdir -p "$HOME/.zsh-plugins"
+    cd "$HOME/.zsh-plugins" || exit
+    git clone https://github.com/zsh-users/zsh-autosuggestions
 fi
 ## Syntax Highlighting ##
 if [ ! -d "$HOME/.zsh-plugins/zsh-syntax-highlighting" ]; then
-  echo "${YELLOW}zsh-syntax-highlighting plugin does not exist. Cloning plugin...${NC}"
-  mkdir -p "$HOME/.zsh-plugins"
-  cd "$HOME/.zsh-plugins" || exit
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+    echo "${YELLOW}zsh-syntax-highlighting plugin does not exist. Cloning plugin...${NC}"
+    mkdir -p "$HOME/.zsh-plugins"
+    cd "$HOME/.zsh-plugins" || exit
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 fi
 ## History Substring Search ##
 if [ ! -d "$HOME/.zsh-plugins/zsh-history-substring-search" ]; then
-  echo "${YELLOW}history-substring-search plugin does not exist. Cloning plugin...${NC}"
-  mkdir -p "$HOME/.zsh-plugins"
-  cd "$HOME/.zsh-plugins" || exit
-  git clone https://github.com/zsh-users/zsh-history-substring-search
+    echo "${YELLOW}history-substring-search plugin does not exist. Cloning plugin...${NC}"
+    mkdir -p "$HOME/.zsh-plugins"
+    cd "$HOME/.zsh-plugins" || exit
+    git clone https://github.com/zsh-users/zsh-history-substring-search
 fi
 
 #### Autosuggestions press -> (right arrow) to activate ####
