@@ -41,6 +41,7 @@ alias sps='sudo pacman -S $1 --noconfirm'
 alias spss='sudo pacman -Ss'
 alias spr='sudo pacman -R $1 --noconfirm'
 alias spq='sudo pacman -Q'
+alias spu='sudo pacman -Syu --noconfirm'
 ## Unlocking Pacman ##
 alias punlock='sudo rm /var/lib/pacman/db.lck'
 ## Using Yay as Paru ##
@@ -52,6 +53,7 @@ alias yys='yay -S $1 --noconfirm'
 alias yyss='yay -Ss'
 alias yyr='yay -R $1 --noconfirm'
 alias yyq='yay -Q'
+alias yyu='yay -Syu --noconfirm'
 ## Updating the System ##
 alias update='sudo pacman -Syu --noconfirm'
 alias upall='yay -Syu --noconfirm'
@@ -62,6 +64,7 @@ alias hbs='brew install $1'
 alias hbss='brew search $1'
 alias hbr='brew uninstall $1'
 alias hbq='brew list'
+alias hbu='brew upgrade'
 
 
 #### Fastest Mirrors ####
