@@ -39,7 +39,12 @@ vim.keymap.set('n', '<CR>', 'o<Esc>', { desc = 'Create new line without exiting 
 vim.keymap.set('i', '<C-C>', '<Esc>', { desc = 'Just exit any current mode.' })
 
 -- Switching Projects
-vim.keymap.set({ 'i', 'v', 'n' }, '<C-f>', '<cmd> silent !tmux neww ~/.config/zshScripts/tmuxthing<CR>')
+vim.keymap.set({ 'i', 'v', 'n' }, '<C-f>', function()
+  vim.cmd "silent !tmux neww zsh -ic 'tmuxthing'"
+end, { desc = 'Swap tmux sessions' })
+vim.keymap.set({ 'i', 'v', 'n' }, '<C-y>', function()
+  vim.cmd "silent !tmux neww zsh -ic 'yazithing'"
+end, { desc = 'Open a new tmux window with yazi' })
 
 -- Find and Replace
 vim.keymap.set(

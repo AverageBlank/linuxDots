@@ -91,7 +91,7 @@ function vimthing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(rg --files --hidden | fzf)
+        selected=$(rg --files --hidden --glob '!**/.git/**' --glob '!**/.venv/**' --glob '!**/node_modules/**' --glob '!**/dist/**' --glob '!**/build/**' --glob '!**/target/**' | fzf)
     fi
 
     if [[ $selected ]]; then
@@ -106,7 +106,7 @@ function yazithing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(find . -type d \( ! -path '*/.*' -o -path './.*' \) | fzf)
+        selected=$(find . -type d \( ! -path '*/.git*' -a ! -path '*/.venv*' -a ! -path '*/node_modules*' -a ! -path '*/unnecessary_folder*' \) | fzf)
     fi
 
     if [[ $selected ]]; then
@@ -121,8 +121,8 @@ function cdthing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(find . -type d \( ! -path '*/.*' -o -path './.*' \) | fzf)
-    fi
+        selected=$(find . -type d \( ! -path '*/.git*' -a ! -path '*/.venv*' -a ! -path '*/node_modules*' -a ! -path '*/unnecessary_folder*' \) | fzf)
+        fi
 
     if [[ $selected ]]; then
         cd "$selected"
