@@ -106,7 +106,7 @@ function yazithing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(find . -mindepth 1 -maxdepth 1 -type d \( ! -path '*/.*' -o -path './.*' \) | fzf)
+        selected=$(find . -maxdepth 1 -type d \( ! -path '*/.*' -o -path './.*' \) | fzf)
     fi
 
     if [[ $selected ]]; then
@@ -121,7 +121,7 @@ function cdthing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(find . -mindepth 1 -maxdepth 1 -type d \( ! -path '*/.*' -o -path './.*' \) | fzf)
+        selected=$(find . -maxdepth 1 -type d \( ! -path '*/.*' -o -path './.*' \) | fzf)
     fi
 
     if [[ $selected ]]; then
