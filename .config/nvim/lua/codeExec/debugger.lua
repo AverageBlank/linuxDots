@@ -23,7 +23,7 @@ sign('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStopped',
 
 -- Python
 dap.adapters.python = function(cb, config)
-  local debugPyPath = vim.fn.expand '~/.virtualenvs/debugpy'
+  local debugPyPath = vim.fn.expand '~/.venv/debugpy'
 
   local function path_exists(path)
     return (vim.uv or vim.loop).fs_stat(path) ~= nil
@@ -32,9 +32,9 @@ dap.adapters.python = function(cb, config)
   if not path_exists(debugPyPath) then
     print 'DebugPy not found, installing!'
     local commands = {
-      'mkdir -p ~/.virtualenvs',
-      'python3 -m venv ~/.virtualenvs/debugpy',
-      '~/.virtualenvs/debugpy/bin/python -m pip install debugpy',
+      'mkdir -p ~/.venv',
+      'python3 -m venv ~/.venv/debugpy',
+      '~/.venv/debugpy/bin/python -m pip install debugpy',
     }
 
     -- Run each command in sequence
@@ -65,7 +65,7 @@ dap.adapters.python = function(cb, config)
   else
     cb {
       type = 'executable',
-      command = vim.fn.expand '~' .. '/.virtualenvs/debugpy/bin/python',
+      command = vim.fn.expand '~' .. '/.venv/debugpy/bin/python',
       args = { '-m', 'debugpy.adapter' },
       options = {
         source_filetype = 'python',
