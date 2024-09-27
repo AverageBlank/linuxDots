@@ -65,7 +65,17 @@ function tmuxthing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(find ~/ ~/coding -mindepth 1 -maxdepth 1 -type d | fzf)
+        if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+            # Get Windows username
+            WIN_HOME=$(cmd.exe /c "echo %USERNAME%" 2>/dev/null | tr -d '\r')
+            WIN_DIR="/mnt/c/Users/$WIN_HOME"
+            
+            # Run find in both Linux and Windows home and coding directories
+            selected=$(find ~/ ~/coding /mnt/c/Coding "$WIN_DIR" "$WIN_DIR/coding" -mindepth 1 -maxdepth 1 -type d | fzf)
+        else
+            # Run find in Linux home and coding directories
+            selected=$(find ~/ ~/coding -mindepth 1 -maxdepth 1 -type d | fzf)
+        fi
     fi
 
     if [[ -z $selected ]]; then
