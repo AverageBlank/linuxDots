@@ -14,7 +14,6 @@ vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
 -- Treesitter
-local npairs = require 'nvim-autopairs'
 local Rule = require 'nvim-autopairs.rule'
 require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
@@ -33,6 +32,18 @@ require('nvim-treesitter.configs').setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+-- Auto Close Bracket
+require('nvim-autopairs').setup {
+  enable_check_bracket_line = false,
+  ignored_next_char = '[%w%.]',
+}
+
+local npairs = require 'nvim-autopairs'
+
+npairs.setup {
+  fast_wrap = {},
+}
 npairs.setup {
   check_ts = true,
   ts_config = {
@@ -45,15 +56,6 @@ local ts_conds = require 'nvim-autopairs.ts-conds'
 npairs.add_rules {
   Rule('%', '%', 'lua'):with_pair(ts_conds.is_ts_node { 'string', 'comment' }),
   Rule('$', '$', 'lua'):with_pair(ts_conds.is_not_ts_node { 'function' }),
-}
-
--- Auto Close Bracket
-require('nvim-autopairs').setup {
-  enable_check_bracket_line = false,
-  ignored_next_char = '[%w%.]',
-}
-npairs.setup {
-  fast_wrap = {},
 }
 
 -- Better Comments
@@ -120,7 +122,7 @@ require('cmp').setup {
 require('mason').setup {}
 local lsp_config = require 'lspconfig'
 require('mason-lspconfig').setup {
-  ensure_installed = { 'eslint', 'pyright', 'clangd', 'lua_ls', 'bashls', 'emmet_language_server' },
+  ensure_installed = { 'pyright', 'clangd', 'lua_ls', 'bashls', 'emmet_language_server' },
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup {}
@@ -197,6 +199,9 @@ require('conform').setup {
     lua = { 'stylua' },
     python = { 'black' },
     javascript = { 'prettierd', 'prettier', stop_after_first = true },
+    markdown = { 'prettierd', 'prettier', stop_after_first = true },
+    bash = { 'beautysh' },
+    sh = { 'beautysh' },
     json = { 'prettierd', 'prettier', stop_after_first = true },
     html = { 'prettierd', 'prettier', stop_after_first = true },
     c = { 'clang-format' },

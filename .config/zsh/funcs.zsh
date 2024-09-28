@@ -101,7 +101,7 @@ function vimthing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(rg --files --hidden --glob '!**/.git/**' --glob '!**/.venv/**' --glob '!**/node_modules/**' --glob '!**/dist/**' --glob '!**/build/**' --glob '!**/target/**' | fzf)
+        selected=$(rg --files --hidden --glob '!**/.git/**' --glob '!**/.venv/**' --glob '!**/node_modules/**' --glob '!**/dist/**' --glob '!**/build/**' --glob '!**/target/**' | fzf --preview "bat --style=numbers --color=always {}")
     fi
 
     if [[ $selected ]]; then

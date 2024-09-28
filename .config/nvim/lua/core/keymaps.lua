@@ -42,9 +42,6 @@ vim.keymap.set('i', '<C-C>', '<Esc>', { desc = 'Just exit any current mode.' })
 vim.keymap.set({ 'i', 'v', 'n' }, '<C-f>', function()
   vim.cmd "silent !tmux neww zsh -ic 'tmuxthing'"
 end, { desc = 'Swap tmux sessions' })
-vim.keymap.set({ 'i', 'v', 'n' }, '<C-y>', function()
-  vim.cmd "silent !tmux neww zsh -ic 'yazithing'"
-end, { desc = 'Open a new tmux window with yazi' })
 
 -- Find and Replace
 vim.keymap.set(
