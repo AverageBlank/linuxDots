@@ -24,9 +24,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move to bottom split' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move highlighted line up in visual mode' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move highlighted line down in visual mode' })
 
--- Center C-u and C-d
+-- Moving Around
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Page up but centered' })
 vim.keymap.set('n', '<C-u>', '<C-u>', { desc = 'Page down but centered' })
+vim.keymap.set('n', '<C-x>', 'zl', { desc = 'Move to the Right of the Page' })
+vim.keymap.set('n', '<C-z>', 'zh', { desc = 'Move to the Left of the Page' })
 
 -- Yank and Pastes
 vim.keymap.set('x', 'p', [["_dP]], { desc = 'Paste without deleting text' })
@@ -119,10 +121,11 @@ vim.keymap.set('n', '<leader>.', builtin.oldfiles, { desc = 'Show Recent Files (
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Show between existing buffers' })
 
 -- Undo Tree
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Show undo tree' })
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndo tree' })
 
--- Neo Git
+-- Neo Git & Diffs
 vim.keymap.set('n', '<leader>gs', vim.cmd.Neogit, { desc = '[G]it [S]tatus' })
+vim.keymap.set('n', '<leader>dv', vim.cmd.DiffviewOpen, { desc = '[D]iff [V]iew' })
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -132,10 +135,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
-    map('gd', require('telescope.builtin').lsp_definitions, 'Goto Definition')
-    map('gr', require('telescope.builtin').lsp_references, 'Goto References')
-    map('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
-    map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+    map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+    map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+    map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+    map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
   end,
 })
 

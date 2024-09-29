@@ -78,20 +78,19 @@ function tmuxthing() {
         fi
     fi
 
-    if [[ -z $selected ]]; then
-        exit 0
+    if [[ $selected ]]; then
+        selected_name=$(basename "$selected" | tr . _)
+
+        if ! tmux has-session -t=$selected_name 2> /dev/null; then
+            tmux new-session -ds $selected_name -c $selected
+        fi
+
+        tmux switch-client -t $selected_name > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+            tmux attach-session -t "$selected_name"
+        fi
     fi
 
-    selected_name=$(basename "$selected" | tr . _)
-
-    if ! tmux has-session -t=$selected_name 2> /dev/null; then
-        tmux new-session -ds $selected_name -c $selected
-    fi
-
-    tmux switch-client -t $selected_name > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
-        tmux attach-session -t "$selected_name"
-    fi
 }
 
 
@@ -101,7 +100,7 @@ function vimthing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(rg --files --hidden --glob '!**/.git/**' --glob '!**/.venv/**' --glob '!**/node_modules/**' --glob '!**/dist/**' --glob '!**/build/**' --glob '!**/target/**' | fzf --preview "bat --style=numbers --color=always {}")
+        selected=$(rg --files --hidden --glob '!**/.git/**' --glob '!**/.local/**' --glob '!**/.venv/**' --glob '!**/node_modules/**' --glob '!**/dist/**' --glob '!**/build/**' --glob '!**/target/**' | fzf --preview "bat --style=numbers --color=always {}")
     fi
 
     if [[ $selected ]]; then
@@ -116,7 +115,7 @@ function yazithing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(find . -type d \( ! -path '*/.git*' -a ! -path '*/.venv*' -a ! -path '*/node_modules*' -a ! -path '*/unnecessary_folder*' \) | fzf)
+        selected=$(find . -type d \( ! -path '*/.git*' -a ! -path '*/.venv*' -a ! -path '*/node_modules*' -a ! -path '*/build*' -a ! -path '*/.local*' \) | fzf)
     fi
 
     if [[ $selected ]]; then
@@ -131,7 +130,7 @@ function cdthing() {
     if [[ $# -eq 1 ]]; then
         selected=$1
     else
-        selected=$(find . -type d \( ! -path '*/.git*' -a ! -path '*/.venv*' -a ! -path '*/node_modules*' -a ! -path '*/unnecessary_folder*' \) | fzf)
+        selected=$(find . -type d \( ! -path '*/.git*' -a ! -path '*/.venv*' -a ! -path '*/node_modules*' -a ! -path '*/build*' \) | fzf)
         fi
 
     if [[ $selected ]]; then
