@@ -38,7 +38,6 @@ require('lazy').setup {
     { 'L3MON4D3/LuaSnip' },
     { 'nvim-pack/nvim-spectre' },
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
-    { 'Djancyp/better-comments.nvim' },
     {
       'MeanderingProgrammer/render-markdown.nvim',
       opts = {},
