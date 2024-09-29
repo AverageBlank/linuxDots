@@ -121,8 +121,8 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Show between existi
 -- Undo Tree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Show undo tree' })
 
--- Vim Fugitive
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
+-- Neo Git
+vim.keymap.set('n', '<leader>gs', vim.cmd.Neogit, { desc = '[G]it [S]tatus' })
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {

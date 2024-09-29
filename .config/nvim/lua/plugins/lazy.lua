@@ -24,7 +24,6 @@ require('lazy').setup {
     { 'lukas-reineke/indent-blankline.nvim' },
     { 'brenoprata10/nvim-highlight-colors' },
     { 'CRAG666/code_runner.nvim' },
-    { 'tpope/vim-fugitive' },
     { 'nvim-lua/plenary.nvim' },
     { 'ThePrimeagen/harpoon' },
     { 'stevearc/conform.nvim' },
@@ -38,6 +37,15 @@ require('lazy').setup {
     { 'L3MON4D3/LuaSnip' },
     { 'nvim-pack/nvim-spectre' },
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+    {
+      'NeogitOrg/neogit',
+      dependencies = {
+        'nvim-lua/plenary.nvim', -- required
+        'sindrets/diffview.nvim', -- optional - Diff integration
+        'nvim-telescope/telescope.nvim', -- optional
+      },
+      config = true,
+    },
     {
       'MeanderingProgrammer/render-markdown.nvim',
       opts = {},
