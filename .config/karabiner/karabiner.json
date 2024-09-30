@@ -438,8 +438,7 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": ["fn"],
-                    "optional": ["any"]
+                    "mandatory": ["fn"]
                   }
                 },
                 "to": [
@@ -460,8 +459,7 @@
                 "from": {
                   "key_code": "r",
                   "modifiers": {
-                    "mandatory": ["fn"],
-                    "optional": ["any"]
+                    "mandatory": ["fn"]
                   }
                 },
                 "to": [
