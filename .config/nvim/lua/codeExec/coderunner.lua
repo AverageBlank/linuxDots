@@ -16,8 +16,12 @@ local function get_command(filetype, quickRun)
       RUNWITH = string.lower(vim.fn.input 'Run(r)/Rebuild(b)/DebugCompile(d)/Compile(c)/CompileAndRun(cr): ')
     end
     if RUNWITH == 'r' or RUNWITH == 'cr' then
-      local args = '2 ' .. vim.fn.input 'If required, enter space separated arguemnts: '
-      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"' .. args
+      local userArgs = vim.fn.input 'If required, enter space separated arguemnts: '
+      if userArgs ~= '' then
+        return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"' .. '2 ' .. userArgs
+      else
+        return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
+      end
     else
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
     end
@@ -25,19 +29,20 @@ local function get_command(filetype, quickRun)
   elseif filetype == 'sh' then
     RUN = 'bash ~/.config/nvim/lua/codeExec/cmds/sh.bash -d "'
     if quickRun then
-      RUNWITH = ' '
-      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
+      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. ' ' .. '"'
     else
-      RUNWITH = 'r'
-      local args = '2 ' .. vim.fn.input 'If required, enter space separated arguemnts: '
-      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"' .. args
+      local userArgs = vim.fn.input 'If required, enter space separated arguemnts: '
+      if userArgs ~= '' then
+        return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. 'r' .. '"' .. '2 ' .. userArgs
+      else
+        return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. 'r' .. '"'
+      end
     end
     -- JavaScript
   elseif filetype == 'javascript' then
     RUN = 'bash ~/.config/nvim/lua/codeExec/cmds/js.bash -d "'
     if quickRun then
-      RUNWITH = ' '
-      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'
+      return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. ' ' .. '"'
     else
       RUNWITH = vim.fn.input 'Vite(v)/Node(n): '
       return RUN .. dir .. '" -f "' .. fileName .. '" -r "' .. RUNWITH .. '"'

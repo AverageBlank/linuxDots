@@ -80,7 +80,15 @@ require('cmp').setup {
 require('mason').setup {}
 local lsp_config = require 'lspconfig'
 require('mason-lspconfig').setup {
-  ensure_installed = { 'pyright', 'clangd', 'lua_ls', 'bashls', 'emmet_language_server' },
+  ensure_installed = {
+    'pyright',
+    'clangd',
+    'lua_ls',
+    'eslint',
+    'ts_ls',
+    'bashls',
+    'emmet_language_server',
+  },
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup {}
