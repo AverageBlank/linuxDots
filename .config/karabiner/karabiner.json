@@ -410,7 +410,7 @@
             ]
           },
           {
-            "description": "Arc only Remaps",
+            "description": "Browser only Remaps",
             "manipulators": [
               {
                 "from": {
@@ -429,7 +429,10 @@
                 "conditions": [
                   {
                     "type": "frontmost_application_if",
-                    "bundle_identifiers": ["^company\\.thebrowser\\.Browser$"]
+                    "bundle_identifiers": [
+                      "^company\\.thebrowser\\.Browser$",
+                      "^com\\.google\\.Chrome$"
+                    ]
                   }
                 ],
                 "type": "basic"
