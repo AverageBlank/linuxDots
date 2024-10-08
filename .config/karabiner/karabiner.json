@@ -439,6 +439,31 @@
               },
               {
                 "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": ["fn"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "^company\\.thebrowser\\.Browser$",
+                      "^com\\.google\\.Chrome$"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
                   "key_code": "l",
                   "modifiers": {
                     "mandatory": ["fn"]
