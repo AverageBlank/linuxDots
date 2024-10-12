@@ -38,3 +38,28 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Set up Indenting
+-- Set indentation to 2 spaces for specific file types (C, C++, HTML, JS, CSS, etc.)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'cpp', 'html', 'javascript', 'css', 'typescript', 'json' },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
+})
+
+-- Restore default indentation (4 spaces) for everything else
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*', -- Matches all file types
+  callback = function()
+    -- If the filetype is NOT one of the specified ones, set to 4 spaces
+    local excluded_filetypes = { 'c', 'cpp', 'html', 'javascript', 'css', 'typescript', 'json' }
+    if not vim.tbl_contains(excluded_filetypes, vim.bo.filetype) then
+      vim.opt_local.tabstop = 4
+      vim.opt_local.softtabstop = 4
+      vim.opt_local.shiftwidth = 4
+    end
+  end,
+})

@@ -410,6 +410,32 @@
             ]
           },
           {
+            "description": "Finder only Remaps",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_or_backspace",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["^com.apple.finder$"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Browser only Remaps",
             "manipulators": [
               {
@@ -439,7 +465,7 @@
               },
               {
                 "from": {
-                  "key_code": "t",
+                  "key_code": "f",
                   "modifiers": {
                     "mandatory": ["fn"],
                     "optional": ["any"]
@@ -447,7 +473,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "t",
+                    "key_code": "f",
                     "modifiers": ["left_command"]
                   }
                 ],
@@ -696,16 +722,6 @@
                     "modifiers": ["left_option"]
                   }
                 ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Turn Caps Lock into Delete Forward",
-            "manipulators": [
-              {
-                "from": { "key_code": "caps_lock" },
-                "to": [{ "key_code": "delete_forward" }],
                 "type": "basic"
               }
             ]
@@ -1186,6 +1202,44 @@
                   }
                 ],
                 "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Misc Remaps",
+            "manipulators": [
+              {
+                "from": { "key_code": "caps_lock" },
+                "to": [{ "key_code": "delete_forward" }],
+                "type": "basic"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "right_command",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "open_bracket"
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "right_option",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "close_bracket"
+                  }
+                ]
               }
             ]
           }
