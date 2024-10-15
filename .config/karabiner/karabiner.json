@@ -299,7 +299,7 @@
               },
               {
                 "from": {
-                  "key_code": "a",
+                  "key_code": "v",
                   "modifiers": {
                     "mandatory": ["fn"],
                     "optional": ["any"]
@@ -307,7 +307,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "a",
+                    "key_code": "v",
                     "modifiers": ["left_control"]
                   }
                 ],
@@ -321,16 +321,16 @@
               },
               {
                 "from": {
-                  "key_code": "v",
+                  "key_code": "a",
                   "modifiers": {
-                    "mandatory": ["fn", "left_shift"],
+                    "mandatory": ["fn"],
                     "optional": ["any"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "v",
-                    "modifiers": ["left_command"]
+                    "key_code": "a",
+                    "modifiers": ["left_control"]
                   }
                 ],
                 "conditions": [
