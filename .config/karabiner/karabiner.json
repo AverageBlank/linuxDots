@@ -252,8 +252,7 @@
                 "from": {
                   "key_code": "v",
                   "modifiers": {
-                    "mandatory": ["fn"],
-                    "optional": ["any"]
+                    "mandatory": ["fn"]
                   }
                 },
                 "to": [
@@ -301,8 +300,7 @@
                 "from": {
                   "key_code": "v",
                   "modifiers": {
-                    "mandatory": ["fn"],
-                    "optional": ["any"]
+                    "mandatory": ["fn"]
                   }
                 },
                 "to": [
@@ -345,8 +343,7 @@
                 "from": {
                   "key_code": "c",
                   "modifiers": {
-                    "mandatory": ["fn"],
-                    "optional": ["any"]
+                    "mandatory": ["fn"]
                   }
                 },
                 "to": [
@@ -389,8 +386,7 @@
                 "from": {
                   "key_code": "v",
                   "modifiers": {
-                    "mandatory": ["fn", "left_shift"],
-                    "optional": ["any"]
+                    "mandatory": ["fn", "left_shift"]
                   }
                 },
                 "to": [
